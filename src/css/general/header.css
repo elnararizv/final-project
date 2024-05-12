@@ -1,27 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-.navbar-nav a{
+.navbar-nav a {
     font-family: "Montserrat", sans-serif;
     color: #241400;
     font-size: 12px;
     font-weight: 400;
     line-height: 23.54px;
     padding: 0;
+    margin-right: 6px;
+}
+.nav-link:hover {
+   color: #E16A00 !important;
+}
+.signIn{
+    cursor: pointer;
 }
 
-.active-page{
+.active-page {
     color: #E16A00 !important;
     border-bottom: 1px solid #E16A00;
     font-weight: bold;
 }
 
-#join-text{
+#join-text {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    margin-left: 6px;
+    margin-inline: 7px;
     margin-top: 11px;
 }
-
-.marg-l{
-    margin-left: 215px;
+.navList{
+    display: flex;
 }
+.hamburger{
+    display: none;
+}
+.menuRespons{
+    background-color: black;
+    opacity: .9;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.menuRespons li{
+    list-style: none;
+    margin-block: 8px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+.menuRespons li a{
+  color: whitesmoke;
+}
+.menuRespons li a:hover{
+    color: #E16A00;
+  }
+@media only screen and (max-width: 767px) {
+    .navList{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #join-text{
+        display: none;
+    }
+  }

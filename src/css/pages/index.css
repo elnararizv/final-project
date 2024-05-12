@@ -1,6 +1,97 @@
-body{
-    width: 1440px;
+body {
+    /* width: 1440px; */
     background-color: #FFFAF5;
     margin: 0;
     padding: 0;
+}
+
+/* Header css */
+.head {
+    margin-top: 7%;
+}
+
+.head-slogan {
+    margin-top: 16%;
+}
+
+.head-slogan p {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 70px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.head-slogan span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 25.5px;
+}
+
+.head-slogan button {
+    margin-top: 18px;
+    box-shadow: 0px 7px 35px 0px #D6640038;
+    background-color: #E16A00;
+    border: none;
+    padding: 11px 63px 11px 24px;
+}
+
+.head-slogan button:hover {
+    background-color: #770c20;
+}
+
+/* Section  - Catalog Css */
+
+.home-catalog button{
+    border: none;
+    text-align: center;
+    background-color: white;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    box-shadow: 0px 4px 11px 0px #00000040;
+    border-radius: 10px;
+    padding: 24px 0;
+    margin: 18px;
+}
+.buttons{
+    width: 54%;
+}
+
+/* Section - About Store */
+
+.store-information span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 98.09px;
+    color: #241400;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 49.05px;
+    margin-bottom: 35px;
+    margin-top: 110px;
+}
+
+.store-information p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 25.5px;
+    color: #241400;
+    margin: 1% 0 0 6%;
+}
+
+
+/* Section Delivery css */
+
+.delivery p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 23.54px;
 }
