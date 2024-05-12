@@ -1,0 +1,14 @@
+function toggleMenu() {
+    var menu = document.querySelector('.menuRespons');
+    if (window.innerWidth > 767) {
+      menu.classList.add('d-none');
+  } else {
+      menu.classList.remove('d-none');
+  }
+    // menu.classList.remove('d-none');
+}
+
+function closeMenu(){
+    var menu = document.querySelector('.menuRespons');
+    menu.classList.add('d-none');
+  }
