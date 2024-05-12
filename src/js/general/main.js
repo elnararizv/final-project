@@ -12,3 +12,13 @@ function closeMenu(){
     var menu = document.querySelector('.menuRespons');
     menu.classList.add('d-none');
   }
+  function openModal() {
+    var modal = document.querySelector('.joinModal');
+    modal.classList.remove('d-none');
+}
+
+  function closeModal(){
+    var modal = document.querySelector('.joinModal');
+    modal.classList.add('d-none');
+  }
+
