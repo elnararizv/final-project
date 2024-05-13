@@ -7,11 +7,26 @@ function toggleMenu() {
   } else {
     menu.classList.remove('d-none');
   }
+
+  const mySlider1 = document.querySelector('#mySlider1')
+  const mySlider2 = document.querySelector('#mySlider2')
+  const mySlider3 = document.querySelector('#mySlider3')
+  mySlider1.style.display = 'none'
+  mySlider2.style.display = 'none'
+  mySlider3.style.display = 'none'
+
 }
 
 function closeMenu() {
+
   var menu = document.querySelector('.menuRespons');
   menu.classList.add('d-none');
+  const mySlider1 = document.querySelector('#mySlider1')
+  const mySlider2 = document.querySelector('#mySlider2')
+  const mySlider3 = document.querySelector('#mySlider3')
+  mySlider1.style.display = 'inline-block'
+  mySlider2.style.display = 'inline-block'
+  mySlider3.style.display = 'inline-block'
 
 }
 
