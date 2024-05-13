@@ -1,5 +1,6 @@
 // Navbar menunun acilib baglanmasi ucun
 function toggleMenu() {
+
   var menu = document.querySelector('.menuRespons');
   if (window.innerWidth > 767) {
     menu.classList.add('d-none');
@@ -11,6 +12,7 @@ function toggleMenu() {
 function closeMenu() {
   var menu = document.querySelector('.menuRespons');
   menu.classList.add('d-none');
+
 }
 
 
