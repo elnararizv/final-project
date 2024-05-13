@@ -13,6 +13,7 @@ function closeMenu() {
   menu.classList.add('d-none');
 }
 
+
 // Join Us modalinin acilib baglanmasi
 function openModal() {
   var modal = document.querySelector('.joinModal');
