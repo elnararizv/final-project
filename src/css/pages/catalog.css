@@ -14,23 +14,23 @@ body {
   background: none;
 }
 #mySlider1{
-  width: 80%;
-  padding-left: 15%;
+  width: 85%;
+  padding-left: 17%;
 }
 #mySlider2{
   margin-top: 50px;
-  width: 80%;
-  padding-left: 15%; 
+  width: 85%;
+  padding-left: 17%; 
 }
 
 #mySlider3{
   margin-top: 50px;
-  width: 80%;
-  padding-left: 15%; 
+  width: 85%;
+  padding-left: 17%; 
 }
 
 #prevBtn{
-  left: 15%;
+  left: 16%;
 }
 #nextBtn{
   right: -4%;
@@ -87,10 +87,8 @@ text-transform: uppercase;
 
 .book{
   display: flex;
-  justify-content: start;
-  gap: 25%;
-  padding-left: 11%;
-  padding-top: 5%;
+  justify-content: space-evenly;
+    padding-top: 5%;
   margin-bottom: 5%;
 }
 
