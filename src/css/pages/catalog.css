@@ -1,0 +1,180 @@
+/* //----------------------------------------- Font-Family */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* //----------------------------------------- */
+
+body {
+  background-color: #FFFAF5;
+}
+
+/* //----------------------------------------- Slider Css */
+
+.splide__arrow{
+  background: none;
+}
+#mySlider1{
+  width: 80%;
+  padding-left: 15%;
+}
+#mySlider2{
+  margin-top: 50px;
+  width: 80%;
+  padding-left: 15%; 
+}
+
+#mySlider3{
+  margin-top: 50px;
+  width: 80%;
+  padding-left: 15%; 
+}
+
+#prevBtn{
+  left: 15%;
+}
+#nextBtn{
+  right: -4%;
+}
+
+.splide__arrow img{
+  width: 21px;
+  height: 41px;
+  flex-shrink: 0;
+}
+
+
+.splide__slide img{
+  width: 134.229px;
+  height: 190px;
+  flex-shrink: 0;
+  padding-top: 20px;
+}
+
+.splide__slide{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  text-align: center;
+  width: 184px;
+  height: 325px;
+  flex-shrink: 0;
+  background: #FFF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.splide__slide button{
+  border: none;
+  width: 136px;
+height: 29px;
+flex-shrink: 0;
+border-radius: 3px;
+background: var(--2, #E16A00);
+box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+
+color: #FFF;
+font-family: "Montserrat", sans-serif;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; /* 23.542px */
+text-transform: uppercase;
+
+}
+
+/* //----------------------------------------- Other div Css*/
+
+
+.book{
+  display: flex;
+  justify-content: start;
+  gap: 25%;
+  padding-left: 11%;
+  padding-top: 5%;
+  margin-bottom: 5%;
+}
+
+.category button{
+  padding-left: 30px;
+  background: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  color: var(--, #241400);
+  
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%; 
+}
+
+.category{
+    padding-top: 40px;
+  
+}
+
+.books{
+  margin-top: 30px;
+  padding-left: 65px;
+}
+
+.books h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+}
+
+
+
+.bookCreator{
+  margin-top: -3px;
+  color: var(--, #241400);
+  font-family: "Montserrat", sans-serif;
+
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%; 
+}
+
+.bookName{
+  margin-top: -0.1px;
+  color: var(--, #241400);
+font-family: "Montserrat", sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 196.187%; 
+}
+
+.besteller{
+  display: flex;
+  justify-content: center;
+  margin-top: 9%;
+}
+.besteller h3{
+  color: var(--, #241400);
+  font-family: "Montserrat", sans-serif;
+
+font-size: 25px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; /* 49.047px */
+}
+
+.new{
+  display: flex;
+  justify-content: center;
+  margin-top: 9%;
+}
+.new h3{
+  color: var(--, #241400);
+  font-family: "Montserrat", sans-serif;
+
+font-size: 25px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; /* 49.047px */
+}
+
