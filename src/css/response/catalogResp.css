@@ -1,9 +1,6 @@
 /* //----------------------------------------- Response for tablet mod */
 
 @media only screen and (max-width: 768px) {
-    body{
-        overflow: hidden;
-    }
     .book{
       display: flex;
       flex-direction: column;
