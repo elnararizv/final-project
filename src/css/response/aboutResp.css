@@ -1,0 +1,23 @@
+@media only screen and (max-width: 490px) {
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .pages {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-left: 15%;
+  }
+
+  img {
+    width: 170px;
+  }
+
+  .mains{
+    flex-direction: column-reverse;
+  }
+
+}
