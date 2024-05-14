@@ -1,23 +1,24 @@
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 992px){
   .about {
     display: flex;
     flex-direction: column-reverse;
-  }
-
-  .pages {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    justify-content: center;
     align-items: center;
-    margin-left: 15%;
   }
-
-  img {
-    width: 170px;
+  .pages{
+    width: 99%;
   }
-
-  .mains{
-    flex-direction: column-reverse;
+  .pages h1,p{
+    text-align: center;
   }
-
+  .text{
+    font-size: 13px;
+  }
 }
+@media only screen and (max-width: 600px){
+    .image img{
+      width: 98%;
+    }
+}
+
+
