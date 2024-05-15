@@ -1,20 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/general/footer.css">
-    <link rel="stylesheet" href="./src/css/general/header.css">
-    <link rel="stylesheet" href="./src/css/response/indexResp.css">
+    <title>Book Store | Home</title>
+    <link rel="shortcut icon" href="./src/assets/icons/titleIcon.svg" type="image/x-icon" />
+    <!-- Yuxaridaki link seyfenin title' nin iconunu deyismek ucundur -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/general/style.css">
     <link rel="stylesheet" href="./src/css/pages/index.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="./src/css/response/indexResp.css">
 </head>
+
 <body>
-    
+    <!-- Modal Join Us -->
+    <section class="joinModal d-none">
+        <div class="bg-white p-2 modalCard">
+            <div class="d-flex justify-content-end">
+                <svg onclick="closeModal()" xmlns="http://www.w3.org/2000/svg" width="35" height="28" fill="black"
+                    class="bi bi-x-lg" role="button" viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                </svg>
+            </div>
+            <p class="h2 text-center color-dark mb-3 fw-bolder">Join Us</p>
+            <div class="container">
+                <div class="row p-4">
+                    <input type="text" placeholder="Full name" class="col-12" id="fnameModal">
+                    <input type="email" placeholder="Email" class="col-12" id="emailModal">
+                    <button class="col-12 mt-3" id="buttonSign" onclick="checkSign()">Join</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header - Start -->
+
+    <header>
+        <!-- Responsive Menu----- Open Hamburger -->
+        <section class="menuRespons d-none">
+            <ul class=" container d-flex flex-column align-items-end">
+                <li class="mt-5"><svg onclick="closeMenu()" xmlns="http://www.w3.org/2000/svg" width="35" height="28"
+                        fill="white" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg></li>
+                <li>
+                    <a href="./index.html" class="text-decoration-none active-page">Home</a>
+                </li>
+                <li>
+                    <a href="./src/pages/catalog.html" class="text-decoration-none">Catalog</a>
+                </li>
+                <li>
+                    <a href="./src/pages/about.html" class="text-decoration-none">About Store</a>
+                </li>
+                <li>
+                    <a href="./src/pages/contact.html" class="text-decoration-none">Contact Us</a>
+                </li>
+                <li>
+                    <a href="./src/pages/search.html" class="text-decoration-none">Search</a>
+                </li>
+                <li><a href="tel:+38 (071) 339-16-26" class="text-white text-decoration-none mt-3"
+                        style="font-size: 13px;">TEL : +38 (071) 339-16-26</a></li>
+            </ul>
+        </section>
+        <!-- NavBar - Start -->
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light">
+            <div class="container">
+
+                <div>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./src/assets/icons/navLogo.svg" alt="">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-center navList">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active-page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./src/pages/catalog.html">Catalog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./src/pages/about.html">About Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./src/pages/contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./src/pages/search.html">Search</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex ">
+                    <div class="d-lg-inline-flex d-md-inline-flex  d-sm-inline-flex  d-xs-inline-flex signIn"
+                        onclick="openModal()">
+                        <img src="./src/assets/icons/profile.svg" alt="">
+                        <p id="join-text" class="mt-3">Join us</p>
+                    </div>
+                    <img src="./src/assets/icons/bars.svg" alt="" class="hamburger ms-2" onclick="toggleMenu()">
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- NavBar End -->
+
+        <section class="head">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class=" col-xl-4 col-lg-5 col-md-5 col-sm-12">
+                        <div class="head-slogan">
+                            <p>Books from A to Z</p>
+                            <span>In our store you can find a book for every taste. A large assortment. Nice prices.
+                                Interesting stories.</span>
+                            <button><a href="./src/pages/catalog.html"
+                                    class="text-decoration-none text-white fw-bolder fs-6">Go to catalog</a></button>
+                        </div>
+                    </div>
+                    <div class=" col-xl-8 col-lg-7 col-md-7 col-sm-12 d-flex justify-content-end">
+                        <img src="./src/assets/images/headerBooks.svg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+    </header>
+    <!-- Header-End -->
 
-<script src="./src/js/general/main.js"></script>
+
+    <!-- Modal Join Us -->
+    <!-- <section class="joinModal d-none">
+            <div class="container bg-white p-5" style="width: 38%;">
+                <div class="d-flex justify-content-end">
+                 <svg onclick="closeModal()" xmlns="http://www.w3.org/2000/svg" width="35" height="28" fill="white" class="bi bi-x-lg" role="button"  viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg> 
+            </div>
+                <div class="row justify-content-center">
+                    <p class="h2 text-center mb-5">Join Us</p>
+                    <div class="d-flex flex-column align-items-center">
+                        <input type="text" placeholder="Full name" class="col-12">
+                        <input type="email" placeholder="Email" class="col-12">
+                        <button class="col-12 mt-3">Join</button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    <!-- New Section Catalog -->
+    <section class="home-catalog">
+        <h2 class="text-center fw-bolder color-dark">Catalog</h2>
+        <div class="buttons container">
+            <div class="row justify-content-center">
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Books</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Electronic books</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Audiobooks</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Toys, creativity</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Book accessories</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Notepads</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Board games</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Present</button>
+                <button class="col-xl-3 col-lg-3 col-md-3 col-sm-12">Stock</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- New Section About Store -->
+
+    <section>
+        <h2 class="text-center fw-bolder color-dark">About Store</h2>
+        <div class="container">
+            <div class="row justify-content-between px-3">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="d-flex align-items-center store-information">
+                        <span>35</span>
+                        <p>Branches in the country</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="d-flex align-items-center store-information ">
+                        <span>896</span>
+                        <p>Products catalog</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="d-flex align-items-center store-information">
+                        <span>8659</span>
+                        <p>Buyers</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="d-flex align-items-center store-information">
+                        <span>72</span>
+                        <p>Hours delivery to cities</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section Delivery -->
+    <section class="delivery">
+        <h2 class="text-center fw-bolder color-dark">Delivery</h2>
+        <div class="container">
+            <div class="row">
+                <p class="text-center col-12">We work without holidays and weekends! Residents of Kiev can receive an
+                    order on the day of its registration. Customers from other cities of Ukraine can receive an order
+                    within 1-5 days, depending on the location of the settlement and the selected delivery method.
+                    Orders over UAH 1000 are delivered free of charge *. You can see the available methods, exact terms
+                    and cost of delivery during checkout in the order basket, aafter selecting the delivery city.
+                    More details</p>
+            </div>
+        </div>
+
+    </section>
+    <!-- New Section -start-Follow Us -->
+    <section id="socialMedia">
+        <p class="text-center color-dark fw-bolder">Follow us on social media</p>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center color-dark social-icon">
+                <img src="./src/assets/icons/facebook.svg" alt="" />
+                <img src="./src/assets/icons/twitter.svg" alt="" id="twitter" />
+                <img src="./src/assets/icons/instagram.svg" alt="" />
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer Start -->
+
+    <footer class="text-white">
+        <div class="footerSec">
+            <div class="footer-logo">
+                <a href="./index.html"><img src="./src/assets/icons/footerLogo.svg" alt=""></a>
+            </div>
+            <div class="d-flex justify-content-between lists">
+
+                <div class="footer-list">
+                    <ul>
+                        <li class="list-category">Popular</li>
+                        <li>
+                            <a href="#">Programming</a>
+                        </li>
+                        <li>
+                            <a href="#">Books for children</a>
+                        </li>
+                        <li>
+                            <a href="#">Psychology</a>
+                        </li>
+                        <li>
+                            <a href="#">Business</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-list">
+                    <ul>
+                        <li class="list-category">Cash</li>
+                        <li>
+                            <a href="#">Delivery</a>
+                        </li>
+                        <li>
+                            <a href="#">Payment</a>
+                        </li>
+                        <li>
+                            <a href="./src/pages/about.html">About store</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-list">
+                    <ul>
+                        <li class="list-category">Help</li>
+                        <li>
+                            <a href="./src/pages/contact.html">Contacts</a>
+                        </li>
+                        <li>
+                            <a href="#">Purchase returns</a>
+                        </li>
+                        <li>
+                            <a href="#">Buyer help</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="phoneNumber">
+                <a href="tel:+38 (071) 339-16-26" class="text-white fw-bolder">+38 (071) 339-16-26</a>
+                <button><a href="tel:+38 (071) 339-16-26">Request a call</a></button>
+            </div>
+        </div>
+
+        <p id="privacypolicy">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+    </footer>
+
+    <!-- Footer END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./src/js/general/main.js"></script>
     <script src="./src/js/index.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,177 @@
+#twitter{
+    margin: 0 53px;
+}
+.social-icon{
+    margin-top: 24px;
+}
+
+#socialMedia{
+    margin-block: 133px;
+}
+
+#socialMedia p{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 49.05px;
+}
+.footerSec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #391F00;
+    padding: 56px 0 1px 0;
+}
+.lists{
+    width: 40%;
+    margin-inline: 5%;
+}
+
+.footer-list li{
+    list-style: none;
+}
+.list-category{
+list-style: none;
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 35.31px;
+}
+.footer-list li a{
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+font-size: 13px;
+line-height: 25.5px;
+}
+.footer-list li a:hover{
+color: #E16A00;
+}
+
+#privacypolicy{
+font-family: "Montserrat", sans-serif;
+font-size: 12px;
+font-weight: 400;
+line-height: 23.54px;
+text-align: center;
+margin-top: 50px;
+}
+.phoneNumber{
+    display: flex;
+    flex-direction: column;
+}
+.phoneNumber a{
+   text-decoration: none;
+   font-size: 12px;
+   font-family: "Montserrat", sans-serif; 
+   color: #E16A00;
+}
+.phoneNumber button{
+    border: 1px solid  #E16A00;
+    background: transparent;
+    text-align: start;
+    margin-top: 9px;
+}
+
+@media only screen and (max-width: 992px) {
+    footer{
+        padding: 45px 0 1px 0;
+    }
+    .footer-logo{
+        width: 27%;
+    }
+.footer-logo img{
+    width: 99%;
+}
+.phoneNumber{
+    width: 15%;
+}
+.phoneNumber a{
+    font-size: 10px;
+}
+#socialMedia{
+    margin-block: 90px;
+}
+}
+ @media only screen and (max-width: 767px) {
+    footer{
+        padding: 37px 0 1px 0;
+    }
+    .footer-logo{
+        width: 22%;
+    }
+    .lists{
+        width: 49%;
+    }
+    .lists li a{
+        font-size: 11px;
+        line-height: 12px;
+    }
+    .lists li {
+        font-size: 14px;
+    }
+    .phoneNumber{
+        width: 13%;
+    }
+    .phoneNumber a{
+        font-size: 7px;
+        font-weight: bold;
+    }
+    #socialMedia{
+        margin-block: 50px;
+    }
+    
+#privacypolicy{
+    font-size: 10px;
+    line-height: 20px;
+    margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    footer{
+        padding: 22px 0 1px 0;
+    }
+    .footerSec{
+        display: flex;
+        flex-direction: column;
+     align-items:center;
+    }
+    .phoneNumber{
+        display: none;
+    }
+    .footer-logo{
+        width: 34%;
+    }
+    .lists{
+        width: 76%;
+       padding: 0;
+       margin: 0;
+    }
+    #privacypolicy{
+        font-size: 8px;
+        line-height: 15px;
+        margin-top: 10px;
+        }
+        #socialMedia p{
+            font-size: 22px;
+            line-height: 45px;
+        }
+        .social-icon{
+            margin: 0;
+        }
+        .social-icon img{
+            width: 16%;
+        }
+        
+  } 
+  @media only screen and (max-width: 375px){
+     .lists{
+        width: 94%;
+        margin-left: -15px;
+     }
+  }

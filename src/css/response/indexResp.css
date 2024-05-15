@@ -1,0 +1,47 @@
+@media only screen and (max-width: 992px) {
+    h2{
+        line-height: 45px;
+        margin-bottom: 30px; 
+        margin-top: 90px !important;
+    }
+    .head-slogan{
+        margin-top:10%;
+    }
+    .buttons{
+        width: 70%;
+      }
+  }
+ 
+  @media only screen and (max-width: 768px) {
+    .head{
+        margin-top: 13%;
+    }  
+    .head-slogan{
+        margin-bottom: 6%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  .head-slogan p{
+    font-size: 29px ;
+    line-height: 45px;
+  }
+  .home-catalog button{
+    padding: 20px 0;
+    margin: 15px;
+}
+  } 
+  @media only screen and (max-width: 576px) {
+    h2{
+        margin-top: 60px;
+    }
+  .head-slogan span{
+    font-size: 12px ;
+  }
+  .head{
+    margin-top: 6%;
+} 
+  
+    } 
+
+
