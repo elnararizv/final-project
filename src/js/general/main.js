@@ -7,7 +7,7 @@ function toggleMenu() {
   } else {
     menu.classList.remove('d-none');
   }
-// Slider gorunmesin
+  // Slider gorunmesin
   const mySlider1 = document.querySelector('#mySlider1')
   const mySlider2 = document.querySelector('#mySlider2')
   const mySlider3 = document.querySelector('#mySlider3')
@@ -59,7 +59,7 @@ function closeModal() {
 
 //  User Join eden zaman input valuelari yoxlayir
 function checkSign() {
-  let profileName=document.querySelector('#join-text')
+  let profileName = document.querySelector('#join-text')
   let fnameInput = document.querySelector('#fnameModal');
   let emailInput = document.querySelector('#emailModal');
 
