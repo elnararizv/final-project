@@ -1,5 +1,5 @@
 var splide = new Splide( '.splide' );
-var bar    = splide.root.querySelector( '.my-carousel-progress-bar' );
+var bar = splide.root.querySelector( '.my-carousel-progress-bar' );
 
 // Updates the bar width whenever the carousel moves:
 splide.on( 'mounted move', function () {
@@ -9,3 +9,4 @@ splide.on( 'mounted move', function () {
 } );
 
 splide.mount();
+
