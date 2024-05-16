@@ -63,7 +63,7 @@ body {
 }
 
 
-.splide__slide button{
+#readBtn{
   border: none;
   width: 136px;
 height: 29px;
@@ -176,3 +176,20 @@ font-weight: 900;
 line-height: 196.187%; /* 49.047px */
 }
 
+.newP{
+  width: 47px;
+  height: 13.578px;
+  margin-left: 75%;
+}
+.newBtn{
+  background-color: #EB5757;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;}
