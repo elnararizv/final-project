@@ -13,7 +13,9 @@ h2{
     font-style: normal;
     font-weight: 900;
     line-height: 196.187%; /* 70.627px */
+
     margin-left: 70px;
+
 
 }
 /* .inputs{
@@ -79,7 +81,9 @@ h2{
   
 } */
 .note{
+
     width: 85.5%;
+
     height: 153px;
     flex-shrink: 0;
     border: 1px solid #CECECE;
@@ -107,12 +111,22 @@ h2{
     padding: 17px 25px;
     /* padding: 10px 7rem 20px; */
 }
+.note{
+    width: 85.5%;
+}
+/* .btns{
+    margin: 0 10rem 0 0;
+    text-align: center;
+    display: flex;
+} */
+
 
 /* .btns{
     margin: 0 10rem 0 0;
     text-align: center;
     display: flex;
 } */
+
 
 /* .btns .button{
     color: #FFF;
@@ -137,7 +151,9 @@ h2{
 
 
 .button{
+
     height: 70px;
+
     color: #FFF;
     /* text-align: center; */
     font-family: "Crimson Text";
@@ -146,7 +162,9 @@ h2{
     font-weight: 400;
     line-height: normal;
     background: #E16A00;
+
     padding: 10px 15rem 15px;
+
     margin: 0 auto;
     border: none;
 }
@@ -157,15 +175,20 @@ h2{
 .address,
 .phone {
     color: #FFF;
+
+    text-align: center;
+
     font-family: "Crimson Text";
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     padding: 10px 15rem 10px;
+
     margin: 0 auto;
     border: 0;
     gap: 33px;
+
 }
 
 

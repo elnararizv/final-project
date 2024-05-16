@@ -1,0 +1,15 @@
+@media (max-height: 500px) {
+    .social_media {
+        display: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 800px)  {
+    .row {
+       flex-direction: column;
+    }
+      div.row input:nth-child(2){
+          margin-left:0px;
+      }
+   }

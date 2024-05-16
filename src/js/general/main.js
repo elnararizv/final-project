@@ -1,13 +1,13 @@
 // Navbar menunun acilib baglanmasi ucun
 function toggleMenu() {
 
-  var menu = document.querySelector('.menuRespons');
+  let menu = document.querySelector('.menuRespons');
   if (window.innerWidth > 767) {
     menu.classList.add('d-none');
   } else {
     menu.classList.remove('d-none');
   }
-
+// Slider gorunmesin
   const mySlider1 = document.querySelector('#mySlider1')
   const mySlider2 = document.querySelector('#mySlider2')
   const mySlider3 = document.querySelector('#mySlider3')
@@ -19,8 +19,9 @@ function toggleMenu() {
 
 function closeMenu() {
 
-  var menu = document.querySelector('.menuRespons');
+  let menu = document.querySelector('.menuRespons');
   menu.classList.add('d-none');
+  // Slider yeniden gorunur olsun
   const mySlider1 = document.querySelector('#mySlider1')
   const mySlider2 = document.querySelector('#mySlider2')
   const mySlider3 = document.querySelector('#mySlider3')
@@ -33,13 +34,27 @@ function closeMenu() {
 
 // Join Us modalinin acilib baglanmasi
 function openModal() {
-  var modal = document.querySelector('.joinModal');
+  let modal = document.querySelector('.joinModal');
   modal.classList.remove('d-none');
+  // modal acilanda slider gorunmesin
+  const mySlider1 = document.querySelector('#mySlider1')
+  const mySlider2 = document.querySelector('#mySlider2')
+  const mySlider3 = document.querySelector('#mySlider3')
+  mySlider1.style.display = 'none'
+  mySlider2.style.display = 'none'
+  mySlider3.style.display = 'none'
 }
 
 function closeModal() {
-  var modal = document.querySelector('.joinModal');
+  let modal = document.querySelector('.joinModal');
   modal.classList.add('d-none');
+  // Modal baglananda slider yeniden gorunsun
+  const mySlider1 = document.querySelector('#mySlider1')
+  const mySlider2 = document.querySelector('#mySlider2')
+  const mySlider3 = document.querySelector('#mySlider3')
+  mySlider1.style.display = 'inline-block'
+  mySlider2.style.display = 'inline-block'
+  mySlider3.style.display = 'inline-block'
 }
 
 //  User Join eden zaman input valuelari yoxlayir
@@ -79,6 +94,6 @@ function checkSign() {
       icon: 'success',
       text: 'Thank you for joining us!'
     });
-    profileName.textContent=fnameInput.value
+    // profileName.textContent=fnameInput.value
   }
 }

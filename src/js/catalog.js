@@ -10,7 +10,7 @@ const mySlider1 = new Splide('#mySlider1',{
       1100:{
         perPage: 4
       },
-      800:{
+      920:{
         perPage: 3,
         arrows: false,
       },
@@ -34,7 +34,7 @@ const mySlider1 = new Splide('#mySlider1',{
       1100:{
         perPage: 4
       },
-      800:{
+      920:{
         arrows: false,
         perPage: 3,
       },
@@ -58,7 +58,7 @@ const mySlider1 = new Splide('#mySlider1',{
       1100:{
         perPage: 4
       },
-      800:{
+      920:{
         arrows: false,
         perPage: 3,
       },

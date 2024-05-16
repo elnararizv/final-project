@@ -1,9 +1,11 @@
+
 @media screen and (max-width: 540px) {
    
 
     h2 {
         text-align: center;
         /* width: 157px; */
+
         height: 50px;
         flex-shrink: 0;
         /* margin-right: 10px; */
@@ -12,7 +14,7 @@
         font-style: normal;
         font-weight: 900;
         line-height: 196.187%;
-        
+
     }
 
     .contact-form {
@@ -23,6 +25,7 @@
     .email,
     .address,
     .phone {
+
     width: 250px;
     height: 40px;
     border-radius: 5px;
@@ -56,11 +59,13 @@
     .button {
         height: 37px;
         margin: 0 auto;
+
         border-radius: 5px;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+
         margin-top: 49px;
         padding: 10px 6.8rem 20px;
         
@@ -104,11 +109,13 @@
     .button{
         /* padding: 20px 14.7rem 20px; */
         height: 60px;
+
         border-radius: 5px;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+
         padding-left: 200px;
         
         
@@ -129,6 +136,7 @@
         font-weight: 400;
         line-height: normal;
     }
+
 
 
 }
