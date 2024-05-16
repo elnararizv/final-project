@@ -87,11 +87,20 @@ body {
     margin: 20px 0;
 }
 
+.book-form h2{
+    margin: 50px 0 0 8px;
+}
+
+.about-store h2{
+    margin: 50px 0 0 8px;
+}
+
 .wrapper .main_content .info .search .input {
     width: 395px;
     padding: 15px;
     border-radius: 30px;
     margin: 0 5px;
+    color: #000000;
 }
 
 .searching {
@@ -105,6 +114,16 @@ body {
     background-color: #fe9c22;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.history {
+    overflow: auto;
+    max-height: 100px;
+    max-width: 388px;
+    margin: 10px 10px;
+    border: 1px solid #F1F0F0;
+    background-color: #F1F0F0;
+    
 }
 
 
