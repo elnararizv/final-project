@@ -91,8 +91,16 @@ body {
     margin: 50px 0 0 8px;
 }
 
+.book-form input{
+    color: #000000;
+}
+
 .about-store h2{
     margin: 50px 0 0 8px;
+}
+
+.about-store input{
+    color: #000000;
 }
 
 .wrapper .main_content .info .search .input {
