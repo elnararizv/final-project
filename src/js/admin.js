@@ -5,7 +5,7 @@ let historyContainer = document.querySelector('.history');
 searchBookbtn.addEventListener('click', function () {
     let searchQuery = searchBookInput.value.trim();
 
-    historyContainer.style.display = 'block'
+    historyContainer.style.display = 'block';
 
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
         .then(response => response.json())
@@ -17,12 +17,23 @@ searchBookbtn.addEventListener('click', function () {
                     const volumeInfo = item.volumeInfo;
                     const title = volumeInfo.title || 'No title available';
                     const authors = volumeInfo.authors ? volumeInfo.authors.join(', ') : 'No authors available';
+                    const description = volumeInfo.description || 'No description available';
+                    const imageLink = volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : 'No image available';
+                    const categories = volumeInfo.categories ? volumeInfo.categories.join(', ') : 'No categories available';
 
                     const bookElement = document.createElement('div');
                     bookElement.classList.add('book-info');
                     bookElement.innerHTML = `
-                                <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
-                            `;
+                        <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
+                    `;
+                    
+                    bookElement.addEventListener('click', function() {
+                        document.querySelector('.bookName').value = title;
+                        document.querySelector('.authorName').value = authors;
+                        document.querySelector('.bookImage').value = imageLink;
+                        document.querySelector('.bookDesc').value = description;
+                        document.querySelector('.bookType').value = categories;
+                    });
 
                     historyContainer.appendChild(bookElement);
                 });
@@ -51,8 +62,8 @@ let aboutStore = document.querySelector('.about-store');
 let joinUs = document.querySelector('.join-us');
 let books = document.querySelector('.books');
 let contactUs = document.querySelector('.contact-us');
-let header = document.querySelector('.header')
-let info = document.querySelector('.info')
+let header = document.querySelector('.header');
+let info = document.querySelector('.info');
 
 document.addEventListener("DOMContentLoaded", function() {
     var burgerMenu = document.querySelector(".burger-menu");
@@ -69,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
             contactUs.style.display = "none";
             header.style.display = "none";
             info.style.display = "none";
-
         } else {
             bookform.style.display = "block";
             aboutStore.style.display = "block";
