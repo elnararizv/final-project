@@ -19,7 +19,6 @@ body {
     margin: 20px;
 }
 
-
 .wrapper .sidebar ul li {
     padding: 15px;
     border-bottom: 1px solid #bdb8d7;
@@ -31,11 +30,6 @@ body {
 .wrapper .sidebar ul li a {
     color: #ffffff;
     margin: 10px 20px;
-
-}
-
-.wrapper .sidebar ul li a .fas {
-    width: 25px;
 }
 
 .wrapper .sidebar ul li:hover {
@@ -52,11 +46,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-}
-
-.wrapper .main_content {
-    width: 100%;
-    margin-left: 300px;
 }
 
 .wrapper .main_content .header {
@@ -87,19 +76,31 @@ body {
     margin: 20px 0;
 }
 
-.book-form h2{
+.search .searching{
+    display: flex;
+
+}
+
+.search .searching .lupa{
+    border: 1px solid #fe9c22;
+    background-color: #fe9c22;
+    padding: 8px 17px;
+    border-radius: 40px;
+}
+
+.book-form h2 {
     margin: 50px 0 0 8px;
 }
 
-.book-form input{
+.book-form input {
     color: #000000;
 }
 
-.about-store h2{
+.about-store h2 {
     margin: 50px 0 0 8px;
 }
 
-.about-store input{
+.about-store input {
     color: #000000;
 }
 
@@ -111,29 +112,20 @@ body {
     color: #000000;
 }
 
-.searching {
-    display: flex;
-    text-align: center;
-}
-
-.lupa {
-    border: 1px solid #fe9c22;
-    padding: 0 25px;
-    background-color: #fe9c22;
-    border-radius: 40px;
-    cursor: pointer;
-}
-
 .history {
+    padding: 15px;
     overflow: auto;
-    max-height: 100px;
+    max-height: 70px;
     max-width: 388px;
     margin: 10px 10px;
     border: 1px solid #F1F0F0;
     background-color: #F1F0F0;
-    
+    border-radius: 20px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 div.row {
     display: flex;
@@ -153,19 +145,16 @@ div.form-container {
     margin-top: 5%;
 }
 
-
-
 input {
     margin: 1rem 0;
     width: 100%;
-    padding: 1em;
     padding: 12px 19px;
     border: 1px solid rgb(211, 221, 225);
     border-radius: 4px;
     box-shadow: 0px 4px 18px 0px #9EA8BD4F;
     background-color: rgb(255, 255, 255);
     color: rgb(208, 208, 208);
-    transition: background-color 300ms ease-in-out 0s, color 300ms ease-in-out 0s;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
 button {
@@ -195,7 +184,6 @@ button {
     margin: 5rem 5px;
 }
 
-
 .fixed_headers th,
 .fixed_headers td {
     padding: 10px;
@@ -204,18 +192,20 @@ button {
 
 .fixed_headers th {
     background-color: #8B0000;
+    border: 1px solid white;
     color: white;
-    border-bottom: 2px solid #A52A2A;
+    border-bottom: #F1F0F0 ;
 }
 
 .fixed_headers td {
     background-color: #F5F5F5;
-    border-bottom: 1px solid #8B4513;
+    border-bottom: 1px solid #F1F0F0;
+    border: 1px solid white;
 }
 
 .fixed_headers {
     border-collapse: collapse;
-    border: 2px solid #8B4513;
+    border: 2px solid #ffffff;
     width: 70%;
 }
 
