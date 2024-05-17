@@ -107,62 +107,62 @@
     <!-- Header End -->
     <!-- Start Main --- Search Section -->
 
-  
-        <main>
-            <section class="searchMain">
-                <div class="searchLeftContainer">
-                    <div class="searchText">
-                        <h1>Search</h1>
-                    </div>
-                    <div class="searchInputButton">
-                        <input placeholder="Orded in Chaos" type="text" id="inputSearch">
-                        <button id="searchBtn">Search</button>
-                    </div>
-                </div>
 
-                <div class="searchAboutBook">
-                    <div class="splide">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <div class="card your-class splide">
-                                    <div class="insideCard splide__track">
-                                        <div>
-                                            <img src="../../src/assets/images/searchBook.svg" alt="" class="search-img">
-                                        </div>
-                                        <div class="bookText">
-                                            <h2>Order in Chaos</h2>
-                                            <h3>Konstantin Koptelov</h3>
-                                            <p>
-                                                We work without holidays and weekends! Residents of Kiev can receive an
-                                                order on the
-                                                day of its registration. Customers from other cities of Ukraine can
-                                                receive an order
-                                                within 1-5 days, depending on the location of the settlement and the
-                                                selected
-                                                delivery method. Orders over UAH 1000 are delivered free of charge *.
-                                                You can see
-                                                the available methods, exact terms and cost of delivery during checkout
-                                                in the order
-                                                basket, after selecting the delivery city
-                                            </p>
-                                        </div>
+    <main>
+        <section class="searchMain">
+            <div class="searchLeftContainer">
+                <div class="searchText">
+                    <h1>Search</h1>
+                </div>
+                <div class="searchInputButton">
+                    <input placeholder="Orded in Chaos" type="text" id="inputSearch">
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+
+            <div class="searchAboutBook">
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <div class="card your-class splide">
+                                <!-- <div class="insideCard splide__track">
+                                    <div>
+                                        <img src="../../src/assets/images/searchBook.svg" alt="" class="search-img">
                                     </div>
-                                </div>
-                            </ul>
-                        </div>
-
-                        <!-- Add the progress bar element -->
-                        <div class="my-slider-progress">
-                            <div class="my-slider-progress-bar"></div>
-                        </div>
+                                    <div class="bookText">
+                                        <h2>Order in Chaos</h2>
+                                        <h3>Konstantin Koptelov</h3>
+                                        <p>
+                                            We work without holidays and weekends! Residents of Kiev can receive an
+                                            order on the
+                                            day of its registration. Customers from other cities of Ukraine can
+                                            receive an order
+                                            within 1-5 days, depending on the location of the settlement and the
+                                            selected
+                                            delivery method. Orders over UAH 1000 are delivered free of charge *.
+                                            You can see
+                                            the available methods, exact terms and cost of delivery during checkout
+                                            in the order
+                                            basket, after selecting the delivery city
+                                        </p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </ul>
                     </div>
 
-
+                    <!-- Add the progress bar element -->
+                    <div class="my-slider-progress">
+                        <div class="my-slider-progress-bar"></div>
+                    </div>
                 </div>
 
-            </section>
-        </main>
-   
+
+            </div>
+
+        </section>
+    </main>
+
 
     <!-- End Main Section -->
     <section id="socialMedia">
@@ -246,6 +246,149 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
     <script src="../js/general/main.js"></script>
     <script src="../js/search.js"></script>
     <!--------------------------------------------->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import {
+          getDatabase,
+          ref,
+          push,
+          get
+        } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+    
+        const userDb = ref(database, "bookData")
+    
+        const searchBtn = document.querySelector('#searchBtn')
+        const searchInput = document.querySelector("#inputSearch")
+        const carusel = document.querySelector(".your-class")
+        let arr = []
+        let complited = false
+    
+        searchBtn.addEventListener('click', function () {
+          get(userDb)
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+    
+                for (let key in snapshot.val()) {
+    
+                  if (snapshot.val().hasOwnProperty(key)) {
+                    const value = snapshot.val()[key];
+                    if (value.bookName.includes(searchInput.value)) {
+                      arr.push(key)
+                      console.log(value.bookName);
+                      carusel.innerHTML = `
+    
+          <div class="insideCard">
+            <div>
+              <img src="${value.BookImageUrl}" alt="" class="search-img">
+            </div>
+            <div class="bookText">
+              <h2>${value.bookName}</h2>
+              <h3>${value.authorName}</h3>
+              <p>
+                We work without holidays and weekends! Residents of Kiev can receive an order on the day
+                of its registration. Customers from other cities of Ukraine can receive an order within
+                1-5 days, depending on the location of the settlement and the selected delivery method.
+                Orders over UAH 1000 are delivered free of charge *. You can see the available methods,
+                exact terms and cost of delivery during checkout in the order basket, after selecting
+                the delivery city
+              </p>
+            </div>
+          </div>
+    
+          `
+                    }
+                  }
+    
+                  if (arr.length) {
+                    complited = true
+    
+                  }
+    
+                  if (complited) {
+                    console.log('test');
+                    $(".your-class").slick({
+    
+                      prevArrow: ` <div class="prev-search">
+              <img src="../assents/images/prevArrow.svg" alt="" class="prev">
+          </div>`,
+                      nextArrow: ` <div class="next-search">
+              <img src="../assents/images/nextArrow.svg" alt="" class="next">
+          </div>`,
+                    });
+    
+                  }
+    
+    
+    
+                }
+              }
+            })
+        })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        document.querySelector("#modalBtn").addEventListener("click", function () {
+          const database = getDatabase(app);
+          const userRef = ref(database, "join/"); // push ile bele edirik
+    
+          const ModalfullName = document.querySelector("#modalFullName").value;
+          const Modalemail = document.querySelector("#modalEmail").value;
+          if (!ModalfullName || !Modalemail) {
+    
+            showAlert("danger", "Please Fill in the Field")
+            return
+          }
+          const person = {
+            ModalfullName,
+            Modalemail
+          }
+          showAlert("success", "Our team will contact you shortly")
+    
+          push(userRef, person);
+          document.querySelector("#modalFullName").value = ""
+          document.querySelector("#modalEmail").value = ""
+          function showAlert(type, message) {
+    
+            const modalBody = document.querySelector("#modalBody")
+            /*
+    
+                      <div class="alert alert-danger" role="alert">
+                        A simple danger alert—check it out!
+                      </div>
+            */
+            let styles = {
+              "display": "block",
+              "position": "absolute",
+              "bottom": 0,
+              "width": "70%",
+              "height": "45px"
+            };
+            let alert = document.createElement("div");
+            alert.className = `alert alert-${type}  role ="alert" myAlert`;
+            alert.textContent = message;
+            Object.assign(alert.style, styles);
+            //console.log(alert);
+            modalBody.appendChild(alert);
+    
+            setTimeout(function () {
+              alert.remove();
+            }, 2000);
+    
+    
+          }
+        });
+      </script>
 </body>
 
 </html>
