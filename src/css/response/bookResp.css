@@ -1,2 +1,109 @@
+/* /* @media only screen and (max-width: 992px){
+    . {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+    .pages{
+      width: 99%;
+    }
+    .pages h1,p{
+      text-align: center;
+    }
+    .text{
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 600px){
+      .image img{
+        width: 98%;
+      }
+  }
+     */
 
-    
+     /* @media only screen and (max-width: 992px) {
+        .div1{
+            width: 60%;
+        }
+        }
+        @media only screen and (max-width: 768px) {
+            #section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+           .book{
+            flex-direction: column;
+          align-items: center;
+           }
+           .text{
+            font-size: 15px;
+           }
+           .buttons{
+           display: flex;
+           justify-content: start;
+           width: 100%;
+           }
+            }
+            body {
+                background-color: #FFFAF5;
+                font-family: 'Rubik', sans-serif;
+                font-size: 16px;
+            }
+            .input {
+                width: 100%;
+                max-width: 746px;
+                height: 60px;
+                border-radius: 5px;
+                border: none;
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+                margin-bottom: 53px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+            }
+            .input input {
+                border: none;
+                width: 100%;
+                margin-left: 38px;
+                outline: none;
+                padding-left: 10px;
+            }
+            .input button {
+                width: 60px;
+                height: 60px;
+                background-color: #E16A00;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+            .container {
+                width: 100%;
+                max-width: 686px;
+                height: 167px;
+                margin-bottom: 43px;
+                padding: 18px 30px;
+                border-radius: 5px;
+                border: none;
+                background-color: white;
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.10);
+            }
+            .box {
+                display: flex;
+                align-items: center;
+                gap: 26px;
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         */ */
