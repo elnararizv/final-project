@@ -44,3 +44,39 @@ function generate_uuidv4() {
             return v.toString(16);
         });
 }
+
+let bookform = document.querySelector('.book-form');
+let aboutStore = document.querySelector('.about-store');
+let joinUs = document.querySelector('.join-us');
+let books = document.querySelector('.books');
+let contactUs = document.querySelector('.contact-us');
+let header = document.querySelector('.header')
+let info = document.querySelector('.info')
+
+document.addEventListener("DOMContentLoaded", function() {
+    var burgerMenu = document.querySelector(".burger-menu");
+    var sidebar = document.querySelector(".sidebar");
+
+    burgerMenu.addEventListener("click", function() {
+        sidebar.classList.toggle("show-sidebar");
+        
+        if (sidebar.classList.contains("show-sidebar")) {
+            bookform.style.display = "none";
+            aboutStore.style.display = "none";
+            joinUs.style.display = "none";
+            books.style.display = "none";
+            contactUs.style.display = "none";
+            header.style.display = "none";
+            info.style.display = "none";
+
+        } else {
+            bookform.style.display = "block";
+            aboutStore.style.display = "block";
+            joinUs.style.display = "block";
+            books.style.display = "block";
+            contactUs.style.display = "block";
+            header.style.display = "block";
+            info.style.display = "block";
+        }
+    });
+});

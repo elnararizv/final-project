@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <div class="admin-header">
+        <img class="ad-logo" src="../assets/icons/navLogo.svg" alt="">
+        <img class="burger-menu" src="../assets/icons/bars.svg" alt="">
+    </div>
+
     <div class="wrapper">
         <div class="sidebar">
             <img src="../assets/images/Logo.png" alt="" class="logo">
@@ -23,145 +28,140 @@
                 <li><img src="../assets/images/Group.png" alt=""><a href="#">Logout</a></li>
             </ul>
         </div>
-        <div class="main_content">
-            <div class="header">
-                <img src="../assets/icons/profile.svg" alt="">
-                <p href="">Admin</p>
-            </div>
-            <div class="info">
-                <h1>Add Book</h1>
-                <div class="search">
-                    <h2>Search book</h2>
-                    <div class="searching">
-                        <input class="input" type="text" name="" id="" placeholder="Dan Brown">
-                        <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
+        <div>
+            <div class="main_content">
+                <div class="header">
+                    <img src="../assets/icons/profile.svg" alt="">
+                    <p href="">Admin</p>
+                </div>
+                <div class="info">
+                    <h1>Add Book</h1>
+                    <div class="search">
+                        <h2>Search book</h2>
+                        <div class="searching">
+                            <input class="input" type="text" name="" id="" placeholder="Dan Brown">
+                            <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
+                        </div>
+                        <div class="history">
+
+                        </div>
                     </div>
-                    <div class="history">
+                </div>
 
+                <div class="book-form">
+                    <h2>Book Form</h2>
+                    <div class="form-container">
+                        <form autocomplete="off">
+                            <label for="townborn">Book Name</label>
+                            <input class="bookName" type="text" placeholder="Angels">
+
+                            <label for="name">Author Name</label>
+                            <input class="authorName" type="text" placeholder="Dan Brown">
+
+                            <label for="townborn">Book Image Url</label>
+                            <input class="bookImage" type="text" placeholder="URL">
+
+                            <label for="text">Description</label>
+                            <input class="bookDesc" type="text" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
+
+                            <label for="townborn">Book Type</label>
+                            <input class="bookType" type="text" placeholder="Dedective">
+
+                        </form>
+                        <button class="formBtn" type="submit">Add</button>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-form">
-                <h2>Book Form</h2>
-                <div class="form-container">
-                    <form autocomplete="off">
-                        <label for="townborn">Book Name</label>
-                        <input class="bookName" type="text" placeholder="Angels">
+                <div class="about-store">
+                    <h2>About Store</h2>
+                    <div class="form-container">
+                        <form autocomplete="off">
 
-                        <label for="name">Author Name</label>
-                        <input class="authorName" type="text" placeholder="Dan Brown">
+                            <label for="townborn">Title</label>
+                            <input class="bookTitle" type="text" placeholder="About Store">
 
-                        <label for="townborn">Book Image Url</label>
-                        <input class="bookImage" type="text" placeholder="URL">
+                            <label for="email">Book Image Url</label>
+                            <input class="userMail" type="email" placeholder="https://image.url">
 
-                        <label for="text">Description</label>
-                        <input class="bookDesc" type="text" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
+                            <label for="townborn">Description</label>
+                            <input class="aboutDesc" type="text" placeholder="Description">
 
-                        <label for="townborn">Book Type</label>
-                        <input class="bookType" type="text" placeholder="Dedective">
-
-                    </form>
-                    <button class="formBtn" type="submit">Add</button>
+                        </form>
+                        <button type="submit" class="aboutBtn">About info add</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="about-store">
-                <h2>About Store</h2>
-                <div class="form-container">
-                    <form autocomplete="off">
-
-                        <label for="townborn">Title</label>
-                        <input class="bookTitle" type="text" placeholder="About Store">
-
-                        <label for="email">Book Image Url</label>
-                        <input class="userMail" type="email" placeholder="https://image.url">
-
-                        <label for="townborn">Description</label>
-                        <input class="aboutDesc" type="text" placeholder="Description">
-
-                    </form>
-                    <button type="submit" class="aboutBtn">About info add</button>
+                <div class="join-us">
+                    <h2>Join Us</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>E-mail Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Eldost</td>
+                                <td>eldost.mirzeyev@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Nuru</td>
+                                <td>nhh145@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Əlövsət</td>
+                                <td>baba19@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-
-            <div class="join-us">
-                <h2>Join Us</h2>
-                <table class="fixed_headers">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Full Name</th>
-                            <th>E-mail Address</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Eldost</td>
-                            <td>eldost.mirzeyev@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Nuru</td>
-                            <td>nhh145@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Əlövsət</td>
-                            <td>baba19@gmail.com</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
 
-            <div class="books">
-                <h2>Books</h2>
-                <table class="fixed_headers">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Author</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Angels</td>
-                            <td>Lorem ipsum</td>
-                            <td>Dedective</td>
-                            <td>Eldost Mirzeyev</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="books">
+                    <h2>Books</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Angels</td>
+                                <td>Lorem ipsum</td>
+                                <td>Dedective</td>
+                                <td>Eldost Mirzeyev</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="contact-us">
-                <h2>Contact Us</h2>
-                <table class="fixed_headers">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Full Name</th>
-                            <th>Address</th>
-                            <th>Email Address</th>
-                            <th>Phone Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Nuru</td>
-                            <td>Baku</td>
-                            <td>nhh145@gmail.com</td>
-                            <td>0506228552</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="contact-us">
+                    <h2>Contact Us</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactUs">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -172,6 +172,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        import { getDatabase, set, ref, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -190,8 +191,7 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        // const analytics = getAnalytics(app);
-        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+        const analytics = getAnalytics(app);
         const db = getDatabase();
 
         const booknameInp = document.querySelector(".bookName")
@@ -235,6 +235,33 @@
                 .catch(err => { alert(err) })
         }
         aboutBtn.addEventListener('click', InserData);
+
+
+        const contactUs = document.querySelector('#contactUs')
+        function ContactUsData() {
+            get(ref(db, 'ContactUs/'))
+            .then((snapshot) => {
+                const data = snapshot.val();
+                if(data){
+                    Object.values(data).forEach((user,index) =>{
+                        contactUs.innerHTML +=
+                        `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${user.Name}</td>
+                            <td>${user.Adress}</td>
+                            <td>${user.Email}</td>
+                            <td>${user.Phone}</td>
+                        </tr>
+                        `
+                    })
+                }else{
+                    console.log('No Data');
+                }
+            })
+            .catch(err =>{alert(err)})
+        }
+        ContactUsData()
     </script>
 </body>
 
