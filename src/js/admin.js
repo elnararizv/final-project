@@ -26,8 +26,8 @@ searchBookbtn.addEventListener('click', function () {
                     bookElement.innerHTML = `
                         <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
                     `;
-                    
-                    bookElement.addEventListener('click', function() {
+
+                    bookElement.addEventListener('click', function () {
                         document.querySelector('.bookName').value = title;
                         document.querySelector('.authorName').value = authors;
                         document.querySelector('.bookImage').value = imageLink;
@@ -65,13 +65,13 @@ let contactUs = document.querySelector('.contact-us');
 let header = document.querySelector('.header');
 let info = document.querySelector('.info');
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var burgerMenu = document.querySelector(".burger-menu");
     var sidebar = document.querySelector(".sidebar");
 
-    burgerMenu.addEventListener("click", function() {
+    burgerMenu.addEventListener("click", function () {
         sidebar.classList.toggle("show-sidebar");
-        
+
         if (sidebar.classList.contains("show-sidebar")) {
             bookform.style.display = "none";
             aboutStore.style.display = "none";
@@ -92,3 +92,53 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById("myModal");
+    var btn = document.querySelector(".formBtn");
+    var span = document.getElementsByClassName("close")[0];
+    var message = document.getElementById("modalMessage");
+
+    btn.onclick = function () {
+
+        var bookName = document.querySelector(".bookName").value;
+        var authorName = document.querySelector(".authorName").value;
+        var bookImage = document.querySelector(".bookImage").value;
+        var bookDesc = document.querySelector(".bookDesc").value;
+        var bookType = document.querySelector(".bookType").value;
+
+        message.innerHTML = `
+            <strong>Book Name:</strong> ${bookName}<br>
+            <strong>Author Name:</strong> ${authorName}<br>
+            <strong>Book Image URL:</strong> ${bookImage}<br>
+            <strong>Description:</strong> ${bookDesc}<br>
+            <strong>Book Type:</strong> ${bookType}
+        `;
+
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});

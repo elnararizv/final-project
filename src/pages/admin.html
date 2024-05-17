@@ -26,11 +26,11 @@
         <div class="sidebar">
             <img src="../assets/images/Logo.png" alt="" class="logo">
             <ul>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Home</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Books</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">About</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Join Us</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Contact</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#addBook">Home</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#books">Books</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
                 <li><img src="../assets/images/Group.png" alt=""><a href="#">Logout</a></li>
             </ul>
         </div>
@@ -40,12 +40,12 @@
                     <img src="../assets/icons/profile.svg" alt="">
                     <p href="">Admin</p>
                 </div>
-                <div class="info">
+                <div class="info" id="addBook">
                     <h1>Add Book</h1>
                     <div class="search">
                         <h2>Search book</h2>
                         <div class="searching">
-                            <input class="input" type="text" name="" id="" placeholder="Dan Brown">
+                            <input class="input" type="text" name="" id="" placeholder="Search Book">
                             <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
                         </div>
                         <div class="history">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="book-form">
+                <div class="book-form" id="bookForm">
                     <h2>Book Form</h2>
                     <div class="form-container">
                         <form autocomplete="off">
@@ -78,7 +78,14 @@
                     </div>
                 </div>
 
-                <div class="about-store">
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+
+                <div class="about-store" id="aboutStore">
                     <h2>About Store</h2>
                     <div class="form-container">
                         <form autocomplete="off">
@@ -97,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="join-us">
+                <div class="join-us" id="joinUs">
                     <h2>Join Us</h2>
                     <table class="fixed_headers">
                         <thead>
@@ -109,26 +116,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Eldost</td>
-                                <td>eldost.mirzeyev@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Nuru</td>
-                                <td>nhh145@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Əlövsət</td>
-                                <td>baba19@gmail.com</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
 
-                <div class="books">
+                <div class="books" id="books">
                     <h2>Books</h2>
                     <table class="fixed_headers">
                         <thead>
@@ -142,17 +139,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Angels</td>
-                                <td>Lorem ipsum</td>
-                                <td>Dedective</td>
-                                <td>Eldost Mirzeyev</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="contact-us">
+                <div class="contact-us" id="contactUsSection">
                     <h2>Contact Us</h2>
                     <table class="fixed_headers">
                         <thead>
@@ -175,7 +172,7 @@
 
     <script src="../js/admin.js"></script>
 
-    
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
