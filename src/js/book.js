@@ -100,8 +100,28 @@ function CommentGetData() {
 
 CommentGetData();
 
-console.log(window.location.search.substring(1));
-
-// function BookGetData(params) {
-//   set(ref(db, 'books'))
-// }
+const bookId = window.location.search.substring(1)
+        const bookInfo = document.querySelector('#section1')
+        function BookGetData() {
+            get(ref(db, 'books/' + bookId ))
+            .then(data => {
+                bookInfo.innerHTML =
+                `
+                <div class="buttons">
+        <button class="back">< BACK</button>
+      </div>
+      <div class="book">
+        <div class="div1">
+          <h4 class="year">${data.val().date}</h4>
+          <h6 class="order">${data.val().name}</h6>
+          <h5 class="day">Gelen vaxt</h5>
+          <h1 class="text-title">${data.val().author}</h1>
+          <p class="text">${data.val().description}</p>
+        </div>
+        <div class="div2">
+          <img class = 'bokImg' src="${data.val().image}"/>
+        </div>
+                `
+            })
+        }
+        BookGetData()
