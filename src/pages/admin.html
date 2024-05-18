@@ -64,6 +64,9 @@
                             <label for="name">Author Name</label>
                             <input class="authorName" type="text" placeholder="Dan Brown">
 
+                            <label for="name">Book Realiese Date</label>
+                            <input class="bookDate" type="text" placeholder="1945">
+
                             <label for="townborn">Book Image Url</label>
                             <input class="bookImage" type="text" placeholder="URL">
 
@@ -73,20 +76,12 @@
                             <label for="townborn">Book Type</label>
                             <input class="bookType" type="text" placeholder="Dedective">
 
-                            <div class="checkbox">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" class="chcbox" name="" id="allBooks">
-                                    <label class="checkbox-label" for="">AllBooks</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" class="chcbox" name="" id="bestSeller">
-                                    <label class="checkbox-label" for="">Bestseller</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" class="chcbox" name="" id="newReleases">
-                                    <label class="checkbox-label" for="">Newreleases</label>
-                                </div>
-                            </div>
+                            <label for="townborn">Book Category</label>
+                            <select class="bookCategory" id="bookCat">
+                                <option value="All books">All Books</option>
+                                <option value="Best Seller">Best Seller</option>
+                                <option value="New Realiese">New Realiese</option>
+                            </select>
 
                         </form>
                         <button class="formBtn" type="submit">Add</button>
@@ -213,10 +208,12 @@
         const db = getDatabase();
         const booknameInp = document.querySelector(".bookName")
         const authorInp = document.querySelector(".authorName")
+        const bookDate = document.querySelector(".bookDate")
         const bookimgInp = document.querySelector(".bookImage")
         const descriptInp = document.querySelector(".bookDesc")
         const bookType = document.querySelector(".bookType")
         const addBtn = document.querySelector(".formBtn")
+        const bookCat = document.querySelector("#bookCat")
 
         function sendBooks() {
             const id = generate_uuidv4();
@@ -224,14 +221,38 @@
             set(ref(db, "books/" + id), {
                 name: booknameInp.value,
                 author: authorInp.value,
+                date: bookDate.value,
                 image: bookimgInp.value,
                 description: descriptInp.value,
                 type: bookType.value,
                 id: id,
+                category: bookCat.value
 
             })
                 .then(successAlert("Perfect"))
                 .catch((err) => errorAlert("Error"));
+
+
+            if (selectedCategory) {
+                
+                const bookCategory = selectedCategory.id;
+                const categoryRef = ref(db, "books/" + bookCategory + "/" + id);
+
+                set(categoryRef, {
+                    name: bookName,
+                    author: authorName,
+                    date: bookDate,
+                    image: bookImage,
+                    description: bookDesc,
+                    type: bookCategory,
+                    id: id,
+                    category: bookCat.value
+                })
+                    .then(() => successAlert("Book added successfully"))
+                    .catch((err) => errorAlert("Error adding book: " + err));
+            } else {
+                errorAlert("Please select a category for the book.");
+            }
         }
 
 
@@ -239,7 +260,7 @@
         const titleInp = document.querySelector('.bookTitle')
         const imgInp = document.querySelector('.userMail')
         const descripInp = document.querySelector('.aboutDesc')
-        const aboutBtn = document.querySelector('.aboutBtn')
+        const aboutBtn = document.querySelector('.aboutBtn') 
         function InserData() {
             const id = generate_uuidv4();
             set(ref(db, 'aboutInfo/' + id), {
