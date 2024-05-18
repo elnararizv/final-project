@@ -71,4 +71,3 @@ searchInputButton.addEventListener("click", () => {
         searchBook(query);
     }
 });
-

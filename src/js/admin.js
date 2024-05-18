@@ -4,7 +4,6 @@ let historyContainer = document.querySelector('.history');
 
 searchBookbtn.addEventListener('click', function () {
     let searchQuery = searchBookInput.value.trim();
-
     historyContainer.style.display = 'block';
 
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
@@ -24,7 +23,8 @@ searchBookbtn.addEventListener('click', function () {
                     const bookElement = document.createElement('div');
                     bookElement.classList.add('book-info');
                     bookElement.innerHTML = `
-                        <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
+                       <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
+                       
                     `;
 
                     bookElement.addEventListener('click', function () {
