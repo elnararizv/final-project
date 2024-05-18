@@ -107,7 +107,6 @@
     <!-- Header End -->
     <!-- Start Main --- Search Section -->
 
-
     <main>
         <section class="searchMain">
             <div class="searchLeftContainer">
@@ -119,29 +118,40 @@
                     <button id="searchBtn">Search</button>
                 </div>
             </div>
-
+    
             <div class="searchAboutBook">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- Carousel items will be inserted here dynamically -->
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a id="nex" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span  class="sr-only-prev" ><img src="../assets/icons/searchSlideBtn.svg" alt=""></span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                    <a id="pre" class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" >
+                        <span  class="carousel-control-next-icon" aria-hidden="true" ></span>
+                        <span  class="sr-only" ><img src="../assets/icons/searchSlideBtn.svg" alt=""></span>
                     </a>
+                    
                 </div>
             </div>
         </section>
     </main>
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="module" src="main.js"></script>
+
+    <style>
+        /* .carousel-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+    
+       
+    </style>
+    
 
 
     <!-- End Main Section -->
