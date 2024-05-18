@@ -199,7 +199,7 @@
         const bookimgInp = document.querySelector(".bookImage")
         const descriptInp = document.querySelector(".bookDesc")
         const bookType = document.querySelector(".bookType")
-
+        let commentArr=[]
         const addBtn = document.querySelector(".formBtn")
 
         function sendBooks() {
@@ -211,6 +211,7 @@
                 image: bookimgInp.value,
                 description: descriptInp.value,
                 type: bookType.value,
+                comment:commentArr,
                 id: id
             })
                 .then(successAlert("Perfect"))
