@@ -4,7 +4,6 @@ let historyContainer = document.querySelector('.history');
 
 searchBookbtn.addEventListener('click', function () {
     let searchQuery = searchBookInput.value.trim();
-
     historyContainer.style.display = 'block';
 
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
@@ -24,7 +23,8 @@ searchBookbtn.addEventListener('click', function () {
                     const bookElement = document.createElement('div');
                     bookElement.classList.add('book-info');
                     bookElement.innerHTML = `
-                        <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
+                       <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
+                       
                     `;
 
                     bookElement.addEventListener('click', function () {
@@ -33,6 +33,8 @@ searchBookbtn.addEventListener('click', function () {
                         document.querySelector('.bookImage').value = imageLink;
                         document.querySelector('.bookDesc').value = description;
                         document.querySelector('.bookType').value = categories;
+                        document.querySelector('.bookDate').value = volumeInfo.publishedDate;
+                        
                     });
 
                     historyContainer.appendChild(bookElement);
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var bookName = document.querySelector(".bookName").value;
         var authorName = document.querySelector(".authorName").value;
+        var bookDAte = document.querySelector(".bookDate").value;
         var bookImage = document.querySelector(".bookImage").value;
         var bookDesc = document.querySelector(".bookDesc").value;
         var bookType = document.querySelector(".bookType").value;
@@ -142,3 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+
+

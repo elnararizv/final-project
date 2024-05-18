@@ -77,6 +77,7 @@ function searchBook(query) {
 }
 
 searchInputButton.addEventListener("click", () => {
+
   const query = searchInp.value.trim();
   if (query) {
     searchBook(query);
@@ -84,4 +85,9 @@ searchInputButton.addEventListener("click", () => {
     nextBtn.style.display = "none";
     prevBtn.style.display = "none";
   }
+});
+    const query = searchInp.value.trim();
+    if (query) {
+        searchBook(query);
+    }
 });
