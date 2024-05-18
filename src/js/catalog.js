@@ -65,7 +65,7 @@
                             <img calss = 'sliderImg' src="${e.image}">
                             <h2 class="bookName">${bookName}</h2>
                             <p class="bookCreator" >${authorName}</p>
-                            <button id="readBtn">Read More</button>
+                            <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                         `;
                         splide.add(slide);
                     });
@@ -73,13 +73,6 @@
         
                 addBooksToSlider();
         
-                document.getElementById('nextBtn').addEventListener('click', () => {
-                    splide.go('+1');
-                });
-        
-                document.getElementById('prevBtn').addEventListener('click', () => {
-                    splide.go('-1');
-                });
             } else {
                 console.log("No data available");
             }
