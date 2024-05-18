@@ -7,164 +7,321 @@
     <link rel="stylesheet" href="../css/general/reset.css">
     <link rel="stylesheet" href="../css/pages/admin.css">
     <link rel="stylesheet" href="../css/response/adminResp.css">
-    <title>Document</title>
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/apple-touch-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/favicon-32x32.png" type="image/x-icon">
+    <title>Admin Dashboard</title>
 </head>
 
 <body>
+    <div class="admin-header">
+        <img class="ad-logo" src="../assets/icons/navLogo.svg" alt="">
+        <img class="burger-menu" src="../assets/icons/bars.svg" alt="">
+    </div>
+
     <div class="wrapper">
         <div class="sidebar">
             <img src="../assets/images/Logo.png" alt="" class="logo">
             <ul>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Home</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Books</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">About</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Join Us</a></li>
-                <li><img src="../assets/images/Group.png" alt=""><a href="#">Contact</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#addBook">Home</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#books">Books</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
+                <li><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
                 <li><img src="../assets/images/Group.png" alt=""><a href="#">Logout</a></li>
             </ul>
         </div>
-        <div class="main_content">
-            <div class="header">
-                <img src="../assets/icons/profile.svg" alt="">
-                <p href="">Admin</p>
-            </div>
-            <div class="info">
-                <h1>Add Book</h1>
-                <div class="search">
-                    <h2>Search book</h2>
-                    <div class="searching">
-                        <input class="input" type="text" name="" id="" placeholder="Dan Brown">
-                        <img class="lupa" src="../assets/icons/searchicon.svg" alt="">
-                    </div>
-                    <div class="history">
-
-                    </div>
+        <div>
+            <div class="main_content">
+                <div class="header">
+                    <img src="../assets/icons/profile.svg" alt="">
+                    <p href="">Admin</p>
                 </div>
-            </div>
-
-            <div class="book-form">
-                <div class="form-container">
-                    <form autocomplete="off">
-                        <label for="townborn">Book Name</label>
-                        <input type="text" placeholder="Angels">
-
-                        <label for="name">Author Name</label>
-                        <div class="row">
-                            <input type="text" placeholder="Dan Brown">
+                <div class="info" id="addBook">
+                    <h1>Add Book</h1>
+                    <div class="search">
+                        <h2>Search book</h2>
+                        <div class="searching">
+                            <input class="input" type="text" name="" id="" placeholder="Search Book">
+                            <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
                         </div>
+                        <div class="history">
 
-                        <label for="townborn">Book Image Url</label>
-                        <input type="text" placeholder="URL">
-
-                        <label for="email">Description</label>
-                        <input type="email" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
-
-                        <label for="townborn">Book Type</label>
-                        <input type="text" placeholder="Dedective">
-
-                        <button type="submit">Add</button>
-                    </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="about-store">
-                <div class="form-container">
-                    <form autocomplete="off">
+                <div class="book-form" id="bookForm">
+                    <h2>Book Form</h2>
+                    <div class="form-container">
+                        <form autocomplete="off">
+                            <label for="townborn">Book Name</label>
+                            <input class="bookName" type="text" placeholder="Angels">
 
-                        <label for="townborn">Title</label>
-                        <input type="text" placeholder="About Store">
+                            <label for="name">Author Name</label>
+                            <input class="authorName" type="text" placeholder="Dan Brown">
 
-                        <label for="email">Book Image Url</label>
-                        <input type="email" placeholder="https://image.url">
+                            <label for="name">Book Realiese Date</label>
+                            <input class="bookDate" type="text" placeholder="1945">
 
-                        <label for="townborn">Description</label>
-                        <input type="text" placeholder="Description">
+                            <label for="townborn">Book Image Url</label>
+                            <input class="bookImage" type="text" placeholder="URL">
 
-                        <button type="submit">About info add</button>
-                    </form>
+                            <label for="text">Description</label>
+                            <input class="bookDesc" type="text" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
+
+                            <label for="townborn">Book Type</label>
+                            <input class="bookType" type="text" placeholder="Dedective">
+
+                            <label for="townborn">Book Category</label>
+                            <select class="bookCategory" id="bookCat">
+                                <option value="All books">All Books</option>
+                                <option value="Best Seller">Best Seller</option>
+                                <option value="New Realiese">New Realiese</option>
+                            </select>
+
+                        </form>
+                        <button class="formBtn" type="submit">Add</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="join-us">
-                <h2>Join Us</h2>
-                <table class="fixed_headers">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Full Name</th>
-                        <th>E-mail Address</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Eldost</td>
-                        <td>eldost.mirzeyev@gmail.com</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Nuru</td>
-                        <td>nhh145@gmail.com</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Əlövsət</td>
-                        <td>baba19@gmail.com</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+
+                <div class="about-store" id="aboutStore">
+                    <h2>About Store</h2>
+                    <div class="form-container">
+                        <form autocomplete="off">
+
+                            <label for="townborn">Title</label>
+                            <input class="bookTitle" type="text" placeholder="About Store">
+
+                            <label for="email">Book Image Url</label>
+                            <input class="userMail" type="email" placeholder="https://image.url">
+
+                            <label for="townborn">Description</label>
+                            <input class="aboutDesc" type="text" placeholder="Description">
+
+                        </form>
+                        <button type="submit" class="aboutBtn">About info add</button>
+                    </div>
+                </div>
+
+                <div class="join-us" id="joinUs">
+                    <h2>Join Us</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>E-mail Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
-            <div class="books">
-                <h2>Books</h2>
-                <table class="fixed_headers">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Author</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Angels</td>
-                            <td>Lorem ipsum</td>
-                            <td>Dedective</td>
-                            <td>Eldost Mirzeyev</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="books" id="books">
+                    <h2>Books</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="contact-us">
-                <h2>Contact Us</h2>
-                <table class="fixed_headers">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Full Name</th>
-                            <th>Address</th>
-                            <th>Email Address</th>
-                            <th>Phone Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Nuru</td>
-                            <td>Baku</td>
-                            <td>nhh145@gmail.com</td>
-                            <td>0506228552</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="contact-us" id="contactUsSection">
+                    <h2>Contact Us</h2>
+                    <table class="fixed_headers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactUs">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
+
+    <script src="../js/admin.js"></script>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBU0sULZYB6-mZdPwFsWw-teB5STW0xBoc",
+            authDomain: "bookstore-44df6.firebaseapp.com",
+            databaseURL: "https://bookstore-44df6-default-rtdb.firebaseio.com",
+            projectId: "bookstore-44df6",
+            storageBucket: "bookstore-44df6.appspot.com",
+            messagingSenderId: "520272877168",
+            appId: "1:520272877168:web:0245c151c6b0c41c62c6b5",
+            measurementId: "G-WKRXPCNFEL"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        import { getDatabase, set, ref, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+        const db = getDatabase();
+        const booknameInp = document.querySelector(".bookName")
+        const authorInp = document.querySelector(".authorName")
+        const bookDate = document.querySelector(".bookDate")
+        const bookimgInp = document.querySelector(".bookImage")
+        const descriptInp = document.querySelector(".bookDesc")
+        const bookType = document.querySelector(".bookType")
+
+        const addBtn = document.querySelector(".formBtn")
+        const bookCat = document.querySelector("#bookCat")
+
+        function sendBooks() {
+            const id = generate_uuidv4();
+
+            set(ref(db, "books/" + id), {
+                name: booknameInp.value,
+                author: authorInp.value,
+                date: bookDate.value,
+                image: bookimgInp.value,
+                description: descriptInp.value,
+                type: bookType.value,
+                id: id,
+                category: bookCat.value
+
+            })
+                .then(successAlert("Perfect"))
+                .catch((err) => errorAlert("Error"));
+
+
+            if (selectedCategory) {
+                
+                const bookCategory = selectedCategory.id;
+                const categoryRef = ref(db, "books/" + bookCategory + "/" + id);
+
+                set(categoryRef, {
+                    name: bookName,
+                    author: authorName,
+                    date: bookDate,
+                    image: bookImage,
+                    description: bookDesc,
+                    type: bookCategory,
+                    id: id,
+                    category: bookCat.value
+                })
+                    .then(() => successAlert("Book added successfully"))
+                    .catch((err) => errorAlert("Error adding book: " + err));
+            } else {
+                errorAlert("Please select a category for the book.");
+            }
+        }
+
+
+        addBtn.addEventListener('click', sendBooks)
+        const titleInp = document.querySelector('.bookTitle')
+        const imgInp = document.querySelector('.userMail')
+        const descripInp = document.querySelector('.aboutDesc')
+        const aboutBtn = document.querySelector('.aboutBtn') 
+        function InserData() {
+            const id = generate_uuidv4();
+            set(ref(db, 'aboutInfo/' + id), {
+                Title: titleInp.value,
+                Image: imgInp.value,
+                Description: descripInp.value,
+            })
+                .then(alert('Data Push for Fairbase'))
+                .catch(err => { alert(err) })
+        }
+        aboutBtn.addEventListener('click', InserData);
+        const joinTable = document.querySelector(".fixed_headers tbody")
+        function sendUser() {
+            get(ref(db, "JoinUs/"))
+                .then((data) => {
+                    const userData = data.val();
+                    if (userData) {
+                        joinTable.innerHTML = '';
+                        Object.values(userData).forEach((user, index) => {
+                            joinTable.innerHTML += `<tr>
+                                                <td>${index + 1}</td>
+                                                <td>${user.FullName}</td>
+                                                <td>${user.Email}</td>
+                                            </tr>`;
+                        });
+                    } else {
+                        console.log("No users found.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error getting users:", error);
+                });
+        }
+        sendUser()
+        const booksTableElement = document.querySelector(".books tbody");
+        function fetchBooks() {
+            get(ref(db, "books/"))
+                .then((data) => {
+                    const booksData = data.val();
+                    if (booksData) {
+                        booksTableElement.innerHTML = '';
+                        Object.values(booksData).forEach((book, index) => {
+                            booksTableElement.innerHTML += `<tr>
+                                                        <td>${index + 1}</td>
+                                                        <td>${book.name}</td>
+                                                        <td>${book.description}</td>
+                                                        <td>${book.type}</td>
+                                                        <td>${book.author}</td>
+                                                    </tr>`;
+                        });
+                    } else {
+                        console.log("Veri bulunamadı.");
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
+        fetchBooks();
+    </script>
 </body>
 
 </html>

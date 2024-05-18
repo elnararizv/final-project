@@ -16,4 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Invalid username or password');
         }
     });
+
+    passwordInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            button.click(); 
+        }
+    });
 });
+

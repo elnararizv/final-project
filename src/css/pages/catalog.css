@@ -13,10 +13,9 @@ body {
 .splide__arrow{
   background: none;
 }
-#mySlider1{
-  width: 85%;
-  padding-left: 17%;
-}
+.splide__track{
+  margin-left: 250px;
+  margin-right: 151px;}
 #mySlider2{
   margin-top: 50px;
   width: 85%;
@@ -43,7 +42,7 @@ body {
 }
 
 
-.splide__slide img{
+.sliderImg{
   width: 134.229px;
   height: 190px;
   flex-shrink: 0;
@@ -63,7 +62,7 @@ body {
 }
 
 
-.splide__slide button{
+#readBtn{
   border: none;
   width: 136px;
 height: 29px;
@@ -176,3 +175,20 @@ font-weight: 900;
 line-height: 196.187%; /* 49.047px */
 }
 
+.newP{
+  width: 47px;
+  height: 13.578px;
+  margin-left: 75%;
+}
+.newBtn{
+  background-color: #EB5757;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;}
