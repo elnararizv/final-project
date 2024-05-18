@@ -26,7 +26,7 @@ const searchInp = document.querySelector("#inputSearch");
 const searchInputButton = document.querySelector("#searchBtn");
 const nextBtn = document.querySelector("#nex");
 const prevBtn = document.querySelector("#pre");
-
+//---------------
 function searchBook(query) {
   get(ref(db, "books/"))
     .then((data) => {
