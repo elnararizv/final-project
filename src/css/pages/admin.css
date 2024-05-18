@@ -76,12 +76,11 @@ body {
     margin: 20px 0;
 }
 
-.search .searching{
+.search .searching {
     display: flex;
-
 }
 
-.search .searching .lupa{
+.search .searching .lupa {
     border: 1px solid #fe9c22;
     background-color: #fe9c22;
     padding: 8px 17px;
@@ -89,7 +88,7 @@ body {
     cursor: pointer;
 }
 
-.search .searching .lupa:hover{
+.search .searching .lupa:hover {
     background-color: #bdb8d7;
 }
 
@@ -101,7 +100,7 @@ body {
     color: #000000;
 }
 
-.book-form .formBtn{
+.book-form .formBtn {
     cursor: pointer;
 }
 
@@ -113,7 +112,7 @@ body {
     color: #000000;
 }
 
-.about-store .aboutBtn{
+.about-store .aboutBtn {
     cursor: pointer;
 }
 
@@ -208,7 +207,7 @@ button {
     background-color: #8B0000;
     border: 1px solid white;
     color: white;
-    border-bottom: #F1F0F0 ;
+    border-bottom: #F1F0F0;
 }
 
 .fixed_headers td {
@@ -260,4 +259,23 @@ button {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+    gap: 55px;
+    margin-top: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input {
+    margin-right: 5px;
+}
+
+.checkbox-label{
+    width: 100%;
 }
