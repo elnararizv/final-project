@@ -33,6 +33,8 @@ searchBookbtn.addEventListener('click', function () {
                         document.querySelector('.bookImage').value = imageLink;
                         document.querySelector('.bookDesc').value = description;
                         document.querySelector('.bookType').value = categories;
+                        document.querySelector('.bookDate').value = volumeInfo.publishedDate;
+                        
                     });
 
                     historyContainer.appendChild(bookElement);
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var bookName = document.querySelector(".bookName").value;
         var authorName = document.querySelector(".authorName").value;
+        var bookDAte = document.querySelector(".bookDate").value;
         var bookImage = document.querySelector(".bookImage").value;
         var bookDesc = document.querySelector(".bookDesc").value;
         var bookType = document.querySelector(".bookType").value;
@@ -142,3 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+
+
