@@ -217,9 +217,6 @@
         const descriptInp = document.querySelector(".bookDesc")
         const bookType = document.querySelector(".bookType")
         const addBtn = document.querySelector(".formBtn")
-        const allBooks = document.querySelector("#allBooks")
-        const bestSeller = document.querySelector("#bestSeller")
-        const NewRel = document.querySelector("#newreleases")
 
         function sendBooks() {
             const id = generate_uuidv4();
@@ -236,10 +233,6 @@
                 .then(successAlert("Perfect"))
                 .catch((err) => errorAlert("Error"));
         }
-
-        allBooks.addEventListener("change", updateFirebasePath);
-        bestSeller.addEventListener("change", updateFirebasePath);
-        newReleases.addEventListener("change", updateFirebasePath);
 
 
         addBtn.addEventListener('click', sendBooks)
