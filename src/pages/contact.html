@@ -122,14 +122,14 @@
             </div> -->
                 <div class="container">
                     <div class="row justify-content-center inputs">
-                        <input type="text" class="name col-lg-5 col-md-5 m-3" placeholder="Full Name">
-                        <input type="text" class="email col-lg-5 col-md-5 m-3" placeholder="Email">
-                        <input type="text" class="address col-lg-5 col-md-5 m-3 " placeholder="Address">
-                        <input type="number" class="phone col-lg-5 col-md-5 m-3" placeholder="Phone">
-                        <textarea name="" class="note" placeholder="Note"></textarea>
+                        <input type="text" id="email" class="email col-lg-5 col-md-5 m-3" placeholder="Email">
+                        <input type="text" id="adress" class="address col-lg-5 col-md-5 m-3 " placeholder="Address">
+                        <input type="text" id="name" class="name col-lg-5 col-md-5 m-3" placeholder="Full Name">
+                        <input type="number" id="phone" class="phone col-lg-5 col-md-5 m-3" placeholder="Phone">
+                        <textarea name="" id="text" class="note" placeholder="Note"></textarea>
                     </div>
                     <div class="btns">
-                        <button class="button col-lg-5 col-md-5 m-3">Send</button>
+                        <button id="sendBtn" class="button col-lg-5 col-md-5 m-3">Send</button>
                     </div>
                 </div>
             </section>
@@ -218,7 +218,7 @@
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/general/main.js"></script>
-    <script src="../js/contact.js"></script>
+    <script type="module" src="../js/contact.js"></script>
 </body>
 
 </html>

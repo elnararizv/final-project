@@ -147,3 +147,48 @@ body {
 .splide__arrows{
     display: none;
 }
+
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#inputSearch {
+    padding: 10px;
+    width: 300px;
+}
+
+.searchInputButton {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.insideCard {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.card {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.search-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bookText {
+    padding: 20px;
+}
+
+.bookText h2, .bookText h3, .bookText p {
+    margin: 0 0 10px;
+
+}
+
+
