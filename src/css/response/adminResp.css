@@ -1,0 +1,154 @@
+@media only screen and (min-width: 567px) {
+    .admin-header {
+        display: none;
+    }
+
+    .header , .search{
+        margin-left: 300px;
+    }
+
+    .book-form,
+    .about-store,
+    .join-us,
+    .books,
+    .contact-us {
+        margin-left: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 567px) {
+    .sidebar {
+        display: none; 
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 80px;
+    }
+    
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .sidebar a:hover {
+        color: #f1f1f1;
+    }
+    
+    .show-sidebar {
+        display: block;
+        width: 100%;
+    }
+
+    .sidebar li{
+        height: 80px;
+    }
+    
+
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-left: 20px;
+    }
+
+    .admin-header .burger-menu {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header {
+        display: none !important;
+    }
+
+    .searching .input{
+        width: 70% !important;
+    }
+
+    .wrapper {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper .main_content {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .wrapper .main_content .info h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .wrapper .main_content .info h2 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .searching {
+        display: flex;
+        align-items: center;
+    }
+
+    .wrapper .main_content .info .search .input {
+        width: calc(100% - 50px);
+        margin-right: 10px;
+    }
+
+    .lupa:hover {
+        background-color: #bdb8d7;
+       
+    }
+
+    .history {
+        max-width: 70%;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .book-form h2,
+    .about-store h2,
+    .join-us h2,
+    .books h2,
+    .contact-us h2 {
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    .book-form ,
+    .about-store ,
+    .join-us ,
+    .books ,
+    .contact-us {
+        margin: 20px 23px;
+    }
+
+    .fixed_headers {
+        width: 100%;
+    }
+
+    .fixed_headers th,
+    .fixed_headers td {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
