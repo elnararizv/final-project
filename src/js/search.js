@@ -42,9 +42,7 @@ function searchBook(query) {
                             isActive ? "active" : ""
                           }">
                               <div class="card mx-auto">
-                                  <img src="${el.image}" alt="${
-              el.name
-            }" class="search-img">
+                                  <img src="${el.image}" alt="${el.name}" class="search-img">
                                   <div class="card-body">
                                       <h2 class="card-title">${el.name}</h2>
                                       <h3 class="card-subtitle mb-2 text-muted">${
