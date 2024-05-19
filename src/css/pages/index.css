@@ -33,7 +33,13 @@ body {
     box-shadow: 0px 7px 35px 0px #D6640038;
     background-color: #E16A00;
     border: none;
-    padding: 11px 63px 11px 24px;
+    text-align: start;
+    padding: 11px 44px;
+}
+.head-slogan button a{
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
 }
 
 .head-slogan button:hover {
