@@ -9,23 +9,24 @@ body {
 }
 
 /* //----------------------------------------- Slider Css */
-
 .splide__arrow{
   background: none;
 }
-.splide__track{
-  margin-left: 250px;
-  margin-right: 151px;}
-#mySlider2{
-  margin-top: 50px;
-  width: 85%;
-  padding-left: 17%; 
+.splide__arrow svg{
+  width: 900px;
+  height: 900px;
 }
 
-#mySlider3{
-  margin-top: 50px;
-  width: 85%;
-  padding-left: 17%; 
+.splide__arrow--prev{
+  margin-left: 11%;
+}
+.splide__arrow--next{
+  margin-right: 11%;
+}
+
+.splide__track{
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 #prevBtn{
@@ -71,13 +72,16 @@ border-radius: 3px;
 background: var(--2, #E16A00);
 box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
 
-color: #FFF;
-font-family: "Montserrat", sans-serif;
-font-size: 12px;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; /* 23.542px */
-text-transform: uppercase;
+}
+a{
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 23.542px */
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 
 }
 
@@ -91,6 +95,9 @@ text-transform: uppercase;
   margin-bottom: 5%;
 }
 
+#janr{
+  margin-left: 50%;
+}
 .category button{
   padding-left: 30px;
   background: none;
@@ -192,3 +199,9 @@ line-height: 196.187%; /* 49.047px */
   font-weight: 900;
   line-height: 196.187%;
   text-transform: uppercase;}
+
+
+  .allBtn{
+    border: none;
+    background: none;
+  }
