@@ -75,17 +75,18 @@ function searchBook(query) {
 }
 
 searchInputButton.addEventListener("click", () => {
-
   const query = searchInp.value.trim();
   if (query) {
-    searchBook(query);
+    searchBook(query);  
   } else {
     nextBtn.style.display = "none";
     prevBtn.style.display = "none";
   }
 });
-    const query = searchInp.value.trim();
-    if (query) {
-        searchBook(query);
-    }
+
+searchInp.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchInputButton.click();
+  }
 });
