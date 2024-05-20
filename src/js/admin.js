@@ -12,7 +12,7 @@ searchBookbtn.addEventListener('click', function () {
             historyContainer.innerHTML = '';
 
             if (data.items && data.items.length > 0) {
-                data.items.forEach(item => {
+                data.items.forEach(item => {    
                     const volumeInfo = item.volumeInfo;
                     const title = volumeInfo.title || 'No title available';
                     const authors = volumeInfo.authors ? volumeInfo.authors.join(', ') : 'No authors available';
@@ -146,5 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.search.includes('admin.html')) {
+        window.location.href = 'admin-login.html';
+    }
+});
