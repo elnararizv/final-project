@@ -9,23 +9,24 @@ body {
 }
 
 /* //----------------------------------------- Slider Css */
-
 .splide__arrow{
   background: none;
 }
-.splide__track{
-  margin-left: 250px;
-  margin-right: 151px;}
-#mySlider2{
-  margin-top: 50px;
-  width: 85%;
-  padding-left: 17%; 
+.splide__arrow svg{
+  width: 900px;
+  height: 900px;
 }
 
-#mySlider3{
-  margin-top: 50px;
-  width: 85%;
-  padding-left: 17%; 
+.splide__arrow--prev{
+  margin-left: 11%;
+}
+.splide__arrow--next{
+  margin-right: 11%;
+}
+
+.splide__track{
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 #prevBtn{
@@ -71,14 +72,20 @@ border-radius: 3px;
 background: var(--2, #E16A00);
 box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
 
-color: #FFF;
-font-family: "Montserrat", sans-serif;
-font-size: 12px;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; /* 23.542px */
-text-transform: uppercase;
+}
+a{
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 23.542px */
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 
+}
+a:hover{
+  color: #fff !important;
 }
 
 /* //----------------------------------------- Other div Css*/
@@ -91,6 +98,9 @@ text-transform: uppercase;
   margin-bottom: 5%;
 }
 
+#janr{
+  margin-left: 50%;
+}
 .category button{
   padding-left: 30px;
   background: none;
@@ -192,3 +202,90 @@ line-height: 196.187%; /* 49.047px */
   font-weight: 900;
   line-height: 196.187%;
   text-transform: uppercase;}
+
+
+  .allBtn{
+    border: none;
+    background: none;
+  }
+
+
+  .loader {
+    width: 100px;
+    height: 3px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .child {
+    width: 60px;
+    height: 3px;
+    background-color: rgb(107, 27, 255);
+    border-radius: 20px;
+    z-index: 0;
+    margin-left: -60px;
+    animation: go 1s 0s infinite;
+  }
+  
+  @keyframes go {
+    from {
+      margin-left: -100px;
+      width: 80px;
+    }
+    to {
+      width: 30px;
+      margin-left: 110px;
+    }
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .text {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: -35px;
+  }
+  
+  .text::before {
+    content: "Loading";
+    color: white;
+    animation: text 1s 0s infinite;
+  }
+  
+  @keyframes text {
+    0% {
+      content: "Loading";
+    }
+  
+    30% {
+      content: "Loading.";
+    }
+  
+    60% {
+      content: "Loading..";
+    }
+  
+    100% {
+      content: "Loading...";
+    }
+  }
+  
+
+  #load1{
+    margin-left: 45%;
+    margin-top: 10%;
+  }
+  #load2{
+    margin-left: 45%;
+    margin-top: 10%;
+  }
+  #load3{
+    margin-left: 45%;
+    margin-top: 10%;
+  }
