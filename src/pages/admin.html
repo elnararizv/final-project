@@ -20,14 +20,14 @@
     <div class="admin-login">
         <div class="login-page">
             <div class="form">
-              <h1>Welcome Admin</h1>
-              <form class="login-form">
-                <input class="login-user" type="text" placeholder="Username" />
-                <input class="login-password" type="password" placeholder="Password" />
-              </form>
-              <button>Join</button>
+                <h1>Welcome Admin</h1>
+                <form class="login-form">
+                    <input class="login-user" type="text" placeholder="Username" />
+                    <input class="login-password" type="password" placeholder="Password" />
+                </form>
+                <button class="adminJoin">Join</button>
             </div>
-          </div>
+        </div>
     </div>
 
 
@@ -37,7 +37,7 @@
             <img class="ad-logo" src="../assets/icons/navLogo.svg" alt="">
             <img class="burger-menu" src="../assets/icons/bars.svg" alt="">
         </div>
-    
+
         <div class="wrapper">
             <div class="sidebar">
                 <img src="../assets/images/Logo.png" alt="" class="logo">
@@ -47,7 +47,7 @@
                     <li><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
                     <li><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
                     <li><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="../pages/admin-login.html">Logout</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="../pages/admin.html">Logout</a></li>
                 </ul>
             </div>
             <div>
@@ -65,71 +65,72 @@
                                 <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
                             </div>
                             <div class="history">
-    
+
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="book-form" id="bookForm">
                         <h2>Book Form</h2>
                         <div class="form-container">
                             <form autocomplete="off">
                                 <label for="townborn">Book Name</label>
                                 <input class="bookName" type="text" placeholder="Angels">
-    
+
                                 <label for="name">Author Name</label>
                                 <input class="authorName" type="text" placeholder="Dan Brown">
-    
+
                                 <label for="name">Book Realiese Date</label>
                                 <input class="bookDate" type="text" placeholder="1945">
-    
+
                                 <label for="townborn">Book Image Url</label>
                                 <input class="bookImage" type="text" placeholder="URL">
-    
+
                                 <label for="text">Description</label>
                                 <input class="bookDesc" type="text" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
-    
+
                                 <label for="townborn">Book Type</label>
                                 <input class="bookType" type="text" placeholder="Dedective">
-    
+
                                 <label for="townborn">Book Category</label>
                                 <select class="bookCategory" id="bookCat">
                                     <option value="All books">All Books</option>
                                     <option value="Best Seller">Best Seller</option>
                                     <option value="New Realiese">New Realiese</option>
                                 </select>
-    
+
                             </form>
                             <button class="formBtn" type="submit">Add</button>
                         </div>
                     </div>
-    
+
                     <div id="myModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <p id="modalMessage"></p>
                         </div>
                     </div>
-    
+
                     <div class="about-store" id="aboutStore">
                         <h2>About Store</h2>
                         <div class="form-container">
                             <form autocomplete="off">
-    
+
                                 <label for="townborn">Title</label>
                                 <input class="bookTitle" type="text" placeholder="About Store">
-    
+
                                 <label for="email">Book Image Url</label>
                                 <input class="userMail" type="email" placeholder="https://image.url">
-    
+
                                 <label for="townborn">Description</label>
                                 <input class="aboutDesc" type="text" placeholder="Description">
-    
+
                             </form>
                             <button type="submit" class="aboutBtn">About info add</button>
+                            <button type="submit" class="aboutBtns">Update info add</button>
                         </div>
                     </div>
-    
+
                     <div class="join-us" id="joinUs">
                         <h2>Join Us</h2>
                         <table class="fixed_headers">
@@ -149,15 +150,15 @@
                             </tbody>
                         </table>
                     </div>
-    
-    
+
+
                     <div class="books" id="books">
                         <h2>Books</h2>
                         <table class="fixed_headers">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Title</th>
+                                    <th class="books-titles">Title</th>
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Author</th>
@@ -166,7 +167,7 @@
                             <tbody>
                                 <tr>
                                     <td></td>
-                                    <td></td>
+                                    <td class="books-titles"></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -174,7 +175,7 @@
                             </tbody>
                         </table>
                     </div>
-    
+
                     <div class="contact-us" id="contactUsSection">
                         <h2>Contact Us</h2>
                         <table class="fixed_headers">
@@ -198,12 +199,13 @@
 
 
     <script src="../js/admin.js"></script>
-    <script src="../js/admin-login.js"></script>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
         // Your web app's Firebase configuration
@@ -221,7 +223,8 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         // const analytics = getAnalytics(app);
-        import { getDatabase, set, ref, get , onValue} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+        import { getDatabase, set, ref, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
         const db = getDatabase();
         const booknameInp = document.querySelector(".bookName")
         const authorInp = document.querySelector(".authorName")
@@ -231,6 +234,14 @@
         const bookType = document.querySelector(".bookType")
         const addBtn = document.querySelector(".formBtn")
         const bookCat = document.querySelector("#bookCat")
+        const adminBtn = document.querySelector('.adminJoin')
+        const adminLogin = document.querySelector('.login-user').value
+        const adminPassword = document.querySelector('.login-password').value
+
+
+        const auth = getAuth(app);
+ 
+
 
         function sendBooks() {
             const id = generate_uuidv4();
@@ -313,29 +324,32 @@
         }
         sendUser()
         const booksTableElement = document.querySelector(".books tbody");
-        // function fetchBooks() {
-        //     get(ref(db, "books/"))
-        //         .then((data) => {
-        //             const booksData = data.val();
-        //             if (booksData) {
-        //                 booksTableElement.innerHTML = '';
-        //                 Object.values(booksData).forEach((book, index) => {
-        //                     booksTableElement.innerHTML += `<tr>
-        //                                                 <td>${index + 1}</td>
-        //                                                 <td>${book.name}</td>
-        //                                                 <td>${book.description}</td>
-        //                                                 <td>${book.type}</td>
-        //                                                 <td>${book.author}</td>
-        //                                             </tr>`;
-        //                 });
-        //             } else {
-        //                 console.log("Veri bulunamadı.");
-        //             }
-        //         })
-        //         .catch((error) => {
-        //             console.error(error);
-        //         });
-        // }
+
+        const contactUs = document.querySelector('#contactUs')
+        function ContactUsData() {
+            get(ref(db, 'ContactUs/'))
+                .then((snapshot) => {
+                    const data = snapshot.val();
+                    if (data) {
+                        Object.values(data).forEach((user, index) => {
+                            contactUs.innerHTML +=
+                                `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${user.Name}</td>
+                            <td>${user.Adress}</td>
+                            <td>${user.Email}</td>
+                            <td>${user.Phone}</td>
+                        </tr>
+                        `
+                        })
+                    } else {
+                        console.log('No Data');
+                    }
+                })
+                .catch(err => { alert(err) })
+        }
+        ContactUsData()
 
         function fetchBooks() {
             onValue(ref(db, "books/"), (snapshot) => {
@@ -343,13 +357,22 @@
                 if (booksData) {
                     booksTableElement.innerHTML = '';
                     Object.values(booksData).forEach((book, index) => {
-                        booksTableElement.innerHTML += `<tr>
-                                            <td>${index + 1}</td>
-                                            <td>${book.name}</td>
-                                            <td>${book.description}</td>
-                                            <td>${book.type}</td>
-                                            <td>${book.author}</td>
-                                        </tr>`;
+                        const truncatedDescription = book.description.split(' ').slice(0, 30).join(' ') + (book.description.split(' ').length > 30 ? '...' : '');
+
+                        // Kitap adını en fazla iki kelimeye kısalt
+                        const truncatedName = book.name.split(' ').slice(0, 2).join(' ');
+
+                        booksTableElement.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>
+                        <img src="${book.image}" alt="${truncatedName}" class="book-thumbnail">
+                        ${truncatedName}
+                    </td>
+                    <td>${truncatedDescription}</td>
+                    <td>${book.type}</td>
+                    <td>${book.author}</td>
+                </tr>`;
                     });
                 } else {
                     console.log("Veri bulunamadı.");
@@ -359,6 +382,44 @@
             });
         }
         fetchBooks();
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('.login-form');
+    const usernameInput = document.querySelector('input[type="text"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const button = document.querySelector('button');
+    const login = document.querySelector('.admin-login')
+    const dashboard = document.querySelector('.admin-dashboard')
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        signInWithEmailAndPassword(auth, username, password)
+            .then(() => {
+                login.style.display = 'none';
+                dashboard.style.display = 'block';
+            })
+            .catch(() => {
+                alert('Invalid username or password');
+            });
+
+
+
+    });
+
+    passwordInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            button.click();
+        }
+    });
+});
+
+
     </script>
 </body>
 

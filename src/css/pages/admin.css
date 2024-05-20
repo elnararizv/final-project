@@ -119,6 +119,11 @@
 
 .about-store .aboutBtn {
     cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+.about-store .aboutBtns {
+    cursor: pointer;
 }
 
 .wrapper .main_content .info .search .input {
@@ -374,3 +379,19 @@ body{
   cursor: pointer;
 }
 
+.book-thumbnail {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.books-titles{
+    width: 200px;
+}
+
+.book-info {
+    display: flex;
+    align-items: center;
+}
