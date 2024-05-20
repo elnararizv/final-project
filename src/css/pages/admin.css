@@ -1,5 +1,6 @@
-body {
+.admin-dashboard {
     background-color: #fffaf5;
+    display: none;
 }
 
 .wrapper {
@@ -58,10 +59,14 @@ body {
     margin: 0 10px;
 }
 
-.wrapper .main_content .info {
+.wrapper .main_content . {
     margin: 20px;
     color: #000000;
     line-height: 25px;
+}
+
+.info h1{
+    margin-left: 300px !important;
 }
 
 .wrapper .main_content .info h1 {
@@ -83,13 +88,13 @@ body {
 .search .searching .lupa {
     border: 1px solid #fe9c22;
     background-color: #fe9c22;
-    padding: 8px 17px;
+    padding: 9px 21px;
     border-radius: 40px;
     cursor: pointer;
 }
 
 .search .searching .lupa:hover {
-    background-color: #bdb8d7;
+    background-color: #8B0000;
 }
 
 .book-form h2 {
@@ -156,6 +161,7 @@ div.form-container {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 30px;
     padding: 1%;
     margin-top: 5%;
+    border-radius: 15px;
 }
 
 input {
@@ -223,7 +229,7 @@ button {
 }
 
 .fixed_headers tbody tr:hover {
-    background-color: #DCDCDC;
+    background-color: #382727;
 }
 
 .modal {
@@ -298,3 +304,73 @@ button {
     color: black;
     background-color: white;
 }
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body{
+    background-color: #720418;
+}
+
+.login-user{
+    color: #000000;
+}
+
+.login-password{
+    color: #000000;
+}
+
+.logos img{
+    width: 282.59px;
+    height: 85.04;
+    margin: 45px 0 0 32px;
+}
+
+.login-page {
+  width: 662px;
+  margin: 100px  auto 0;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 462px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form h1{
+    margin: 20px auto;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #ffffff;
+  width: 100%;
+  border: 1px solid gray;
+  margin: 10px auto;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin: 40px 0 0 0; 
+  outline: 0;
+  background: #E16A00;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+

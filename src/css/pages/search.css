@@ -5,6 +5,10 @@ body {
 .searchMain {
     margin-top: 100px;
     margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .searchLeftContainer {
@@ -17,20 +21,32 @@ body {
     font-family: sans-serif;
     font-weight: 700;
     line-height: 70.63px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    padding-left: 20px;
 }
 
 .searchText h1 {
     font-size: 35px;
     font-weight: 700;
     color: #241400;
+    /* display: inline-block; */
+    margin: 0 0.5rem;
+    animation: slideInLeft;
+    animation-duration: 0.8s;
+
 }
 
 .searchInputButton {
     display: flex;
     flex-direction: column;
-    width: 84.58%;
+    /* width: 200px; */
     margin-top: 45px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#searchBtn {
+    width: 300px;
 }
 
 .searchInputButton input {
@@ -75,12 +91,6 @@ body {
     opacity: 0.8;
 }
 
-.searchMain {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-}
 
 
 .searchAboutBook {
@@ -96,10 +106,19 @@ body {
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     padding-bottom: 120px;
+    width: 85%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+
+  
 }
 
 .insideCard {
     display: flex !important;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
 .insideCard div:first-child {
@@ -159,24 +178,6 @@ body {
     width: 300px;
 }
 
-.searchInputButton {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.insideCard {
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-.card {
-    width: 85%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-}
-
 .search-img {
     width: 100%;
     height: auto;
@@ -191,9 +192,7 @@ body {
 .bookText h3,
 .bookText p {
     margin: 0 0 10px;
-
 }
-
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -212,9 +211,12 @@ body {
 
 #pre {
     display: none;
-    padding-top: 300px;
+    /* background-color: #E16A00; */
+    padding-top: 320px;
     padding-left: 50px;
+
 }
+
 
 .card {
     display: flex;
@@ -232,6 +234,7 @@ body {
     height: auto;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
+    padding-top: 36px;
 }
 
 .card-body {
@@ -274,5 +277,16 @@ body {
         width: 200px;
         height: 300px;
         border-radius: 8px 0 0 8px;
+    }
+
+    #nex {
+        display: none;
+
+    }
+
+    #pre {
+        display: none;
+
+
     }
 }

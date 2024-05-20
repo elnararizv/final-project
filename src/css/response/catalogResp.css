@@ -9,25 +9,16 @@
     .books h3 {
       margin-left: -35px;
     }
-    #mySlider1{
-      margin-left: 0%;
-    }
-    #mySlider2{
-      margin-left: 0%;
-    }
-    #mySlider3{
-      margin-left: 0%;
-    }
     .category{
       margin-left: -2%;
       margin-bottom: 2%;
     }
-  
-    .splide__slide img{
-      width: 85%;
+    #janr{
+      width: 50%;
+      margin-left: 35%;
     }
-    .splide__slide button{
-      width: 85%;
+    .newP{
+      margin-left: 65%;
     }
   }
 
@@ -63,24 +54,10 @@
       align-items: flex-start;
       width: 290px;
     }
-    #mySlider1{
-      margin-left: 18%;
-      width: 270px;
-      height: 352px;
-     
+
+    .splide{
+      width: 50%;
+      margin-left: 20%;
     }
-    #mySlider2{
-      margin-left: 18%;
-      width: 270px;
-      height: 352px;
-      flex-shrink: 0;
-    }
-    #mySlider3{
-      margin-left: 18%;
-      width: 270px;
-      height: 352px;
-      flex-shrink: 0;
-    }
-  
   }
   

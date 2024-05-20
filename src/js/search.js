@@ -26,7 +26,7 @@ const searchInp = document.querySelector("#inputSearch");
 const searchInputButton = document.querySelector("#searchBtn");
 const nextBtn = document.querySelector("#nex");
 const prevBtn = document.querySelector("#pre");
-
+//---------------
 function searchBook(query) {
   get(ref(db, "books/"))
     .then((data) => {
@@ -42,9 +42,7 @@ function searchBook(query) {
                             isActive ? "active" : ""
                           }">
                               <div class="card mx-auto">
-                                  <img src="${el.image}" alt="${
-              el.name
-            }" class="search-img">
+                                  <img src="${el.image}" alt="${el.name}" class="search-img">
                                   <div class="card-body">
                                       <h2 class="card-title">${el.name}</h2>
                                       <h3 class="card-subtitle mb-2 text-muted">${
@@ -77,17 +75,18 @@ function searchBook(query) {
 }
 
 searchInputButton.addEventListener("click", () => {
-
   const query = searchInp.value.trim();
   if (query) {
-    searchBook(query);
+    searchBook(query);  
   } else {
     nextBtn.style.display = "none";
     prevBtn.style.display = "none";
   }
 });
-    const query = searchInp.value.trim();
-    if (query) {
-        searchBook(query);
-    }
+
+searchInp.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchInputButton.click();
+  }
 });
