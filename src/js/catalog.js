@@ -74,7 +74,12 @@
                     <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                 `;
                 splide1.add(slide);
+
+                loader1.style.display = 'none'
             });
+            
+
+
         }
 
         addBooksToSlider();
@@ -139,6 +144,8 @@ get(booksRef).then((snapshot) => {
                    <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                `;
                splide2.add(slide);
+               loader2.style.display = 'none'
+
            });
        }
 
@@ -206,6 +213,8 @@ get(booksRef).then((snapshot) => {
                    <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                `;
                splide3.add(slide);
+               loader3.style.display = 'none'
+
            });
        }
 
@@ -282,6 +291,7 @@ function FantasitcGetData() {
                         <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                     `;
                     splide4.add(slide);
+
                 });
             }
      
@@ -356,6 +366,7 @@ function PoemsGetData() {
                         <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                     `;
                     splide5.add(slide);
+
                 });
             }
      
@@ -430,6 +441,7 @@ function DetectiveGetData() {
                         <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                     `;
                     splide6.add(slide);
+
                 });
             }
      
@@ -504,6 +516,7 @@ function ForKidsGetData() {
                         <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                     `;
                     splide7.add(slide);
+
                 });
             }
      
@@ -541,3 +554,46 @@ function allBtnFun() {
 }
 
 allBtn.addEventListener('click', allBtnFun);
+
+
+
+
+
+const loader1 = document.querySelector('#load1')
+const loader2 = document.querySelector('#load2')
+const loader3 = document.querySelector('#load3')
+
+
+//----------------------------------------------- No Cansole
+
+// document.addEventListener('contextmenu', function(event) {
+//     event.preventDefault();
+// });
+
+// document.addEventListener('keydown', function(event) {
+//     // F12
+//     if (event.keyCode === 123) {
+//         event.preventDefault();
+//     }
+//     // Ctrl+Shift+I
+//     if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+//         event.preventDefault();
+//     }
+//     // Ctrl+Shift+J
+//     if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
+//         event.preventDefault();
+//     }
+//     // Ctrl+U
+//     if (event.ctrlKey && event.keyCode === 85) {
+//         event.preventDefault();
+//     }
+//     // Ctrl+Shift+C (для вкладки Elements в DevTools)
+//     if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+//         event.preventDefault();
+//     }
+// });
+
+// // Отключение методов console
+// console.log = function() {};
+// console.warn = function() {};
+// console.error = function() {};
