@@ -77,7 +77,13 @@ function searchBook(query) {
 searchInputButton.addEventListener("click", () => {
   const query = searchInp.value.trim();
   if (query) {
-    searchBook(query);  
+    searchBook(query); 
+    setTimeout(()=>{
+      nextBtn.style.display = "inline-block";
+      prevBtn.style.display = "inline-block";
+  
+    },1000) 
+
   } else {
     nextBtn.style.display = "none";
     prevBtn.style.display = "none";

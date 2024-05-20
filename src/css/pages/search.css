@@ -12,7 +12,7 @@ body {
 }
 
 .searchLeftContainer {
-    padding-left: 130px;
+    padding-left: 0px;
 }
 
 .searchText {
@@ -29,20 +29,12 @@ body {
     font-size: 35px;
     font-weight: 700;
     color: #241400;
-    /* display: inline-block; */
-    margin: 0 0.5rem;
-    animation: slideInLeft;
-    animation-duration: 0.8s;
-
 }
 
 .searchInputButton {
     display: flex;
     flex-direction: column;
-    /* width: 200px; */
     margin-top: 45px;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 #searchBtn {
@@ -61,23 +53,21 @@ body {
     padding-left: 27px;
     border: 1px solid #CECECE;
     border-radius: 5px;
-
 }
 
-.searchInputButton ::placeholder {
+.searchInputButton::placeholder {
     color: #241400;
     font-size: 19px;
-    font-family: Crimson Text;
+    font-family: 'Crimson Text';
     font-weight: 200;
-    word-wrap: break-word
+    word-wrap: break-word;
 }
 
 .searchInputButton button {
     margin-top: 45px;
     height: 60px;
     width: 360px;
-    background-color:
-        #E16A00;
+    background-color: #E16A00;
     border: none;
     cursor: pointer;
     font-size: 30px;
@@ -91,158 +81,39 @@ body {
     opacity: 0.8;
 }
 
-
-
 .searchAboutBook {
     width: 50%;
     position: relative;
+    padding-top: 70px;
 }
 
 .card {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    padding-bottom: 120px;
-    width: 85%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    background: #fff;
-
-  
-}
-
-.insideCard {
-    display: flex !important;
+    padding: 20px;
     margin: 20px auto;
     max-width: 800px;
 }
 
-.insideCard div:first-child {
-    margin-top: 65px;
-    width: 200px;
-    margin-left: 30px;
-}
-
-.bookText {
-    margin-top: 65px;
-    margin-left: 35px;
-    margin-right: 30px;
-}
-
-.bookText h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 47px;
-    letter-spacing: 0em;
-
-    color: #241400;
-
-}
-
-.bookText h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 19px;
-    font-weight: lighter;
-    line-height: 35px;
-    letter-spacing: 0em;
-    color: #4b4137;
-
-}
-
-.bookText p {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 0em;
-    color: #120a00;
-    width: 390px;
-}
-
-.splide__arrows {
-    display: none;
-}
-
-.search-container {
-    margin: 20px;
-    text-align: center;
-}
-
-#inputSearch {
-    padding: 10px;
-    width: 300px;
-}
-
-.search-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.bookText {
-    padding: 20px;
-}
-
-.bookText h2,
-.bookText h3,
-.bookText p {
-    margin: 0 0 10px;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 60px;
-    height: 60px;
-    display: none;
-}
-
-
-#nex {
-    display: none;
-    transform: rotate(180deg);
-    padding-top: 225px;
-    padding-left: 50px;
-}
-
-#pre {
-    display: none;
-    /* background-color: #E16A00; */
-    padding-top: 320px;
-    padding-left: 50px;
-
-}
-
-
-.card {
-    display: flex;
-    padding: 20px;
-    max-width: 70%;
-    height: auto;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    flex-direction: column;
-}
-
 .card img {
-    max-width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
-    padding-top: 36px;
 }
 
 .card-body {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    padding: 20px;
 }
 
 .card-title {
@@ -266,6 +137,15 @@ body {
     font-size: 1em;
 }
 
+.vector-icon {
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 46px;
+    object-fit: contain;
+    }
+
 @media (min-width: 768px) {
     .card {
         flex-direction: row;
@@ -279,14 +159,126 @@ body {
         border-radius: 8px 0 0 8px;
     }
 
+    .insideCard {
+        display: flex !important;
+    }
+
+    .insideCard div:first-child {
+        margin-top: 65px;
+        width: 200px;
+        margin-left: 30px;
+    }
+
+    .bookText {
+        margin-top: 65px;
+        margin-left: 35px;
+        margin-right: 30px;
+    }
+
+    .bookText h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 47px;
+        letter-spacing: 0em;
+        color: #241400;
+    }
+
+    .bookText h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 19px;
+        font-weight: lighter;
+        line-height: 35px;
+        letter-spacing: 0em;
+        color: #4b4137;
+    }
+
+    .bookText p {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        color: #120a00;
+        width: 390px;
+    }
+
+    .splide__arrows {
+        display: none;
+    }
+
+    .search-container {
+        margin: 20px;
+        text-align: center;
+    }
+
+    #inputSearch {
+        padding: 10px;
+        width: 300px;
+    }
+
+    .searchInputButton {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .insideCard {
+        margin: 20px auto;
+        max-width: 800px;
+    }
+
+    /* .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 60px;
+        height: 60px;
+        display: block;
+    } */
+
+    .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../assets/icons/Vector2.svg');
+    
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../assets/icons/Vector3.svg');
+}
+
+.vector-icon {
+    display: none; /* Hide the image elements themselves */
+
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    
+}
+
     #nex {
         display: none;
+    padding-top: 250px;
+    padding-right: 80px;
 
     }
 
     #pre {
         display: none;
-
-
+      padding-top: 250px;
+      padding-left: 80px ;
     }
 }
