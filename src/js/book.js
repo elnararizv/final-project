@@ -72,7 +72,6 @@ function CommentSetData() {
     })
     .catch((err) => errorAlert("Error"));
 }
-
 send.addEventListener("click", CommentSetData);
 
 const time = new Date();
