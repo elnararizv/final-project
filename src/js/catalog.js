@@ -291,7 +291,8 @@ function FantasitcGetData() {
                         <button id="readBtn"><a href="../pages/book.html?${e.id}">Read more</a></button>
                     `;
                     splide4.add(slide);
-
+                    
+        
                 });
             }
      
