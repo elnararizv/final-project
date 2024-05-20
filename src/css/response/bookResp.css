@@ -1,12 +1,33 @@
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .back {
-    margin-left: 2%;
+    margin-left: -16%;
   }
   .text {
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
   }
-  .div1 {
+  .div2 {
+    width: 50%;
+  }
+
+  .div2 img {
+    /* width: 80%; */
+    margin-left: 50px;
+    width: 300px;
+    height: 470px;
+    object-fit: cover;
+  }
+
+  .order {
+    font-size: 25px;
+  }
+
+  .day {
+    font-size: 12px;
+  }
+
+  .text-title {
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 540px) {
@@ -19,21 +40,28 @@
   .text {
     width: 90%;
     margin-top: 8px;
+    font-size: 12px;
   }
   .back {
     width: 81px;
-    margin-top: 51px;
+    margin-top: 35%;
+    margin-left: -50%;
+  }
+
+  #section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .book {
-    text-align: center;
+    flex-direction: column-reverse;
   }
 
   .div2 img {
-    width: 86%;
-    /* height: 388px; */
-    margin-top: 47px;
-    margin-left: 10px;
-    /* margin-right: 23px;  */
+    width: 273.642px;
+    height: 388px;
+    margin-top: 10%;
+    margin-left: 12%;
   }
 
   .year {
@@ -69,54 +97,32 @@
 
   .input {
     width: 90%;
-    
   }
-
-  
-
 }
-@media only screen and (max-width: 768px) {
-  /* #section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
-  .div1 {
-    width: 96%;
-    text-align: center;
-    margin-top: 35px;
-  }
-  #section1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .book {
-    flex-direction: column-reverse;
-    /* align-items: center; */
-  }
+
+@media only screen and (min-width: 540px) and (max-width: 768px) {
   .back {
-    margin-top: 70px;
   }
+
   .text {
-    font-size: 15px;
+    width: 60%;
+    font-size: 12px;
   }
-  .buttons {
-    display: flex;
-    justify-content: start;
-    width: 100%;
+
+  .order{
+    font-size: 30px;
   }
-  .div2 img {
-    margin: 0;
-    margin-bottom: 30px;
+
+  .day{
+    font-size: 12px;
   }
-  .div2 {
-    text-align: center;
+
+  .text-title{
+    font-size: 16px;
   }
-  .input {
-    width: 65%;
-  }
-  .book-container {
-    width: 65%;
+
+  .div2 img{
+    width: 67%;
+    height: 70%;
   }
 }

@@ -20,6 +20,11 @@ body {
 .div1 {
   width: 52%;
 }
+
+.buttons{
+  width: 200px;
+  margin-left: 4.5%;
+}
 .back {
   /* width: 100px; */
   height: 29px;
@@ -32,8 +37,11 @@ body {
   padding-right: 3%;
   margin-top: 180px;
   margin-bottom: 80px;
-  color: #fff;
 }
+
+
+
+
 .year {
   background-color: #2f80ed;
   width: 69px;
@@ -50,7 +58,6 @@ body {
   font-weight: 900;
   line-height: 196.187%; /* 23.542px */
   text-transform: uppercase;
-  
 }
 .order {
   margin-top: -2%;
@@ -90,8 +97,15 @@ body {
   line-height: 196.187%; /* 43.161px */
 }
 
-.div2 img{
+.div2 img {
   margin-top: -100px;
+  width: 379px;
+  height: 529px;
+  object-fit: cover;
+}
+
+.div2 img{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .input {
@@ -107,6 +121,12 @@ body {
   align-items: center;
   margin-top: 102px;
 }
+
+.input:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 #comment-inp {
   border: none;
   width: 100%;
@@ -139,6 +159,6 @@ body {
   align-items: center;
   gap: 26px;
 }
-.bookText{
+.bookText {
   padding: 0;
 }
