@@ -16,6 +16,9 @@
   font-size: 36px;
   font-weight: 900;
   line-height: 70.63px;
+  display: inline-block;
+  animation: slideInLeft; 
+  animation-duration: 0.8s; 
 }
 .pages{
   width: 49%;
@@ -24,3 +27,5 @@
   margin-top: 6%;
 
 }
+
+

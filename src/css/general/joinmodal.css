@@ -1,0 +1,40 @@
+.joinModal {
+    background-color: grey;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 15;
+  }
+  
+  .joinModal input {
+    border: 1px solid #CECECE;
+    padding: 13px;
+    margin-bottom: 24px;
+  }
+  
+  .joinModal button {
+    background: #E16A00;
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+  }
+  
+  .modalCard {
+    width: 36%;
+    margin: 10% auto;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .modalCard {
+      width: 52%;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .modalCard {
+      width: 75%;
+      margin: 25% auto;
+    }
+  }

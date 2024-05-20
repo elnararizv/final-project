@@ -1,3 +1,4 @@
+
     body {
         background: #FFFAF5;
     }
@@ -91,6 +92,10 @@
         width: 50%;
         position: relative;
     }
+
+
+
+@media (min-width: 768px) {
 
     .card {
         display: block;
