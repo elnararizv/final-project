@@ -10,6 +10,9 @@
     .buttons{
         width: 70%;
       }
+      .moreDetails{
+        width: 18%;
+      }
   }
  
   @media only screen and (max-width: 768px) {
@@ -29,6 +32,10 @@
   .home-catalog button{
     padding: 20px 0;
     margin: 15px;
+}
+.moreDetails{
+  width: 26%;
+  font-size: 13px;
 }
   } 
   @media only screen and (max-width: 576px) {
