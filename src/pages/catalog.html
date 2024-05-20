@@ -114,91 +114,84 @@
 
   <div class="book">
     <div class="books">
-      <h3>All Books</h3>
+      <button class="allBtn"><h3>All Books</h3></button>
     </div>
     <div class="category">
-      <button class="categoryBook">Fantastic</button>
-      <button class="categoryBook">Besteller</button>
-      <button class="categoryBook">Dedective</button>
-      <button class="categoryBook">Children</button>
+      <button id="fantastic" class="categoryBook">Fantastic</button>
+      <button id="poems" class="categoryBook">Poems</button>
+      <button id="dedective" class="categoryBook">Dedective</button>
+      <button id="kids" class="categoryBook">For Kids</button>
     </div>
   </div>
 
 <!------------------------------------------- Slider1 -->
-  <section id="mySlider1" class="splide">
-    <div class="splide__arrows">
-      <button id="prevBtn" class="splide__arrow splide__arrow--prev">
-        <img src="../assets/icons/Vector 2.svg" alt="" >
-      </button>
-      <button id="nextBtn" class="splide__arrow splide__arrow--next">
-        <img src="../assets/icons/Vector 3.svg" alt="" >
-      </button>
-    </div>
-    <div class="splide__track">
-      <div class="splide__list">
-        <div class="splide__slide">
-          <img src="../assets/images/book.jpg">
-          <h4 class="bookName">Lorem</h4>
-          <p class="bookCreator">lorem ipsum</p>
-          <button id="readBtn">Read more</button>
-        </div>
-      </div>
-    </div>
-  </section>
-<!--------------------------------------------->
+<div id="splide1" class="splide">
+  <div class="splide__track">
+      <ul class="splide__list">
+      </ul>
+  </div>
+</div>
 
-  <div class="besteller">
-    <h3>Besteller</h3>
+<div id="splide4" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+        </ul>
+    </div>
   </div>
 
-<!------------------------------------------- Slider2 -->
-  <section id="mySlider2" class="splide">
-    <div class="splide__arrows">
-      <button id="prevBtn" class="splide__arrow splide__arrow--prev">
-        <img src="../assets/icons/Vector 2.svg" alt="" srcset="">
-      </button>
-      <button id="nextBtn" class="splide__arrow splide__arrow--next">
-        <img src="../assets/icons/Vector 3.svg" alt="" srcset="">
-      </button>
-    </div>
+  <div id="splide5" class="splide">
     <div class="splide__track">
-      <div class="splide__list">
-        <div class="splide__slide">
-          <img src="../assets/images/book.jpg">
-          <h4 class="bookName">lorem</h4>
-          <p class="bookCreator">lorem ipsum</p>
-          <button id="readBtn">Read more</button>
-        </div>
-      </div>
+        <ul class="splide__list">
+        </ul>
     </div>
-  </section>
+  </div>
+
+  <div id="splide6" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+        </ul>
+    </div>
+  </div>
+
+  <div id="splide7" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+        </ul>
+    </div>
+  </div>
+
+
+<!--------------------------------------------->
+
+
+<!--------------------------------------------- -->
+
+  <div class="besteller">
+    <h3>Best Seller</h3>
+  </div>
+<!------------------------------------------- Slider2 -->
+<div id="splide2" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+        </ul>
+    </div>
+  </div>
+  
 <!--------------------------------------------->
 
   <div class="new">
-    <h3>New releases</h3>
+    <h3>New Realiese</h3>
   </div>
+  
 
 <!------------------------------------------- Slider3 -->
-  <section id="mySlider3" class="splide">
-    <div class="splide__arrows">
-      <button id="prevBtn" class="splide__arrow splide__arrow--prev">
-        <img src="../assets/icons/Vector 2.svg" alt="" srcset="">
-      </button>
-      <button id="nextBtn" class="splide__arrow splide__arrow--next">
-        <img src="../assets/icons/Vector 3.svg" alt="" srcset="">
-      </button>
-    </div>
+<div id="splide3" class="splide">
     <div class="splide__track">
-      <div class="splide__list">
-        <div class="splide__slide">
-          <img src="../assets/images/book.jpg">
-          <h4 class="bookName">lorem</h4>
-          <p class="bookCreator">lorem ipsum</p>
-          <button id="readBtn">Read more</button>
-        </div>
-      </div>
+        <ul class="splide__list">
+        </ul>
     </div>
-  </section>
+  </div>
+  
 <!--------------------------------------------->
 
 
@@ -288,7 +281,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/general/main.js"></script>
-  <script src="../js/catalog.js"></script>
+  <script type="module" src="../js/catalog.js"></script>
 <!--------------------------------------------->
 </body>
 

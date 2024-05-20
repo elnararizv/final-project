@@ -1,132 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Cormorant+Garamond:ital,wght@1,700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Cormorant+Garamond:ital,wght@1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap');
-body{
+
+body {
     /* width: 1440px; */
     background: #FFFAF5;
 }
-h2{
+
+h2 {
     width: 215px;
+    align-items: flex-start;
     color: var(--Gray-1, #333);
     font-family: Montserrat;
     font-size: 36px;
     font-style: normal;
     font-weight: 900;
     line-height: 196.187%; /* 70.627px */
-    margin-left: 115px;
+    margin-left: 100px;
+
+
 }
-/* .inputs{
-    margin-left: 107px;
-} */
-/* .name{
-    width: 45.7%;
-    height: 75px;
-    flex-shrink: 0;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    margin-right: 37px;
-    margin-bottom: 33px;
-    color: #797667;
-    font-family: "Crimson Text";
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.email{
-    width: 45.7%;
-    height: 75px;
-    flex-shrink: 0;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    color: #797667;
-    font-family: "Crimson Text";
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-} */
-/* .address{
-    width: 45.7%;
-    height: 75px;
-    flex-shrink: 0;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    margin-right: 37px;
-    margin-bottom: 33px;
-    flex-shrink: 0;
-    color: #797667;
-    font-family: "Crimson Text";
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-   
-} */
-/* .phone{
-    width: 45.7%;
-    height: 75px;
-    flex-shrink: 0;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    color: #797667;
-    font-family: "Crimson Text";
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  
-} */
-.note{
-    width: 94.4%;
+
+.note {
+    width: 85.5%;
     height: 153px;
     flex-shrink: 0;
     border: 1px solid #CECECE;
     background: #FFF;
     color: #797667;
     font-family: "Crimson Text";
-    font-size: 23px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     /* margin-right: 107px; */
     padding-top: 13px;
     padding-left: 38px;
+    margin-top: 33px;
+    margin-bottom: 85px;
 }
-/* .forum{
-    display: flex;
-    flex-wrap: wrap;
-   
-} */
 
-.forum input{
+.forum input {
     border: 1px solid #CECECE;
     padding: 17px 25px;
     /* padding: 10px 7rem 20px; */
 }
-.note{
-    width: 85.5%;
-}
-/* .btns{
-    margin: 0 10rem 0 0;
-    text-align: center;
-    display: flex;
-} */
 
-/* .btns .button{
-    color: #FFF;
+.note {
+    width: 85.5%;
+    color: #797667;
     font-family: "Crimson Text";
-    font-size: 30px;
+    font-size: 23px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    flex-shrink: 0;
-    background: #E16A00;
-    border: none;
-    align-items: center;
-} */
+}
 
 
-.btns{
+.btns {
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -134,7 +64,8 @@ h2{
 }
 
 
-.button{
+.button {
+    height: 70px;
     color: #FFF;
     /* text-align: center; */
     font-family: "Crimson Text";
@@ -143,9 +74,10 @@ h2{
     font-weight: 400;
     line-height: normal;
     background: #E16A00;
-    padding: 10px 15rem 10px;
+    padding: 10px 15rem 15px;
     margin: 0 auto;
     border: none;
+    
 }
 
 
@@ -153,18 +85,17 @@ h2{
 .email,
 .address,
 .phone {
-    color: #FFF;
-    text-align: center;
+
+
+    padding: 10px 15rem 10px;
+    margin: 0 auto;
+    border: 0;
+    gap: 33px;
+    color: #797667;
     font-family: "Crimson Text";
-    font-size: 30px;
+    font-size: 23px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 10px 15rem 10px;
-    text-align: center;
-    margin: 0 auto;
-    border: 0;
+
 }
-
-
-        

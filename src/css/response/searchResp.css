@@ -16,12 +16,16 @@
         padding: 0 20px;
     }
     
+    .searchText h1 {
+        font-size: 32px;
+    }
+
     .searchText {
         color: #241400;
         font-size: 36px;
         font-family: sans-serif;
         font-weight: 700;
-        line-height: 1.5;
+        line-height: 1.2;
         text-align: center;
     }
     
@@ -128,7 +132,7 @@
         }
     
         .searchAboutBook p{
-            width: 220px;
+            width: 350px;
         }
     
         .searchInputButton input {
@@ -176,7 +180,7 @@
     }
     
     /* Media Queries */
-    @media only screen and (max-width: 926px) {
+    @media only screen and (max-width: 826px) {
         .searchText {
             font-size: 32px;
         }
@@ -192,6 +196,7 @@
         .searchInputButton input,
         .searchInputButton button {
             max-width: 300px;
+            width: 360px;
         }
     
         .card {
@@ -209,5 +214,17 @@
         .searchText {
             font-size: 28px;
         }
+
+        .searchAboutBook p{
+            width: 150px;
+            max-height: 190px;
+        }
+        .searchAboutBook img {
+            width: 160px;
+            margin-bottom: 40px;
+            padding-top: 70px;
+            padding-left: 25px;
+        }
+        
     }
     }
