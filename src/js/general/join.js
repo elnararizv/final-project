@@ -1,12 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBU0sULZYB6-mZdPwFsWw-teB5STW0xBoc",
   authDomain: "bookstore-44df6.firebaseapp.com",
@@ -18,33 +14,88 @@ const firebaseConfig = {
   measurementId: "G-WKRXPCNFEL"
 };
 
-
 const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
 const db = getDatabase()
+
 
 let fnameModal = document.querySelector('#fnameModal')
 let userMail = document.querySelector('#emailModal')
 let btnSend = document.querySelector('#buttonSign')
-
-function generate_uuidv4() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-      function(c) {
-          const uuid = Math.random() * 16 | 0;
-          const v = c == 'x' ? uuid : (uuid & 0x3 | 0x8);
-          return v.toString(16);
-      });
-}
-const id=generate_uuidv4()
+let joinText = document.querySelector('#join-text');
 
 function infoSend(){
-  const id=generate_uuidv4()
-  set(ref(db,'JoinUs/'+ id),{
-    FullName: fnameModal.value,
-    Email: userMail.value
+  const id = generate_uuidv4();
+  const fullName = fnameModal.value;
+  const email = userMail.value; 
+
+  set(ref(db, 'JoinUs/' + id), {
+    FullName: fullName,
+    Email: email
   })
-  .then(alert('You have been joined'))
-  .catch(err=>{alert(err)})
+  .then(() => {
+    Swal.fire({
+      icon: 'success',
+      text: 'Thank you for joining us!'
+    });
+    fnameModal.value=""
+    userMail.value=""
+    joinText.textContent = fullName; 
+     
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push({
+      fullName: fullName,
+      email: email
+    });
+    localStorage.setItem('users', JSON.stringify(users));
+  })
+  .catch(err => {
+    console.error("Firebase error:", err);
+  });
 }
 
-btnSend.addEventListener('click',infoSend)
+
+let modal = document.querySelector('.joinModal');
+function checkSign() {
+  let fnameInput = document.querySelector('#fnameModal');
+  let emailInput = document.querySelector('#emailModal');
+
+  let hasError = false;
+
+  if (!(emailInput.value.includes("@")) || emailInput.value.trim() === "") {
+    emailInput.style.border = "1px solid red";
+    hasError = true;
+    Swal.fire({
+      icon: 'error',
+      text: 'Please check your email address!'
+    });
+  } else {
+    emailInput.style.border = "1px solid #CECECE";
+  }
+
+  if (!/^[a-zA-Z\s]+$/.test(fnameInput.value.trim())) {
+    fnameInput.style.border = "1px solid red";
+    hasError = true;
+    Swal.fire({
+      icon: 'error',
+      text: 'Please check your name!'
+    });
+  } else {
+    fnameInput.style.border = "1px solid #CECECE";
+  }
+  if (!hasError) {
+    infoSend(); 
+    // modal.style.display="none";
+    document.querySelector('#userIcon').style.display="none";
+    document.querySelector('.logOut').style.display='block'
+  }
+}
+
+btnSend.addEventListener('click', checkSign);
+
+function logOut(){
+  document.querySelector('#userIcon').style.display="block";
+  // modal.style.display="block";
+  document.querySelector('.logOut').style.display='none'
+  joinText.textContent = 'Join us'; 
+}
+document.querySelector('.logOut').addEventListener('click', logOut)
