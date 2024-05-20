@@ -146,11 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.search.includes('admin.html')) {
-        window.location.href = 'admin-login.html';
-    }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('.login-form');

@@ -221,7 +221,10 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         // const analytics = getAnalytics(app);
+
         import { getDatabase, set, ref, get , onValue} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+       
         const db = getDatabase();
         const booknameInp = document.querySelector(".bookName")
         const authorInp = document.querySelector(".authorName")
@@ -229,6 +232,7 @@
         const bookimgInp = document.querySelector(".bookImage")
         const descriptInp = document.querySelector(".bookDesc")
         const bookType = document.querySelector(".bookType")
+
         const addBtn = document.querySelector(".formBtn")
         const bookCat = document.querySelector("#bookCat")
 
@@ -313,30 +317,6 @@
         }
         sendUser()
         const booksTableElement = document.querySelector(".books tbody");
-        // function fetchBooks() {
-        //     get(ref(db, "books/"))
-        //         .then((data) => {
-        //             const booksData = data.val();
-        //             if (booksData) {
-        //                 booksTableElement.innerHTML = '';
-        //                 Object.values(booksData).forEach((book, index) => {
-        //                     booksTableElement.innerHTML += `<tr>
-        //                                                 <td>${index + 1}</td>
-        //                                                 <td>${book.name}</td>
-        //                                                 <td>${book.description}</td>
-        //                                                 <td>${book.type}</td>
-        //                                                 <td>${book.author}</td>
-        //                                             </tr>`;
-        //                 });
-        //             } else {
-        //                 console.log("Veri bulunamadı.");
-        //             }
-        //         })
-        //         .catch((error) => {
-        //             console.error(error);
-        //         });
-        // }
-
         function fetchBooks() {
             onValue(ref(db, "books/"), (snapshot) => {
                 const booksData = snapshot.val();
