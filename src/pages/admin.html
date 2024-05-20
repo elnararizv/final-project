@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/general/reset.css">
-    <link rel="stylesheet" href="../css/pages/admin.css">
-    <link rel="stylesheet" href="../css/response/adminResp.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/general/reset.css" />
+    <link rel="stylesheet" href="../css/pages/admin.css" />
+    <link rel="stylesheet" href="../css/response/adminResp.css" />
     <!-- Fav icon -->
-    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-192x192.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/fav-icon/apple-touch-icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/fav-icon/favicon-16x16.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/fav-icon/favicon-32x32.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../assets/fav-icon/android-chrome-192x192.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/fav-icon/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/fav-icon/apple-touch-icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/fav-icon/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/fav-icon/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <title>Admin Dashboard</title>
-</head>
+  </head>
+
 
 <body>
     <div class="admin-login">
@@ -193,9 +213,99 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+          </div>
 
+          <div class="about-store" id="aboutStore">
+            <h2>About Store</h2>
+            <div class="form-container">
+              <form autocomplete="off">
+                <label for="townborn">Title</label>
+                <input
+                  class="bookTitle"
+                  type="text"
+                  placeholder="About Store"
+                />
+
+                <label for="email">Book Image Url</label>
+                <input
+                  class="userMail"
+                  type="email"
+                  placeholder="https://image.url"
+                />
+
+                <label for="townborn">Description</label>
+                <input
+                  class="aboutDesc"
+                  type="text"
+                  placeholder="Description"
+                />
+              </form>
+              <button type="submit" class="aboutBtn">About info add</button>
+            </div>
+          </div>
+
+          <div class="join-us" id="joinUs">
+            <h2>Join Us</h2>
+            <table class="fixed_headers">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Full Name</th>
+                  <th>E-mail Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="books" id="books">
+            <h2>Books</h2>
+            <table class="fixed_headers">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contact-us" id="contactUsSection">
+            <h2>Contact Us</h2>
+            <table class="fixed_headers">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Full Name</th>
+                  <th>Address</th>
+                  <th>Email Address</th>
+                  <th>Phone Number</th>
+                </tr>
+              </thead>
+              <tbody id="contactUs"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="../js/admin.js"></script>
     <script src="../js/admin-login.js"></script>
@@ -292,30 +402,49 @@
                 .then(alert('Data Push for Fairbase'))
                 .catch(err => { alert(err) })
         }
-        aboutBtn.addEventListener('click', InserData);
-        const joinTable = document.querySelector(".fixed_headers tbody")
-        function sendUser() {
-            get(ref(db, "JoinUs/"))
-                .then((data) => {
-                    const userData = data.val();
-                    if (userData) {
-                        joinTable.innerHTML = '';
-                        Object.values(userData).forEach((user, index) => {
-                            joinTable.innerHTML += `<tr>
+      }
+
+      addBtn.addEventListener("click", sendBooks);
+      const titleInp = document.querySelector(".bookTitle");
+      const imgInp = document.querySelector(".userMail");
+      const descripInp = document.querySelector(".aboutDesc");
+      const aboutBtn = document.querySelector(".aboutBtn");
+      function InserData() {
+        const id = generate_uuidv4();
+        set(ref(db, "aboutInfo/" + id), {
+          Title: titleInp.value,
+          Image: imgInp.value,
+          Description: descripInp.value,
+        })
+          .then(alert("Data Push for Fairbase"))
+          .catch((err) => {
+            alert(err);
+          });
+      }
+      aboutBtn.addEventListener("click", InserData);
+      const joinTable = document.querySelector(".fixed_headers tbody");
+      function sendUser() {
+        get(ref(db, "JoinUs/"))
+          .then((data) => {
+            const userData = data.val();
+            if (userData) {
+              joinTable.innerHTML = "";
+              Object.values(userData).forEach((user, index) => {
+                joinTable.innerHTML += `<tr>
                                                 <td>${index + 1}</td>
                                                 <td>${user.FullName}</td>
                                                 <td>${user.Email}</td>
                                             </tr>`;
-                        });
-                    } else {
-                        console.log("No users found.");
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error getting users:", error);
-                });
-        }
-        sendUser()
+              });
+            } else {
+              console.log("No users found.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error getting users:", error);
+          });
+      }
+      sendUser();
         const booksTableElement = document.querySelector(".books tbody");
         function fetchBooks() {
             onValue(ref(db, "books/"), (snapshot) => {
@@ -332,7 +461,7 @@
                                         </tr>`;
                     });
                 } else {
-                    console.log("Veri bulunamadı.");
+                    console.log("Data not find.");
                 }
             }, (error) => {
                 console.error(error);
@@ -340,6 +469,5 @@
         }
         fetchBooks();
     </script>
-</body>
-
+  </body>
 </html>

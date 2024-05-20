@@ -72,8 +72,6 @@ function CommentSetData() {
     })
     .catch((err) => errorAlert("Error"));
 }
-
-
 send.addEventListener("click", CommentSetData);
 
 const time = new Date();
@@ -101,13 +99,11 @@ function CommentGetData() {
 
 CommentGetData();
 
-const bookId = window.location.search.substring(1)
-        const bookInfo = document.querySelector('#section1')
-        function BookGetData() {
-            get(ref(db, 'books/' + bookId ))
-            .then(data => {
-                bookInfo.innerHTML =
-                `
+const bookId = window.location.search.substring(1);
+const bookInfo = document.querySelector("#section1");
+function BookGetData() {
+  get(ref(db, "books/" + bookId)).then((data) => {
+    bookInfo.innerHTML = `
                 <div class="buttons">
         <button class="back">< BACK</button>
       </div>
@@ -122,7 +118,7 @@ const bookId = window.location.search.substring(1)
         <div class="div2">
           <img class = 'bokImg' src="${data.val().image}"/>
         </div>
-                `
-            })
-        }
-        BookGetData()
+                `;
+  });
+}
+BookGetData();
