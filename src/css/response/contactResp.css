@@ -1,11 +1,9 @@
-
 @media screen and (max-width: 540px) {
    
 
     h2 {
         text-align: center;
         /* width: 157px; */
-
         height: 50px;
         flex-shrink: 0;
         /* margin-right: 10px; */
@@ -53,13 +51,16 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        width: 50%;
+    }
+
+    .btns button{
+        padding: 10px 90px !important;
+        text-align: center;
     }
 
     .button {
         height: 37px;
         margin: 0 auto;
-
         border-radius: 5px;
         font-size: 16px;
         font-style: normal;
@@ -87,8 +88,13 @@
     }
 }
 
+@media screen and (width: 768px) {
+    .note{
+        width: 88.5% !important;
+    }
+}
 
-@media screen and (max-width: 1024px) and (min-width: 541px) {
+@media screen and (max-width: 768px) and (min-width: 541px) {
     h2{
         margin-top: 50px;
     }
@@ -96,7 +102,7 @@
         width: 100%;
         border-radius: 5px;
         margin-top: 14px;
-        color: #797667;
+        color: #241400;
         font-family: "Crimson Text";
         font-size: 20px;
         font-style: normal;
@@ -109,21 +115,13 @@
     .button{
         /* padding: 20px 14.7rem 20px; */
         height: 60px;
-
         border-radius: 5px;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-
         padding-left: 200px;
-        
-        
-        
-       
     }
-
-   
 
 
     .name,
