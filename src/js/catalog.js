@@ -198,7 +198,7 @@ get(booksRef).then((snapshot) => {
                slide.classList.add('splide__slide');
                slide.innerHTML = `
                    <div class="newP">
-                   <button id = 'newB' class="newBtn">NEW</button>
+                   <button class="newBtn">NEW</button>
                    </div> 
                    <img class="sliderImg" src="${imageUrl}">
                    <h2 class="bookName">${bookName}</h2>
@@ -238,7 +238,7 @@ function FantasitcGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type.toLowerCase() === "fantastic") {
+                if (book.type === "fantastic") {
                     booksData.push(book);
                 }
             });
@@ -312,7 +312,7 @@ function PoemsGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type.toLowerCase() === "poems") {
+                if (book.type === "poems") {
                     booksData.push(book);
                 }
             });
@@ -386,7 +386,7 @@ function DetectiveGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type.toLowerCase() === "detective") {
+                if (book.type === "detective") {
                     booksData.push(book);
                 }
             });
@@ -460,7 +460,7 @@ function ForKidsGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type.toLowerCase() === "for kids") {
+                if (book.type === "for kids") {
                     booksData.push(book);
                 }
             });
