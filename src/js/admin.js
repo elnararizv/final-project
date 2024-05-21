@@ -148,3 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+const listItems = document.querySelectorAll('ul li');
+
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const link = item.querySelector('a');
+                if (link) {
+                    window.location.href = link.getAttribute('href');
+                }
+            });
+        });

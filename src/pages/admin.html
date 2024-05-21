@@ -18,6 +18,9 @@
 
 <body>
     <div class="admin-login">
+        <div class="adminLogo">
+            <a href="../../index.html"><img src="../assets/icons/adminlogo.svg" alt=""></a>
+        </div>
         <div class="login-page">
             <div class="form">
                 <h1>Welcome Admin</h1>
@@ -54,7 +57,7 @@
                 <div class="main_content">
                     <div class="header">
                         <img src="../assets/icons/profile.svg" alt="">
-                        <p href="">Admin</p>
+                        <p class="adminName"> </p>
                     </div>
                     <div class="info" id="addBook">
                         <h1>Add Book</h1>
@@ -240,11 +243,16 @@
 
 
         const auth = getAuth(app);
- 
+
 
 
         function sendBooks() {
             const id = generate_uuidv4();
+
+            function getCurrentTimestamp() {
+                const now = new Date();
+                return now.toISOString();
+            }
 
             set(ref(db, "books/" + id), {
                 name: booknameInp.value,
@@ -254,7 +262,8 @@
                 description: descriptInp.value,
                 type: bookType.value,
                 id: id,
-                category: bookCat.value
+                category: bookCat.value,
+                time: timestamp
 
             })
                 .then(successAlert("Perfect"))
@@ -262,9 +271,6 @@
 
 
             if (selectedCategory) {
-
-                const bookCategory = selectedCategory.id;
-                const categoryRef = ref(db, "books/" + bookCategory + "/" + id);
 
                 set(categoryRef, {
                     name: bookName,
@@ -385,39 +391,46 @@
 
 
         document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('.login-form');
-    const usernameInput = document.querySelector('input[type="text"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-    const button = document.querySelector('button');
-    const login = document.querySelector('.admin-login')
-    const dashboard = document.querySelector('.admin-dashboard')
+            const form = document.querySelector('.login-form');
+            const usernameInput = document.querySelector('input[type="text"]');
+            const passwordInput = document.querySelector('input[type="password"]');
+            const button = document.querySelector('button');
+            const login = document.querySelector('.admin-login')
+            const dashboard = document.querySelector('.admin-dashboard')
 
-    button.addEventListener('click', function (event) {
-        event.preventDefault();
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
 
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
 
-        signInWithEmailAndPassword(auth, username, password)
-            .then(() => {
-                login.style.display = 'none';
-                dashboard.style.display = 'block';
-            })
-            .catch(() => {
-                alert('Invalid username or password');
+                signInWithEmailAndPassword(auth, username, password)
+                    .then(() => {
+                        login.style.display = 'none';
+                        dashboard.style.display = 'block';
+                    })
+                    .catch(() => {
+                        alert('Invalid username or password');
+                    });
+
+
+                let adminName = document.querySelector('.adminName')
+                let displayName = username.split('@')[0];
+
+                adminName.innerHTML += `
+                <p>${displayName}</p>
+                `
+
+
             });
 
-
-
-    });
-
-    passwordInput.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            button.click();
-        }
-    });
-});
+            passwordInput.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    button.click();
+                }
+            });
+        });
 
 
     </script>
