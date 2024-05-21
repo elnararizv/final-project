@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Store | Search</title>
     <link rel="shortcut icon" href="../assets/icons/titleIcon.svg" type="image/x-icon" />
-    <!-- Yuxaridaki link sehifenin title' nin iconunu deyismek ucundur -->
+    <!-- Yuxaridaki link sehifenin title' nin iconunu deyismek ucundur --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   
     <link rel="stylesheet" href="../css/general/style.css">
     <link rel="stylesheet" href="../css/pages/search.css">
     <link rel="stylesheet" href="../css/response/searchResp.css">
@@ -97,6 +99,7 @@
                         onclick="openModal()">
                         <img src="../assets/icons/profile.svg" alt="">
                         <p id="join-text" class="mt-3">Join us</p>
+                        <button class="bg-transparent border-0 fs-5 logOut"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                     </div>
                     <img src="../assets/icons/bars.svg" alt="" class="hamburger ms-2" onclick="toggleMenu()">
                 </div>
@@ -107,7 +110,6 @@
     <!-- Header End -->
     <!-- Start Main --- Search Section -->
 
-
     <main>
         <section class="searchMain">
             <div class="searchLeftContainer">
@@ -115,33 +117,31 @@
                     <h1>Search</h1>
                 </div>
                 <div class="searchInputButton">
-                    <input placeholder="Ordered in Chaos" type="text" id="inputSearch">
+                    <input placeholder="Ordered in Chaos" type="text" id="inputSearch" class="inputSearch">
                     <button id="searchBtn">Search</button>
                 </div>
             </div>
-
+    
             <div class="searchAboutBook">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- Carousel items will be inserted here dynamically -->
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a id="nex" class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                        data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span class="sr-only"><img class="vector-icon" src="../assets/icons/Vector2.svg" alt=""></span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a id="pre" class="carousel-control-next" href="#carouselExampleControls" role="button"
+                        data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                        <span class="sr-only"><img class="vector-icon" src="../assets/icons/Vector3.svg" alt=""></span>
                     </a>
                 </div>
             </div>
         </section>
     </main>
+    
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="module" src="main.js"></script>
 
 
     <!-- End Main Section -->
@@ -216,15 +216,19 @@
         <p id="privacypolicy">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
     </footer>
     <!------------------------------------------- Script -->
-    <script src="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/general/main.js"></script>
     <script type="module" src="../js/search.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="../js/general/join.js"></script>
     <!--------------------------------------------->
 </body>
+
 </html>
