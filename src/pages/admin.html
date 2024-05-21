@@ -45,13 +45,14 @@
             <div class="sidebar">
                 <img src="../assets/images/Logo.png" alt="" class="logo">
                 <ul>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="#addBook">Home</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="#books">Books</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
-                    <li><img src="../assets/images/Group.png" alt=""><a href="../pages/admin.html">Logout</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="#addBook">Home</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="#books">Books</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
+                    <li class="nav-item"><img src="../assets/images/Group.png" alt=""><a href="../pages/admin.html">Logout</a></li>
                 </ul>
+                
             </div>
             <div>
                 <div class="main_content">
@@ -260,8 +261,8 @@
                 };
     
                 set(ref(db, "books/" + id), bookData)
-                    .then(() => alert("Book added successfully"))
-                    .catch(err => alert("Error: " + err));
+                    .then(() => console.log("data send"))
+                    .catch(err => console.log("Error: " + err));
             }
     
             function fetchBooks() {
@@ -284,7 +285,7 @@
                                 <td>${truncatedDescription}</td>
                                 <td>${book.type}</td>
                                 <td>${book.author}</td>
-                                <td><button class="deleteBook" data-id="${book.id}">Delete</button></td>
+                                <td><button style="cursor: pointer;" class="deleteBook" data-id="${book.id}">Delete</button></td>
                             </tr>`;
                         });
     
@@ -303,7 +304,7 @@
             function removeData(bookId) {
                 remove(ref(db, 'books/' + bookId))
                     .then(() => fetchBooks())
-                    .catch(err => alert("Error: " + err.message));
+                    .catch(err => console.log("Error: " + err.message));
             }
     
             fetchBooks();

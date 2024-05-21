@@ -125,4 +125,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const link = this.querySelector('a');
+            if (link) {
+                link.click();
+            }
+        });
+    });
+});
 
