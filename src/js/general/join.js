@@ -16,12 +16,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase()
-
+const userIcon=document.querySelector('.navbar .d-flex img');
 
 let fnameModal = document.querySelector('#fnameModal')
 let userMail = document.querySelector('#emailModal')
-let btnSend = document.querySelector('#buttonSign')
+let btnSend = document.querySelector('.modalCard button')
 let joinText = document.querySelector('#join-text');
+
 
 function infoSend(){
   const id = generate_uuidv4();
@@ -58,6 +59,7 @@ let modal = document.querySelector('.joinModal');
 function checkSign() {
   let fnameInput = document.querySelector('#fnameModal');
   let emailInput = document.querySelector('#emailModal');
+  const userIcon=document.querySelector('.navbar .d-flex img');
 
   let hasError = false;
 
@@ -85,7 +87,7 @@ function checkSign() {
   if (!hasError) {
     infoSend(); 
     // modal.style.display="none";
-    document.querySelector('#userIcon').style.display="none";
+    userIcon.style.display="none";
     document.querySelector('.logOut').style.display='block'
   }
 }
@@ -93,7 +95,7 @@ function checkSign() {
 btnSend.addEventListener('click', checkSign);
 
 function logOut(){
-  document.querySelector('#userIcon').style.display="block";
+userIcon.style.display="block";
   // modal.style.display="block";
   document.querySelector('.logOut').style.display='none'
   joinText.textContent = 'Join us'; 
