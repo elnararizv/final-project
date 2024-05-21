@@ -18,6 +18,9 @@
 
 <body>
     <div class="admin-login">
+        <div class="adminLogo">
+            <a href="../../index.html"><img src="../assets/icons/adminlogo.svg" alt=""></a>
+        </div>
         <div class="login-page">
             <div class="form">
                 <h1>Welcome Admin</h1>
@@ -54,7 +57,7 @@
                 <div class="main_content">
                     <div class="header">
                         <img src="../assets/icons/profile.svg" alt="">
-                        <p href="">Admin</p>
+                        <p class="adminName"> </p>
                     </div>
                     <div class="info" id="addBook">
                         <h1>Add Book</h1>
@@ -162,17 +165,10 @@
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Author</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td class="books-titles"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
 
@@ -201,15 +197,10 @@
     <script src="../js/admin.js"></script>
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        import { getDatabase, ref, set, get, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+    
         const firebaseConfig = {
             apiKey: "AIzaSyBU0sULZYB6-mZdPwFsWw-teB5STW0xBoc",
             authDomain: "bookstore-44df6.firebaseapp.com",
@@ -220,207 +211,179 @@
             appId: "1:520272877168:web:0245c151c6b0c41c62c6b5",
             measurementId: "G-WKRXPCNFEL"
         };
-        // Initialize Firebase
+    
         const app = initializeApp(firebaseConfig);
-        // const analytics = getAnalytics(app);
-
-        import { getDatabase, set, ref, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-        const db = getDatabase();
-        const booknameInp = document.querySelector(".bookName")
-        const authorInp = document.querySelector(".authorName")
-        const bookDate = document.querySelector(".bookDate")
-        const bookimgInp = document.querySelector(".bookImage")
-        const descriptInp = document.querySelector(".bookDesc")
-        const bookType = document.querySelector(".bookType")
-        const addBtn = document.querySelector(".formBtn")
-        const bookCat = document.querySelector("#bookCat")
-        const adminBtn = document.querySelector('.adminJoin')
-        const adminLogin = document.querySelector('.login-user').value
-        const adminPassword = document.querySelector('.login-password').value
-
-
         const auth = getAuth(app);
- 
-
-
-        function sendBooks() {
-            const id = generate_uuidv4();
-
-            set(ref(db, "books/" + id), {
-                name: booknameInp.value,
-                author: authorInp.value,
-                date: bookDate.value,
-                image: bookimgInp.value,
-                description: descriptInp.value,
-                type: bookType.value,
-                id: id,
-                category: bookCat.value
-
-            })
-                .then(successAlert("Perfect"))
-                .catch((err) => errorAlert("Error"));
-
-
-            if (selectedCategory) {
-
-                const bookCategory = selectedCategory.id;
-                const categoryRef = ref(db, "books/" + bookCategory + "/" + id);
-
-                set(categoryRef, {
-                    name: bookName,
-                    author: authorName,
-                    date: bookDate,
-                    image: bookImage,
-                    description: bookDesc,
-                    type: bookCategory,
+        const db = getDatabase(app);
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const adminLogin = document.querySelector('.login-user');
+            const adminPassword = document.querySelector('.login-password');
+            const loginButton = document.querySelector('.adminJoin');
+            const loginSection = document.querySelector('.admin-login');
+            const dashboardSection = document.querySelector('.admin-dashboard');
+            const adminNameElement = document.querySelector('.adminName');
+    
+            loginButton.addEventListener('click', function (event) {
+                event.preventDefault();
+    
+                const username = adminLogin.value.trim();
+                const password = adminPassword.value.trim();
+    
+                signInWithEmailAndPassword(auth, username, password)
+                    .then(() => {
+                        loginSection.style.display = 'none';
+                        dashboardSection.style.display = 'block';
+                        const displayName = username.split('@')[0];
+                        adminNameElement.innerHTML = `<p>${displayName}</p>`;
+                    })
+                    .catch(() => {
+                        alert('Invalid username or password');
+                    });
+            });
+    
+            const addBtn = document.querySelector('.formBtn');
+            addBtn.addEventListener('click', sendBooks);
+    
+            function sendBooks() {
+                const id = generate_uuidv4();
+                const bookData = {
+                    name: document.querySelector(".bookName").value,
+                    author: document.querySelector(".authorName").value,
+                    date: document.querySelector(".bookDate").value,
+                    image: document.querySelector(".bookImage").value,
+                    description: document.querySelector(".bookDesc").value,
+                    type: document.querySelector(".bookType").value,
                     id: id,
-                    category: bookCat.value
-                })
-                    .then(() => successAlert("Book added successfully"))
-                    .catch((err) => errorAlert("Error adding book: " + err));
-            } else {
-                errorAlert("Please select a category for the book.");
+                    category: document.querySelector("#bookCat").value,
+                    timestamp: new Date().toISOString()
+                };
+    
+                set(ref(db, "books/" + id), bookData)
+                    .then(() => alert("Book added successfully"))
+                    .catch(err => alert("Error: " + err));
             }
-        }
-
-
-        addBtn.addEventListener('click', sendBooks)
-        const titleInp = document.querySelector('.bookTitle')
-        const imgInp = document.querySelector('.userMail')
-        const descripInp = document.querySelector('.aboutDesc')
-        const aboutBtn = document.querySelector('.aboutBtn')
-        function InserData() {
-            const id = generate_uuidv4();
-            set(ref(db, 'aboutInfo/' + id), {
-                Title: titleInp.value,
-                Image: imgInp.value,
-                Description: descripInp.value,
-            })
-                .then(alert('Data Push for Fairbase'))
-                .catch(err => { alert(err) })
-        }
-        aboutBtn.addEventListener('click', InserData);
-        const joinTable = document.querySelector(".fixed_headers tbody")
-        function sendUser() {
-            get(ref(db, "JoinUs/"))
-                .then((data) => {
-                    const userData = data.val();
-                    if (userData) {
-                        joinTable.innerHTML = '';
-                        Object.values(userData).forEach((user, index) => {
-                            joinTable.innerHTML += `<tr>
-                                                <td>${index + 1}</td>
-                                                <td>${user.FullName}</td>
-                                                <td>${user.Email}</td>
-                                            </tr>`;
+    
+            function fetchBooks() {
+                onValue(ref(db, "books/"), (snapshot) => {
+                    const booksData = snapshot.val();
+                    const booksTableElement = document.querySelector(".books tbody");
+                    booksTableElement.innerHTML = '';
+                    if (booksData) {
+                        Object.values(booksData).forEach((book, index) => {
+                            const truncatedDescription = book.description.split(' ').slice(0, 30).join(' ') + (book.description.split(' ').length > 30 ? '...' : '');
+                            const truncatedName = book.name.split(' ').slice(0, 2).join(' ');
+    
+                            booksTableElement.innerHTML += `
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>
+                                    <img src="${book.image}" alt="${truncatedName}" class="book-thumbnail">
+                                    ${truncatedName}
+                                </td>
+                                <td>${truncatedDescription}</td>
+                                <td>${book.type}</td>
+                                <td>${book.author}</td>
+                                <td><button class="deleteBook" data-id="${book.id}">Delete</button></td>
+                            </tr>`;
+                        });
+    
+                        document.querySelectorAll('.deleteBook').forEach(button => {
+                            button.addEventListener('click', function () {
+                                const bookId = this.getAttribute('data-id');
+                                removeData(bookId);
+                            });
                         });
                     } else {
-                        console.log("No users found.");
+                        booksTableElement.innerHTML = '<tr><td colspan="6">No books found</td></tr>';
                     }
-                })
-                .catch((error) => {
-                    console.error("Error getting users:", error);
                 });
-        }
-        sendUser()
-        const booksTableElement = document.querySelector(".books tbody");
-
-        const contactUs = document.querySelector('#contactUs')
-        function ContactUsData() {
-            get(ref(db, 'ContactUs/'))
-                .then((snapshot) => {
-                    const data = snapshot.val();
-                    if (data) {
-                        Object.values(data).forEach((user, index) => {
-                            contactUs.innerHTML +=
-                                `
-                        <tr>
-                            <td>${index + 1}</td>
-                            <td>${user.Name}</td>
-                            <td>${user.Adress}</td>
-                            <td>${user.Email}</td>
-                            <td>${user.Phone}</td>
-                        </tr>
-                        `
-                        })
-                    } else {
-                        console.log('No Data');
-                    }
-                })
-                .catch(err => { alert(err) })
-        }
-        ContactUsData()
-
-        function fetchBooks() {
-            onValue(ref(db, "books/"), (snapshot) => {
-                const booksData = snapshot.val();
-                if (booksData) {
-                    booksTableElement.innerHTML = '';
-                    Object.values(booksData).forEach((book, index) => {
-                        const truncatedDescription = book.description.split(' ').slice(0, 30).join(' ') + (book.description.split(' ').length > 30 ? '...' : '');
-
-                        // Kitap adını en fazla iki kelimeye kısalt
-                        const truncatedName = book.name.split(' ').slice(0, 2).join(' ');
-
-                        booksTableElement.innerHTML += `
-                <tr>
-                    <td>${index + 1}</td>
-                    <td>
-                        <img src="${book.image}" alt="${truncatedName}" class="book-thumbnail">
-                        ${truncatedName}
-                    </td>
-                    <td>${truncatedDescription}</td>
-                    <td>${book.type}</td>
-                    <td>${book.author}</td>
-                </tr>`;
+            }
+    
+            function removeData(bookId) {
+                remove(ref(db, 'books/' + bookId))
+                    .then(() => fetchBooks())
+                    .catch(err => alert("Error: " + err.message));
+            }
+    
+            fetchBooks();
+    
+            const aboutBtn = document.querySelector('.aboutBtn');
+            aboutBtn.addEventListener('click', insertData);
+    
+            function insertData() {
+                const id = generate_uuidv4();
+                const aboutData = {
+                    Title: document.querySelector('.bookTitle').value,
+                    Image: document.querySelector('.userMail').value,
+                    Description: document.querySelector('.aboutDesc').value,
+                };
+    
+                set(ref(db, 'aboutInfo/' + id), aboutData)
+                    .then(() => alert('Data pushed to Firebase'))
+                    .catch(err => alert("Error: " + err));
+            }
+    
+            function sendUser() {
+                get(ref(db, "JoinUs/"))
+                    .then((data) => {
+                        const userData = data.val();
+                        const joinTable = document.querySelector(".join-us tbody");
+                        joinTable.innerHTML = '';
+                        if (userData) {
+                            Object.values(userData).forEach((user, index) => {
+                                joinTable.innerHTML += `<tr>
+                                    <td>${index + 1}</td>
+                                    <td>${user.FullName}</td>
+                                    <td>${user.Email}</td>
+                                </tr>`;
+                            });
+                        } else {
+                            console.log("No users found.");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error getting users:", error);
                     });
-                } else {
-                    console.log("Veri bulunamadı.");
-                }
-            }, (error) => {
-                console.error(error);
-            });
-        }
-        fetchBooks();
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('.login-form');
-    const usernameInput = document.querySelector('input[type="text"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-    const button = document.querySelector('button');
-    const login = document.querySelector('.admin-login')
-    const dashboard = document.querySelector('.admin-dashboard')
-
-    button.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
-
-        signInWithEmailAndPassword(auth, username, password)
-            .then(() => {
-                login.style.display = 'none';
-                dashboard.style.display = 'block';
-            })
-            .catch(() => {
-                alert('Invalid username or password');
-            });
-
-
-
-    });
-
-    passwordInput.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            button.click();
-        }
-    });
-});
-
-
+            }
+    
+            sendUser();
+    
+            function contactUsData() {
+                get(ref(db, 'ContactUs/'))
+                    .then((snapshot) => {
+                        const data = snapshot.val();
+                        const contactUs = document.querySelector('#contactUs');
+                        contactUs.innerHTML = '';
+                        if (data) {
+                            Object.values(data).forEach((user, index) => {
+                                contactUs.innerHTML += `
+                                    <tr>
+                                        <td>${index + 1}</td>
+                                        <td>${user.Name}</td>
+                                        <td>${user.Adress}</td>
+                                        <td>${user.Email}</td>
+                                        <td>${user.Phone}</td>
+                                    </tr>`;
+                            });
+                        } else {
+                            console.log('No Data');
+                        }
+                    })
+                    .catch(err => alert("Error: " + err));
+            }
+    
+            contactUsData();
+    
+            function generate_uuidv4() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+            }
+        });
     </script>
+    
 </body>
 
 </html>

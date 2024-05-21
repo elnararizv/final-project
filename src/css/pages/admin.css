@@ -59,7 +59,7 @@
     margin: 0 10px;
 }
 
-.wrapper .main_content . {
+.wrapper .main_content {
     margin: 20px;
     color: #000000;
     line-height: 25px;
@@ -394,4 +394,10 @@ body{
 .book-info {
     display: flex;
     align-items: center;
+}
+
+
+.adminLogo{
+    cursor: pointer;
+    margin: 24px 32px;
 }
