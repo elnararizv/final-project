@@ -79,8 +79,8 @@ searchInputButton.addEventListener("click", () => {
   if (query) {
     searchBook(query); 
     setTimeout(()=>{
-      nextBtn.style.display = "inline-block";
-      prevBtn.style.display = "inline-block";
+      // nextBtn.style.display = "inline-block";
+      // prevBtn.style.display = "inline-block";
   
     },1000) 
 

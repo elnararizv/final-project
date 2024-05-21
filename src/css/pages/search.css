@@ -106,6 +106,8 @@ body {
     height: auto;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
+    padding-left: 30px;
+    padding-top: 40px;
 }
 
 .card-body {
@@ -253,7 +255,7 @@ body {
 }
 
 .vector-icon {
-    display: none; /* Hide the image elements themselves */
+    display: none; 
 
 }
 
@@ -272,13 +274,13 @@ body {
     #nex {
         display: none;
     padding-top: 250px;
-    padding-right: 80px;
+    padding-right: 50px;
 
     }
 
     #pre {
         display: none;
       padding-top: 250px;
-      padding-left: 80px ;
+      padding-left: 50px ;
     }
 }
