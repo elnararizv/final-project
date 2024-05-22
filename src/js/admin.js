@@ -1,3 +1,239 @@
+// FireBase Setup------------------------------------------------------
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getDatabase, set, ref, get, child, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+//Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBU0sULZYB6-mZdPwFsWw-teB5STW0xBoc",
+    authDomain: "bookstore-44df6.firebaseapp.com",
+    databaseURL: "https://bookstore-44df6-default-rtdb.firebaseio.com",
+    projectId: "bookstore-44df6",
+    storageBucket: "bookstore-44df6.appspot.com",
+    messagingSenderId: "520272877168",
+    appId: "1:520272877168:web:0245c151c6b0c41c62c6b5",
+    measurementId: "G-WKRXPCNFEL"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+
+// Generate a UUID (version 4)
+function generate_uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+// Show success alert
+function successAlert(message) {
+    const modal = document.getElementById("myModal");
+    const modalMessage = document.getElementById("modalMessage");
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 50000);
+}
+
+// Show error alert
+function errorAlert(message) {
+    const modal = document.getElementById("myModal");
+    const modalMessage = document.getElementById("modalMessage");
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 50000);
+}
+
+// Login functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('.login-form');
+    const usernameInput = document.querySelector('input[type="text"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const button = document.querySelector('.adminJoin');
+    const login = document.querySelector('.admin-login');
+    const dashboard = document.querySelector('.panel');
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        signInWithEmailAndPassword(auth, username, password)
+            .then(() => {
+                login.style.display = 'none';
+                dashboard.style.display = 'block';
+                dashboard.style.display = 'flex';
+            })
+            .catch(() => {
+                alert('Invalid username or password');
+            });
+    });
+
+    passwordInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            button.click();
+        }
+    });
+});
+
+// Add Book functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const booknameInp = document.querySelector(".bookName");
+    const authorInp = document.querySelector(".authorName");
+    const bookDate = document.querySelector(".bookDate");
+    const bookimgInp = document.querySelector(".bookImage");
+    const descriptInp = document.querySelector(".bookDesc");
+    const bookType = document.querySelector(".bookType");
+    const addBtn = document.querySelector(".formBtn");
+    const bookCat = document.querySelector("#bookCat");
+    const bookTable = document.querySelector("#bookTable tbody");
+
+    function truncateDescription(description, wordLimit) {
+        const words = description.split(' ');
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(' ') + '...';
+        }
+        return description;
+    }
+
+    function sendBooks() {
+        const id = generate_uuidv4();
+        const timestamp = new Date().toISOString();
+
+        set(ref(db, "books/" + id), {
+            name: booknameInp.value,
+            author: authorInp.value,
+            date: bookDate.value,
+            image: bookimgInp.value,
+            description: descriptInp.value,
+            type: bookType.value,
+            id: id,
+            category: bookCat.value,
+            addedAt: timestamp
+        })
+            .then(() => {
+                successAlert("Book added successfully");
+                fetchBooks();
+            })
+            .catch((err) => errorAlert("Error adding book: " + err));
+
+        function clearInputAndHistory() {
+            // Clear input values
+            bookNameInput.value = '';
+            authorNameInput.value = '';
+            bookDateInput.value = '';
+            bookImageInput.value = '';
+            bookDescInput.value = '';
+            bookTypeInput.value = '';
+
+            // Hide history
+            historyContainer.innerHTML = '';
+            historyContainer.style.display = 'none';
+        }
+        clearInputAndHistory()
+    }
+
+    function fetchBooks() {
+        const dbRef = ref(db);
+        get(child(dbRef, `books/`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                const books = snapshot.val();
+                bookTable.innerHTML = "";
+                Object.keys(books).forEach((key, index) => {
+                    const book = books[key];
+                    const row = bookTable.insertRow();
+                    row.insertCell(0).textContent = index + 1;
+                    const imgCell = row.insertCell(1);
+                    const img = document.createElement("img");
+                    img.src = book.image;
+                    img.alt = book.name;
+                    imgCell.appendChild(img);
+                    row.insertCell(2).textContent = book.name;
+                    row.insertCell(3).textContent = truncateDescription(book.description, 30);
+                    row.insertCell(4).textContent = book.category;
+                    row.insertCell(5).textContent = book.author;
+                    const removeCell = row.insertCell(6);
+                    const removeButton = document.createElement("button");
+                    removeButton.textContent = "Remove";
+                    removeButton.classList.add("remove-button");
+                    removeButton.addEventListener("click", function () {
+                        removeBook(book.id);
+                    });
+                    removeCell.appendChild(removeButton);
+                });
+            } else {
+                bookTable.innerHTML = "<tr><td colspan='7'>No books available</td></tr>";
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+
+    function removeBook(id) {
+        remove(ref(db, 'books/' + id))
+            .then(() => {
+                successAlert("Book removed successfully");
+                fetchBooks();
+            })
+            .catch((error) => {
+                errorAlert("Error removing book: " + error);
+            });
+    }
+
+    addBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        sendBooks();
+    });
+
+    // Fetch books when the page loads
+    fetchBooks();
+});
+
+// Add About Info 
+document.addEventListener("DOMContentLoaded", function () {
+    const titleInp = document.querySelector('.bookTitle');
+    const imgInp = document.querySelector('.userMail');
+    const descripInp = document.querySelector('.aboutDesc');
+    const aboutBtn = document.querySelector('.aboutBtn');
+
+    aboutBtn.addEventListener('click', function () {
+        const title = titleInp.value.trim();
+        const imgUrl = imgInp.value.trim();
+        const description = descripInp.value.trim();
+
+        addAboutInfo(title, imgUrl, description);
+    });
+
+
+    function addAboutInfo(title, imgUrl, description) {
+        const id = generate_uuidv4();
+        set(ref(db, 'aboutInfo/' + id), {
+            Title: title,
+            Image: imgUrl,
+            Description: description,
+        })
+            .then(() => {
+                successAlert('About info added successfully');
+                titleInp.value = '';
+                imgInp.value = '';
+                descripInp.value = '';
+            })
+            .catch((error) => {
+                errorAlert('Error adding about info: ' + error);
+            });
+    }
+});
+
+
 //Google Api++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const searchBookInput = document.querySelector('.search-input')
 const searchBookbtn = document.querySelector('.src-btn')
@@ -91,41 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-//Modal
-document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById("myModal");
-    var btn = document.querySelector(".formBtn");
-    var span = document.getElementsByClassName("close")[0];
-    var message = document.getElementById("modalMessage");
-    btn.onclick = function () {
-        var bookName = document.querySelector(".bookName").value;
-        var authorName = document.querySelector(".authorName").value;
-        var bookDate = document.querySelector(".bookDate").value;
-        var bookImage = document.querySelector(".bookImage").value;
-        var bookDesc = document.querySelector(".bookDesc").value;
-        var bookType = document.querySelector(".bookType").value;
-        message.innerHTML = `
-            <strong>Book Name:</strong> ${bookName}<br>
-            <strong>Author Name:</strong> ${authorName}<br>
-            <strong>Release Date:</strong> ${bookDate}<br>
-            <strong>Book Image URL:</strong> ${bookImage}<br>
-            <strong>Description:</strong> ${bookDesc}<br>
-            <strong>Book Type:</strong> ${bookType}
-        `;
-        modal.style.display = "block";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-});
-
-
 //Sidebar Scroll 
 document.addEventListener("DOMContentLoaded", function () {
     const menuItems = document.querySelectorAll('.menu li a');
@@ -187,3 +388,94 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+//Modal
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById("myModal");
+    var btn = document.querySelector(".formBtn");
+    var span = document.getElementsByClassName("close")[0];
+    var message = document.getElementById("modalMessage");
+    btn.onclick = function () {
+        var bookName = document.querySelector(".bookName").value;
+        var authorName = document.querySelector(".authorName").value;
+        var bookDate = document.querySelector(".bookDate").value;
+        var bookImage = document.querySelector(".bookImage").value;
+        var bookDesc = document.querySelector(".bookDesc").value;
+        var bookType = document.querySelector(".bookType").value;
+        message.innerHTML = `
+            <strong>Book Name:</strong> ${bookName}<br>
+            <strong>Author Name:</strong> ${authorName}<br>
+            <strong>Release Date:</strong> ${bookDate}<br>
+            <strong>Book Image URL:</strong> ${bookImage}<br>
+            <strong>Description:</strong> ${bookDesc}<br>
+            <strong>Book Type:</strong> ${bookType}
+        `;
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+
+
+//Join Us
+const joinTable = document.querySelector("#joinUsTable tbody")
+function sendUser() {
+    get(ref(db, "JoinUs/"))
+        .then((data) => {
+            const userData = data.val();
+            if (userData) {
+                joinTable.innerHTML = '';
+                Object.values(userData).forEach((user, index) => {
+                    joinTable.innerHTML += `<tr>
+                                                <td>${index + 1}</td>
+                                                <td>${user.FullName}</td>
+                                                <td>${user.Email}</td>
+                                            </tr>`;
+                });
+            } else {
+                console.log("No users found.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error getting users:", error);
+        });
+}
+sendUser()
+
+
+
+//Contact Us 
+const contactUs = document.querySelector('#contactUs')
+function ContactUsData() {
+    get(ref(db, 'ContactUs/'))
+        .then((snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                Object.values(data).forEach((user, index) => {
+                    contactUs.innerHTML +=
+                        `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${user.Name}</td>
+                    <td>${user.Adress}</td>
+                    <td>${user.Email}</td>
+                    <td>${user.Phone}</td>
+                </tr>
+                `
+                })
+            } else {
+                console.log('No Data');
+            }
+        })
+        .catch(err => { alert(err) })
+}
+ContactUsData()
+
