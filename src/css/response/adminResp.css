@@ -1,177 +1,121 @@
-@media only screen and (min-width: 567px) {
-    .admin-header {
+@media (max-width: 540px) {
+
+    /* Header */
+    .admin-logo {
+        top: 10px;
+        left: 10px;
+    }
+
+    .admin-logo img {
+        width: 200px;
+        height: auto;
+    }
+
+    .login-page {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .adminJoin {
+        padding: 10px;
+        margin: 20px 0 0 0;
+        font-size: 14px;
+    }
+
+    /* Admin Login */
+    .header {
         display: none;
     }
 
-    .header , .search{
-        margin-left: 300px;
+    .side-bar {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .dashboard {
+        padding-left: 0;
+    }
+
+    .panel {
+        flex-direction: column;
+    }
+
+    .side-bar {
+        width: 100%;
+        height: 100%;
     }
 
     .book-form,
-    .about-store,
-    .join-us,
-    .books,
-    .contact-us {
-        margin-left: 300px;
-    }
-}
-
-
-
-@media only screen and (max-width: 567px) {
-
-    .sidebar {
-        display: none; 
-        height: 100%;
-        width: 10rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 80px;
+    .about-store {
+        margin-left: 0 20px;
     }
 
-    .show-sidebar{
-        display: none;
+    .about-store h2 {
+        margin: 4rem 0 0 0;
     }
-    
-    .sidebar a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
+
+    /* Table */
+    .dash-table {
+        margin: 4rem 20px;
+    }
+
+    .content,
+    .book-form,
+    .about-store {
+        margin: 0 20px;
+    }
+
+    .mobile-header {
         display: block;
-        transition: 0.3s;
+        margin: 20px 0 0 20px;
     }
+
+    .search-area input {
+        width: 320px;
+    }
+
+
+    /* Burger Menu */
+
+        .mobile-logo{
+            width: 170px;
+            margin-bottom: 2rem;
+        }
     
-    .sidebar a:hover {
-        color: #f1f1f1;
-    }
-    
-    .show-sidebar {
-        display: block;
-        width: 100%;
-    }
+        .burger-menu {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
 
-    .sidebar li{
-        height: 80px;
-    }
-    
+        .burger-close {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
 
-    .admin-header {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        margin-left: 20px;
-    }
+        .side-bar {
+            display: none;
+            height: 110vh;
+        }
 
-    .admin-header .burger-menu {
-        width: 30px;
-        height: 30px;
-    }
+        .dashboard {
+            padding-left: 0;
+        }
 
-    .header {
-        display: none !important;
-    }
+        .panel {
+            flex-direction: column;
+        }
 
-    .searching .input{
-        width: 70% !important;
-    }
-
-    .wrapper {
-        margin: 0;
-        padding: 0;
-    }
-
-    .wrapper .main_content {
-        margin: 0;
-        padding: 20px;
-        width: 100%;
-    }
-
-    .wrapper .main_content .info h1 {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    }
-
-    .wrapper .main_content .info h2 {
-        font-size: 1.2rem;
-        margin: 1rem 0;
-    }
-
-    .searching {
-        display: flex;
-        align-items: center;
-    }
-
-    .wrapper .main_content .info .search .input {
-        width: calc(100% - 50px);
-        margin-right: 10px;
-    }
-
-    .lupa:hover {
-        background-color: #bdb8d7;
-       
-    }
-
-    .history {
-        max-width: 70%;
-    }
-
-    .form-container {
-        width: 50%;
-        padding: 10px;
-    }
-
-    .book-form h2,
-    .about-store h2,
-    .join-us h2,
-    .books h2,
-    .contact-us h2 {
-        font-size: 1.2rem;
-        margin: 20px 0;
-    }
-
-    .book-form ,
-    .about-store ,
-    .join-us ,
-    .books ,
-    .contact-us {
-        margin: 20px 23px;
-    }
-
-    .fixed_headers {
-        width: 100%;
-    }
-
-    .fixed_headers th,
-    .fixed_headers td {
-        padding: 8px;
-        width: 30%;
-    }
-
-    button {
-        width: 100%;
-        font-size: 1rem;
-        margin-top: 10px;
-    }
-
-    .tables{
-        width: 60% !important;
-    }
-
-    .tables-datas{
-        width: 50% !important;
-    }
-
-    .td-none, .actions .deleteBook{
-       display: none !important;
-    }
-
-    .form-container{
-        width: 90%;
-    }
 }

@@ -1,11 +1,11 @@
-let searchBookInput = document.querySelector('.input');
-let searchBookbtn = document.querySelector('#searching');
-let historyContainer = document.querySelector('.history');
+//Google Api++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const searchBookInput = document.querySelector('.search-input')
+const searchBookbtn = document.querySelector('.src-btn')
+const historyContainer = document.querySelector('.history')
+
 searchBookbtn.addEventListener('click', function () {
-    
     let searchQuery = searchBookInput.value.trim();
     historyContainer.style.display = 'block';
-
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
         .then(response => response.json())
         .then(data => {
@@ -21,15 +21,22 @@ searchBookbtn.addEventListener('click', function () {
                     const bookElement = document.createElement('div');
                     bookElement.classList.add('book-info');
                     bookElement.innerHTML = `
-                       <p style="cursor: pointer;"><strong>Title:</strong> ${title}</p>
-                    `;
+                        <div class="book-info">
+                            <img src="${imageLink}" alt="Book Cover">
+                            <div>
+                            <p><strong>Title:</strong> ${title}</p>
+                            <p><strong>Author:</strong> ${authors}</p>
+                            </div>
+                        </div> `;
+
                     bookElement.addEventListener('click', function () {
                         document.querySelector('.bookName').value = title;
                         document.querySelector('.authorName').value = authors;
+                        document.querySelector('.bookDate').value = volumeInfo.publishedDate;
                         document.querySelector('.bookImage').value = imageLink;
                         document.querySelector('.bookDesc').value = description;
                         document.querySelector('.bookType').value = categories;
-                        document.querySelector('.bookDate').value = volumeInfo.publishedDate;
+
                     });
                     historyContainer.appendChild(bookElement);
                 });
@@ -43,63 +50,49 @@ searchBookbtn.addEventListener('click', function () {
             console.error('Error fetching data:', error);
         });
 });
-function generate_uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-        function (c) {
-            const uuid = Math.random() * 16 | 0;
-            const v = c == 'x' ? uuid : (uuid & 0x3 | 0x8);
-            return v.toString(16);
-        });
-}
-let bookform = document.querySelector('.book-form');
-let aboutStore = document.querySelector('.about-store');
-let joinUs = document.querySelector('.join-us');
-let books = document.querySelector('.books');
-let contactUs = document.querySelector('.contact-us');
-let header = document.querySelector('.header');
-let info = document.querySelector('.info');
 
-document.addEventListener("DOMContentLoaded", function () {
-    var burgerMenu = document.querySelector(".burger-menu");
-    var sidebar = document.querySelector(".sidebar");
-    var dashboard = document.querySelector(".admin-dashboard")
-    burgerMenu.addEventListener("click", function () {
-        sidebar.classList.toggle("show-sidebar");
-        if (sidebar.classList.contains("show-sidebar")) {
-            bookform.style.display = "none";
-            aboutStore.style.display = "none";
-            joinUs.style.display = "none";
-            books.style.display = "none";
-            contactUs.style.display = "none";
-            header.style.display = "none";
-            info.style.display = "none";
-            dashboard.style.background.color = "red"
 
-        } else {
-            bookform.style.display = "block";
-            aboutStore.style.display = "block";
-            joinUs.style.display = "block";
-            books.style.display = "block";
-            contactUs.style.display = "block";
-            header.style.display = "block";
-            info.style.display = "block";
-        }
+
+
+// Burger Menu +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+document.addEventListener('DOMContentLoaded', function () {
+    const contentDash = document.querySelector('.content')
+    const bookForm = document.querySelector('.book-form')
+    const aboutStore = document.querySelector('.about-store')
+    const dashTables = document.querySelector('.dash-table')
+    const sidebar = document.getElementById('sidebar')
+    const burgerMenu = document.getElementById('burgerMenu')
+    const burgerClose = document.querySelector('.burger-close')
+    const mobileLogo = document.querySelector('.mobile-logo')
+
+    burgerClose.style.display = 'none';
+
+    burgerMenu.addEventListener('click', function () {
+        sidebar.style.display = 'block'
+        burgerMenu.style.display = 'none'
+        burgerClose.style.display = 'block'
+        contentDash.style.display = 'none'
+        bookForm.style.display = 'none'
+        aboutStore.style.display = 'none'
+        dashTables.style.display = 'none'
+        mobileLogo.style.display = 'none'
     });
-});
 
-document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+    burgerClose.addEventListener('click', function () {
+        sidebar.style.display = 'none'
+        burgerMenu.style.display = 'block'
+        burgerClose.style.display = 'none'
+        contentDash.style.display = 'block'
+        bookForm.style.display = 'block'
+        aboutStore.style.display = 'block'
+        dashTables.style.display = 'block'
+        mobileLogo.style.display = 'block'
     });
+
 });
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Modal
 
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById("myModal");
@@ -109,14 +102,14 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.onclick = function () {
         var bookName = document.querySelector(".bookName").value;
         var authorName = document.querySelector(".authorName").value;
-        var bookDAte = document.querySelector(".bookDate").value;
+        var bookDate = document.querySelector(".bookDate").value;
         var bookImage = document.querySelector(".bookImage").value;
         var bookDesc = document.querySelector(".bookDesc").value;
         var bookType = document.querySelector(".bookType").value;
         message.innerHTML = `
             <strong>Book Name:</strong> ${bookName}<br>
             <strong>Author Name:</strong> ${authorName}<br>
-            <strong>Release Date:</strong> ${bookDAte}<br>
+            <strong>Release Date:</strong> ${bookDate}<br>
             <strong>Book Image URL:</strong> ${bookImage}<br>
             <strong>Description:</strong> ${bookDesc}<br>
             <strong>Book Type:</strong> ${bookType}
@@ -131,17 +124,5 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = "none";
         }
     }
-});
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const link = this.querySelector('a');
-            if (link) {
-                link.click();
-            }
-        });
-    });
 });
 
