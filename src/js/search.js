@@ -58,10 +58,11 @@ function searchBook(query) {
           }
         });
         if (!found) {
-          searchCard.innerHTML = "<p class='text-center'>No results found</p>";
+          searchCard.innerHTML = "<p class='text-center-error'>Ohh, sorry. Unfortunately, there is no book with this name :(</p>";
           nextBtn.style.display = "none";
           prevBtn.style.display = "none";
         } else {
+          
           nextBtn.style.display = "inline-block";
           prevBtn.style.display = "inline-block";
         }
@@ -81,6 +82,7 @@ searchInputButton.addEventListener("click", () => {
     setTimeout(()=>{
       // nextBtn.style.display = "inline-block";
       // prevBtn.style.display = "inline-block";
+      
   
     },1000) 
 
