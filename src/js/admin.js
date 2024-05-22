@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //Modal
-
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById("myModal");
     var btn = document.querySelector(".formBtn");
@@ -126,3 +125,65 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+//Sidebar Scroll 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll('.menu li a');
+    const logoutBtn = document.querySelector('a[href="#logout"]');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').slice(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                smoothScrollTo(targetElement);
+            }
+        });
+    });
+
+    logoutBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        location.reload();
+    });
+
+    function smoothScrollTo(target) {
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000;
+        let start = null;
+
+        window.requestAnimationFrame(step);
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            window.scrollTo(0, easeInOutQuad(progress, startPosition, distance, duration));
+            if (progress < duration) window.requestAnimationFrame(step);
+        }
+
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebarLinks = document.querySelectorAll('.menu a');
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});

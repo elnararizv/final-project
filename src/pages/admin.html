@@ -45,12 +45,12 @@
             <div class="side-bar" id="sidebar">
                 <ul class="menu">
                     <img class="logo" src="../assets/icons/adminlogo.svg" alt="Logo">
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">Home</a></li>
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">Books</a></li>
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">About</a></li>
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">Join Us</a></li>
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">Contact</a></li>
-                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#">Logout</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#home">Home</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#books">Books</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#about">About</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#join">Join Us</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#contact">Contact</a></li>
+                    <li> <img src="../assets/icons/group.svg" alt=""> <a href="#logout">Logout</a></li>
                 </ul>
             </div>
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- Search Book-->
-                <div class="content">
+                <div class="content" id="home">
                     <h2>Add Book</h2>
                     <h3>Search Book</h3>
                     <div class="search-area">
@@ -131,7 +131,7 @@
 
                 <!-- About Store -->
                 <div class="about-store" id="aboutStore">
-                    <h2>About Store</h2>
+                    <h2 id="about">About Store</h2>
                     <div class="form-container">
                         <form autocomplete="off">
                             <label for="townborn">Title</label>
@@ -146,7 +146,7 @@
                 </div>
 
                 <!-- Join US Table -->
-                <div class="dash-table">
+                <div class="dash-table" id="join">
                     <h2>Join Us</h2>
                     <table class="join-us-table" id="joinUsTable">
                         <thead>
@@ -166,7 +166,7 @@
                     </table>
 
                     <!-- Books Table -->
-                    <div class="dash-tables">
+                    <div class="dash-tables" id="books">
                         <h2>Books</h2>
                         <table class="book-table" id="bookTable">
                             <thead>
@@ -195,9 +195,9 @@
                     </div>
 
                     <!-- Contact Us Table -->
-                    <div class="dash-tables">
+                    <div class="dash-tables" id="contact">
                         <h2>Contact Us</h2>
-                        <table class="contact-table" id="contactTable">
+                        <table class="contact-table" id="contactUs">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -410,6 +410,43 @@
             // Fetch books when the page loads
             fetchBooks();
         });
+
+        // Add About Info 
+        document.addEventListener("DOMContentLoaded", function () {
+            const titleInp = document.querySelector('.bookTitle');
+            const imgInp = document.querySelector('.userMail');
+            const descripInp = document.querySelector('.aboutDesc');
+            const aboutBtn = document.querySelector('.aboutBtn');
+
+            aboutBtn.addEventListener('click', function () {
+                const title = titleInp.value.trim();
+                const imgUrl = imgInp.value.trim();
+                const description = descripInp.value.trim();
+
+                addAboutInfo(title, imgUrl, description);
+            });
+
+
+            function addAboutInfo(title, imgUrl, description) {
+                const id = generate_uuidv4();
+                set(ref(db, 'aboutInfo/' + id), {
+                    Title: title,
+                    Image: imgUrl,
+                    Description: description,
+                })
+                    .then(() => {
+                        successAlert('About info added successfully');
+                        titleInp.value = '';
+                        imgInp.value = '';
+                        descripInp.value = '';
+                    })
+                    .catch((error) => {
+                        errorAlert('Error adding about info: ' + error);
+                    });
+            }
+        });
+
+
     </script>
 </body>
 
