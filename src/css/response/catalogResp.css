@@ -48,16 +48,46 @@
       flex-shrink: 0;
       width: 281px;
     }
-    .category{
-      width: 80%;
-      display: flex;
-      align-items: flex-start;
-      width: 290px;
+    #kids{
+      display: none;
     }
-
     .splide{
       width: 50%;
       margin-left: 20%;
     }
+    .allBtn{
+      margin-left: 60px;
+    }
+    #load1{
+      margin-left: 190px;
+    }
+    #load2{
+      margin-left: 190px;
+    }
+    #load3{
+      margin-left: 190px;
+    }
+    #splide1{
+      margin-left: 135px;
+    }
+    #splide2{
+      margin-left: 135px;
+    }
+    #splide3{
+      margin-left: 135px;
+    }
+    #splide4{
+      margin-left: 135px;
+    }
+    #splide5{
+      margin-left: 135px;
+    }
+    #splide6{
+      margin-left: 135px;
+    }
+    #splide7{
+      margin-left: 135px;
+    }
+
   }
   

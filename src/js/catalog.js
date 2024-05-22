@@ -565,36 +565,3 @@ const loader2 = document.querySelector('#load2')
 const loader3 = document.querySelector('#load3')
 
 
-//----------------------------------------------- No Cansole
-
-// document.addEventListener('contextmenu', function(event) {
-//     event.preventDefault();
-// });
-
-// document.addEventListener('keydown', function(event) {
-//     // F12
-//     if (event.keyCode === 123) {
-//         event.preventDefault();
-//     }
-//     // Ctrl+Shift+I
-//     if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
-//         event.preventDefault();
-//     }
-//     // Ctrl+Shift+J
-//     if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
-//         event.preventDefault();
-//     }
-//     // Ctrl+U
-//     if (event.ctrlKey && event.keyCode === 85) {
-//         event.preventDefault();
-//     }
-//     // Ctrl+Shift+C (для вкладки Elements в DevTools)
-//     if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-//         event.preventDefault();
-//     }
-// });
-
-// // Отключение методов console
-// console.log = function() {};
-// console.warn = function() {};
-// console.error = function() {};
