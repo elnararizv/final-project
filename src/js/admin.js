@@ -2,8 +2,10 @@ let searchBookInput = document.querySelector('.input');
 let searchBookbtn = document.querySelector('#searching');
 let historyContainer = document.querySelector('.history');
 searchBookbtn.addEventListener('click', function () {
+    
     let searchQuery = searchBookInput.value.trim();
     historyContainer.style.display = 'block';
+
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
         .then(response => response.json())
         .then(data => {
@@ -56,9 +58,11 @@ let books = document.querySelector('.books');
 let contactUs = document.querySelector('.contact-us');
 let header = document.querySelector('.header');
 let info = document.querySelector('.info');
+
 document.addEventListener("DOMContentLoaded", function () {
     var burgerMenu = document.querySelector(".burger-menu");
     var sidebar = document.querySelector(".sidebar");
+    var dashboard = document.querySelector(".admin-dashboard")
     burgerMenu.addEventListener("click", function () {
         sidebar.classList.toggle("show-sidebar");
         if (sidebar.classList.contains("show-sidebar")) {
@@ -69,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
             contactUs.style.display = "none";
             header.style.display = "none";
             info.style.display = "none";
+            dashboard.style.background.color = "red"
+
         } else {
             bookform.style.display = "block";
             aboutStore.style.display = "block";
@@ -80,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -93,6 +100,7 @@ document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById("myModal");
     var btn = document.querySelector(".formBtn");
@@ -128,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', (event) => {
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             const link = this.querySelector('a');
             if (link) {
                 link.click();
