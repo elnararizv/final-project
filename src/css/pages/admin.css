@@ -1,0 +1,403 @@
+.admin-dashboard {
+    background-color: #fffaf5;
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar {
+    width: 280px;
+    height: 100%;
+    background: #720418;
+    padding: 30px 0px;
+    position: fixed;
+}
+
+.sidebar .logo {
+    margin: 20px;
+}
+
+.wrapper .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+}
+
+.wrapper .sidebar ul li a {
+    color: #ffffff;
+    margin: 10px 20px;
+}
+
+.wrapper .sidebar ul li:hover {
+    background-color: #594f8d;
+}
+
+.wrapper .sidebar ul li:hover a {
+    color: #ffffff;
+}
+
+.wrapper .sidebar .social_media {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.wrapper .main_content .header {
+    margin: 2rem;
+    display: flex;
+    justify-content: end;
+}
+
+.wrapper .main_content .header p {
+    margin: 0 10px;
+}
+
+.wrapper .main_content {
+    margin: 20px;
+    color: #000000;
+    line-height: 25px;
+}
+
+.info h1{
+    margin-left: 300px !important;
+}
+
+.wrapper .main_content .info h1 {
+    margin: 3rem 0;
+}
+
+.wrapper .main_content .info div {
+    margin-bottom: 20px;
+}
+
+.search h2 {
+    margin: 20px 0;
+}
+
+.search .searching {
+    display: flex;
+}
+
+.search .searching .lupa {
+    border: 1px solid #fe9c22;
+    background-color: #fe9c22;
+    padding: 9px 21px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.search .searching .lupa:hover {
+    background-color: #8B0000;
+}
+
+.book-form h2 {
+    margin: 50px 0 0 8px;
+}
+
+.book-form input {
+    color: #000000;
+}
+
+.book-form .formBtn {
+    cursor: pointer;
+}
+
+.about-store h2 {
+    margin: 50px 0 0 8px;
+}
+
+.about-store input {
+    color: #000000;
+}
+
+.about-store .aboutBtn {
+    cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+.about-store .aboutBtns {
+    cursor: pointer;
+}
+
+.wrapper .main_content .info .search .input {
+    width: 395px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 0 5px;
+    color: #000000;
+}
+
+.history {
+    display: none;
+    padding: 15px;
+    overflow: auto;
+    max-height: 80px;
+    max-width: 388px;
+    margin: 10px 10px;
+    border: 1px solid #F1F0F0;
+    background-color: #F1F0F0;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+div.row {
+    display: flex;
+}
+
+div.row input:nth-child(2) {
+    margin-left: 5px;
+}
+
+div.form-container {
+    align-items: left;
+    max-width: 70%;
+    border: 1px solid rgb(241, 245, 246);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 30px;
+    padding: 1%;
+    margin-top: 5%;
+    border-radius: 15px;
+}
+
+input {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 12px 19px;
+    border: 1px solid rgb(211, 221, 225);
+    border-radius: 4px;
+    box-shadow: 0px 4px 18px 0px #9EA8BD4F;
+    background-color: rgb(255, 255, 255);
+    color: rgb(208, 208, 208);
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+button {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #fe9c22;
+    height: 38px;
+    padding: 0px 19px;
+    border: 0;
+    border-radius: 4px;
+    line-height: 1;
+    user-select: none;
+    transition-duration: 200ms;
+    transition-property: color, background-color;
+    transition-timing-function: ease-in-out;
+}
+
+.join-us {
+    margin: 5rem 5px;
+}
+
+.books {
+    margin: 5rem 5px;
+}
+
+.contact-us {
+    margin: 5rem 5px;
+}
+
+.fixed_headers th,
+.fixed_headers td {
+    padding: 10px;
+    text-align: left;
+}
+
+.fixed_headers th {
+    background-color: #8B0000;
+    border: 1px solid white;
+    color: white;
+    border-bottom: #F1F0F0;
+}
+
+.fixed_headers td {
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #F1F0F0;
+    border: 1px solid white;
+}
+
+.fixed_headers {
+    border-collapse: collapse;
+    border: 2px solid #ffffff;
+    width: 70%;
+}
+
+.fixed_headers tbody tr:hover {
+    background-color: #382727;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+    gap: 55px;
+    margin-top: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input {
+    margin-right: 5px;
+}
+
+.checkbox-label{
+    width: 100%;
+}
+
+.book-form select {
+    width: 100%;
+    margin: 20px 0;
+    padding: 12px 19px;
+    border: 1px solid rgb(211, 221, 225);
+    border-radius: 4px;
+    box-shadow: 0px 4px 18px 0px #9EA8BD4F;
+    background-color: rgb(255, 255, 255);
+    color: rgb(208, 208, 208);
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    color: black;
+}
+
+
+.book-form select option {
+    color: black;
+    background-color: white;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body{
+    background-color: #720418;
+}
+
+.login-user{
+    color: #000000;
+}
+
+.login-password{
+    color: #000000;
+}
+
+.logos img{
+    width: 282.59px;
+    height: 85.04;
+    margin: 45px 0 0 32px;
+}
+
+.login-page {
+  width: 662px;
+  margin: 100px  auto 0;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 462px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form h1{
+    margin: 20px auto;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #ffffff;
+  width: 100%;
+  border: 1px solid gray;
+  margin: 10px auto;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin: 40px 0 0 0; 
+  outline: 0;
+  background: #E16A00;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.book-thumbnail {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.books-titles{
+    width: 200px;
+}
+
+.book-info {
+    display: flex;
+    align-items: center;
+}
+
+
+.adminLogo{
+    cursor: pointer;
+    margin: 24px 32px;
+}

@@ -5,10 +5,14 @@ body {
 .searchMain {
     margin-top: 100px;
     margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .searchLeftContainer {
-    padding-left: 130px;
+    padding-left: 0px;
 }
 
 .searchText {
@@ -17,7 +21,8 @@ body {
     font-family: sans-serif;
     font-weight: 700;
     line-height: 70.63px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    padding-left: 20px;
 }
 
 .searchText h1 {
@@ -29,8 +34,11 @@ body {
 .searchInputButton {
     display: flex;
     flex-direction: column;
-    width: 84.58%;
     margin-top: 45px;
+}
+
+#searchBtn {
+    width: 300px;
 }
 
 .searchInputButton input {
@@ -45,23 +53,21 @@ body {
     padding-left: 27px;
     border: 1px solid #CECECE;
     border-radius: 5px;
-
 }
 
-.searchInputButton ::placeholder {
+.searchInputButton::placeholder {
     color: #241400;
     font-size: 19px;
-    font-family: Crimson Text;
+    font-family: 'Crimson Text';
     font-weight: 200;
-    word-wrap: break-word
+    word-wrap: break-word;
 }
 
 .searchInputButton button {
     margin-top: 45px;
     height: 60px;
     width: 360px;
-    background-color:
-        #E16A00;
+    background-color: #E16A00;
     border: none;
     cursor: pointer;
     font-size: 30px;
@@ -75,72 +81,204 @@ body {
     opacity: 0.8;
 }
 
-.searchMain {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-
 .searchAboutBook {
     width: 50%;
     position: relative;
+    padding-top: 70px;
 }
 
 .card {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    padding-bottom: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.insideCard {
-    display: flex !important;
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
 }
 
-.insideCard div:first-child {
-    margin-top: 65px;
-    width: 200px;
-    margin-left: 30px;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
 }
 
-.bookText {
-    margin-top: 65px;
-    margin-left: 35px;
-    margin-right: 30px;
-}
-
-.bookText h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 47px;
-    letter-spacing: 0em;
-
+.card-title {
+    margin: 10px 0;
     color: #241400;
-
+    font-size: 1.5em;
 }
 
-.bookText h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 19px;
-    font-weight: lighter;
-    line-height: 35px;
-    letter-spacing: 0em;
+.card-subtitle {
+    margin: 0 0 10px;
     color: #4b4137;
+    font-size: 1.2em;
+}
+
+.card-text {
+    margin: 0 0 10px;
+    color: #120a00;
+    white-space: wrap;
+    overflow: hidden;
+    width: 350px;
+    font-size: 1em;
+}
+
+.vector-icon {
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 46px;
+    object-fit: contain;
+    }
+
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        max-width: 750px;
+        height: 500px;
+    }
+
+    .card img {
+        width: 200px;
+        height: 300px;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .insideCard {
+        display: flex !important;
+    }
+
+    .insideCard div:first-child {
+        margin-top: 65px;
+        width: 200px;
+        margin-left: 30px;
+    }
+
+    .bookText {
+        margin-top: 65px;
+        margin-left: 35px;
+        margin-right: 30px;
+    }
+
+    .bookText h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 47px;
+        letter-spacing: 0em;
+        color: #241400;
+    }
+
+    .bookText h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 19px;
+        font-weight: lighter;
+        line-height: 35px;
+        letter-spacing: 0em;
+        color: #4b4137;
+    }
+
+    .bookText p {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        color: #120a00;
+        width: 390px;
+    }
+
+    .splide__arrows {
+        display: none;
+    }
+
+    .search-container {
+        margin: 20px;
+        text-align: center;
+    }
+
+    #inputSearch {
+        padding: 10px;
+        width: 300px;
+    }
+
+    .searchInputButton {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .insideCard {
+        margin: 20px auto;
+        max-width: 800px;
+    }
+
+    /* .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 60px;
+        height: 60px;
+        display: block;
+    } */
+
+    .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../assets/icons/Vector2.svg');
+    
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../assets/icons/Vector3.svg');
+}
+
+.vector-icon {
+    display: none; /* Hide the image elements themselves */
 
 }
 
-.bookText p {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 0em;
-    color: #120a00;
-    width: 390px;
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    
+}
+
+    #nex {
+        display: none;
+    padding-top: 250px;
+    padding-right: 80px;
+
+    }
+
+    #pre {
+        display: none;
+      padding-top: 250px;
+      padding-left: 80px ;
+    }
 }

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general/reset.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    <link rel="stylesheet" href="../css/response/adminResp.css">
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/apple-touch-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/fav-icon/favicon-32x32.png" type="image/x-icon">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="admin-login">
+        <div class="adminLogo">
+            <a href="../../index.html"><img src="../assets/icons/adminlogo.svg" alt=""></a>
+        </div>
+        <div class="login-page">
+            <div class="form">
+                <h1>Welcome Admin</h1>
+                <form class="login-form">
+                    <input class="login-user" type="text" placeholder="Username" />
+                    <input class="login-password" type="password" placeholder="Password" />
+                </form>
+                <button class="adminJoin">Join</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="admin-dashboard">
+        <div class="admin-header">
+            <img class="ad-logo" src="../assets/icons/navLogo.svg" alt="">
+            <img class="burger-menu" src="../assets/icons/bars.svg" alt="">
+        </div>
+
+        <div class="wrapper">
+            <div class="sidebar">
+                <img src="../assets/images/Logo.png" alt="" class="logo">
+                <ul>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="#addBook">Home</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="#books">Books</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="#aboutStore">About</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="#joinUs">Join Us</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="#contactUsSection">Contact</a></li>
+                    <li><img src="../assets/images/Group.png" alt=""><a href="../pages/admin.html">Logout</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="main_content">
+                    <div class="header">
+                        <img src="../assets/icons/profile.svg" alt="">
+                        <p class="adminName"> </p>
+                    </div>
+                    <div class="info" id="addBook">
+                        <h1>Add Book</h1>
+                        <div class="search">
+                            <h2>Search book</h2>
+                            <div class="searching">
+                                <input class="input" type="text" name="" id="" placeholder="Search Book">
+                                <img class="lupa" id="searching" src="../assets/icons/searchicon.svg" alt="">
+                            </div>
+                            <div class="history">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-form" id="bookForm">
+                        <h2>Book Form</h2>
+                        <div class="form-container">
+                            <form autocomplete="off">
+                                <label for="townborn">Book Name</label>
+                                <input class="bookName" type="text" placeholder="Angels">
+
+                                <label for="name">Author Name</label>
+                                <input class="authorName" type="text" placeholder="Dan Brown">
+
+                                <label for="name">Book Realiese Date</label>
+                                <input class="bookDate" type="text" placeholder="1945">
+
+                                <label for="townborn">Book Image Url</label>
+                                <input class="bookImage" type="text" placeholder="URL">
+
+                                <label for="text">Description</label>
+                                <input class="bookDesc" type="text" placeholder="Lorem Ipsum Dolor Eldostun Maceralari">
+
+                                <label for="townborn">Book Type</label>
+                                <input class="bookType" type="text" placeholder="Dedective">
+
+                                <label for="townborn">Book Category</label>
+                                <select class="bookCategory" id="bookCat">
+                                    <option value="All books">All Books</option>
+                                    <option value="Best Seller">Best Seller</option>
+                                    <option value="New Realiese">New Realiese</option>
+                                </select>
+
+                            </form>
+                            <button class="formBtn" type="submit">Add</button>
+                        </div>
+                    </div>
+
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p id="modalMessage"></p>
+                        </div>
+                    </div>
+
+                    <div class="about-store" id="aboutStore">
+                        <h2>About Store</h2>
+                        <div class="form-container">
+                            <form autocomplete="off">
+
+                                <label for="townborn">Title</label>
+                                <input class="bookTitle" type="text" placeholder="About Store">
+
+                                <label for="email">Book Image Url</label>
+                                <input class="userMail" type="email" placeholder="https://image.url">
+
+                                <label for="townborn">Description</label>
+                                <input class="aboutDesc" type="text" placeholder="Description">
+
+                            </form>
+                            <button type="submit" class="aboutBtn">About info add</button>
+                            <button type="submit" class="aboutBtns">Update info add</button>
+                        </div>
+                    </div>
+
+                    <div class="join-us" id="joinUs">
+                        <h2>Join Us</h2>
+                        <table class="fixed_headers">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>E-mail Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="books" id="books">
+                        <h2>Books</h2>
+                        <table class="fixed_headers">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="books-titles">Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Author</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <div class="contact-us" id="contactUsSection">
+                        <h2>Contact Us</h2>
+                        <table class="fixed_headers">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Address</th>
+                                    <th>Email Address</th>
+                                    <th>Phone Number</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contactUs">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/admin.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+        import { getDatabase, ref, set, get, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyBU0sULZYB6-mZdPwFsWw-teB5STW0xBoc",
+            authDomain: "bookstore-44df6.firebaseapp.com",
+            databaseURL: "https://bookstore-44df6-default-rtdb.firebaseio.com",
+            projectId: "bookstore-44df6",
+            storageBucket: "bookstore-44df6.appspot.com",
+            messagingSenderId: "520272877168",
+            appId: "1:520272877168:web:0245c151c6b0c41c62c6b5",
+            measurementId: "G-WKRXPCNFEL"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const adminLogin = document.querySelector('.login-user');
+            const adminPassword = document.querySelector('.login-password');
+            const loginButton = document.querySelector('.adminJoin');
+            const loginSection = document.querySelector('.admin-login');
+            const dashboardSection = document.querySelector('.admin-dashboard');
+            const adminNameElement = document.querySelector('.adminName');
+    
+            loginButton.addEventListener('click', function (event) {
+                event.preventDefault();
+    
+                const username = adminLogin.value.trim();
+                const password = adminPassword.value.trim();
+    
+                signInWithEmailAndPassword(auth, username, password)
+                    .then(() => {
+                        loginSection.style.display = 'none';
+                        dashboardSection.style.display = 'block';
+                        const displayName = username.split('@')[0];
+                        adminNameElement.innerHTML = `<p>${displayName}</p>`;
+                    })
+                    .catch(() => {
+                        alert('Invalid username or password');
+                    });
+            });
+    
+            const addBtn = document.querySelector('.formBtn');
+            addBtn.addEventListener('click', sendBooks);
+    
+            function sendBooks() {
+                const id = generate_uuidv4();
+                const bookData = {
+                    name: document.querySelector(".bookName").value,
+                    author: document.querySelector(".authorName").value,
+                    date: document.querySelector(".bookDate").value,
+                    image: document.querySelector(".bookImage").value,
+                    description: document.querySelector(".bookDesc").value,
+                    type: document.querySelector(".bookType").value,
+                    id: id,
+                    category: document.querySelector("#bookCat").value,
+                    timestamp: new Date().toISOString()
+                };
+    
+                set(ref(db, "books/" + id), bookData)
+                    .then(() => alert("Book added successfully"))
+                    .catch(err => alert("Error: " + err));
+            }
+    
+            function fetchBooks() {
+                onValue(ref(db, "books/"), (snapshot) => {
+                    const booksData = snapshot.val();
+                    const booksTableElement = document.querySelector(".books tbody");
+                    booksTableElement.innerHTML = '';
+                    if (booksData) {
+                        Object.values(booksData).forEach((book, index) => {
+                            const truncatedDescription = book.description.split(' ').slice(0, 30).join(' ') + (book.description.split(' ').length > 30 ? '...' : '');
+                            const truncatedName = book.name.split(' ').slice(0, 2).join(' ');
+    
+                            booksTableElement.innerHTML += `
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>
+                                    <img src="${book.image}" alt="${truncatedName}" class="book-thumbnail">
+                                    ${truncatedName}
+                                </td>
+                                <td>${truncatedDescription}</td>
+                                <td>${book.type}</td>
+                                <td>${book.author}</td>
+                                <td><button class="deleteBook" data-id="${book.id}">Delete</button></td>
+                            </tr>`;
+                        });
+    
+                        document.querySelectorAll('.deleteBook').forEach(button => {
+                            button.addEventListener('click', function () {
+                                const bookId = this.getAttribute('data-id');
+                                removeData(bookId);
+                            });
+                        });
+                    } else {
+                        booksTableElement.innerHTML = '<tr><td colspan="6">No books found</td></tr>';
+                    }
+                });
+            }
+    
+            function removeData(bookId) {
+                remove(ref(db, 'books/' + bookId))
+                    .then(() => fetchBooks())
+                    .catch(err => alert("Error: " + err.message));
+            }
+    
+            fetchBooks();
+    
+            const aboutBtn = document.querySelector('.aboutBtn');
+            aboutBtn.addEventListener('click', insertData);
+    
+            function insertData() {
+                const id = generate_uuidv4();
+                const aboutData = {
+                    Title: document.querySelector('.bookTitle').value,
+                    Image: document.querySelector('.userMail').value,
+                    Description: document.querySelector('.aboutDesc').value,
+                };
+    
+                set(ref(db, 'aboutInfo/' + id), aboutData)
+                    .then(() => alert('Data pushed to Firebase'))
+                    .catch(err => alert("Error: " + err));
+            }
+    
+            function sendUser() {
+                get(ref(db, "JoinUs/"))
+                    .then((data) => {
+                        const userData = data.val();
+                        const joinTable = document.querySelector(".join-us tbody");
+                        joinTable.innerHTML = '';
+                        if (userData) {
+                            Object.values(userData).forEach((user, index) => {
+                                joinTable.innerHTML += `<tr>
+                                    <td>${index + 1}</td>
+                                    <td>${user.FullName}</td>
+                                    <td>${user.Email}</td>
+                                </tr>`;
+                            });
+                        } else {
+                            console.log("No users found.");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error getting users:", error);
+                    });
+            }
+    
+            sendUser();
+    
+            function contactUsData() {
+                get(ref(db, 'ContactUs/'))
+                    .then((snapshot) => {
+                        const data = snapshot.val();
+                        const contactUs = document.querySelector('#contactUs');
+                        contactUs.innerHTML = '';
+                        if (data) {
+                            Object.values(data).forEach((user, index) => {
+                                contactUs.innerHTML += `
+                                    <tr>
+                                        <td>${index + 1}</td>
+                                        <td>${user.Name}</td>
+                                        <td>${user.Adress}</td>
+                                        <td>${user.Email}</td>
+                                        <td>${user.Phone}</td>
+                                    </tr>`;
+                            });
+                        } else {
+                            console.log('No Data');
+                        }
+                    })
+                    .catch(err => alert("Error: " + err));
+            }
+    
+            contactUsData();
+    
+            function generate_uuidv4() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
