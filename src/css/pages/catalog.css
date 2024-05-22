@@ -80,7 +80,7 @@ a{
   font-style: normal;
   font-weight: 900;
   line-height: 196.187%; /* 23.542px */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: "Montserrat", sans-serif;
 
 }
@@ -208,7 +208,6 @@ line-height: 196.187%; /* 49.047px */
     border: none;
     background: none;
   }
-
 
 
   #load1{
