@@ -65,7 +65,6 @@
     .dash-table {
         margin: 4rem 20px;
     }
-
     .content,
     .book-form,
     .about-store {
@@ -84,38 +83,99 @@
 
     /* Burger Menu */
 
-        .mobile-logo{
-            width: 170px;
-            margin-bottom: 2rem;
-        }
-    
-        .burger-menu {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
+    .mobile-logo {
+        width: 170px;
+        margin-bottom: 2rem;
+    }
 
-        .burger-close {
-            display: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
 
-        .side-bar {
-            display: none;
-            height: 110vh;
-        }
+    .burger-close {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
 
-        .dashboard {
-            padding-left: 0;
-        }
+    .side-bar {
+        display: none;
+        height: 110vh;
+    }
 
-        .panel {
-            flex-direction: column;
-        }
+    .dashboard {
+        padding-left: 0;
+    }
 
+    .panel {
+        flex-direction: column;
+    }
+
+}
+
+/* Join us Table */
+@media (max-width: 540px) {
+    .join-us-table {
+        width: 400px;
+    }
+
+    .join-us-table th,
+    .join-us-table td {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* Books Table */
+@media (max-width: 540px) {
+    .book-table {
+        width: 400px;
+        table-layout: fixed; /* Tablo genişliğini sabitle */
+    }
+
+    /* Image ve Description sütunlarını gizle */
+    .book-table th:nth-child(2),
+    .book-table td:nth-child(2),
+    .book-table th:nth-child(4),
+    .book-table td:nth-child(4) {
+        display: none;
+    }
+
+    .book-table th,
+    .book-table td {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .book-table th:first-child,
+    .book-table td:first-child {
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
+
+
+/* Contact Us Table */
+@media (max-width: 540px) {
+    .contact-table {
+        width: 400px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
