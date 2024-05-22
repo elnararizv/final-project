@@ -1,242 +1,269 @@
-.admin-dashboard {
-    background-color: #fffaf5;
-    display: none;
-}
-
-.wrapper {
+/* Admin Login */
+.admin-login {
+    background-color: #720418;
+    height: 100vh;
     display: flex;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.wrapper .sidebar {
-    width: 280px;
-    height: 100%;
-    background: #720418;
-    padding: 30px 0px;
-    position: fixed;
+.admin-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.sidebar .logo {
+.admin-logo img {
+    width: 282px;
+    height: 85px;
+}
+
+.login-page {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-page .form h1 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
     margin: 20px;
 }
 
-.wrapper .sidebar ul li {
-    padding: 15px;
-    border-bottom: 1px solid #bdb8d7;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
+.login-form {
+    margin: 20px 0;
 }
 
-.wrapper .sidebar ul li a {
-    color: #ffffff;
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 15px 0 15px 25px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-form .login-user,
+.login-form .login-password {
+    width: calc(100% - 20px);
+}
+
+.adminJoin {
+    background-color: #e16a00;
+    color: white;
+    padding: 10px 20px;
+    margin: 30px 10px 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: calc(100% - 20px);
+}
+
+.adminJoin:hover {
+    background-color: #cc5c00;
+}
+
+/* Main */
+.panel {
+    display: flex;
+    display: none;
+}
+
+/* Mobile header */
+.mobile-header{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+
+/* Side-Bar */
+.side-bar {
+    width: 355px;
+    background-color: #720418;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    width: 282px;
+    height: 105px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
     margin: 10px 20px;
 }
 
-.wrapper .sidebar ul li:hover {
-    background-color: #594f8d;
-}
-
-.wrapper .sidebar ul li:hover a {
-    color: #ffffff;
-}
-
-.wrapper .sidebar .social_media {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+.menu li {
     display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 15px 0;
 }
 
-.wrapper .main_content .header {
-    margin: 2rem;
+.menu li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Search Book */
+.dashboard {
+    background-color: #fffaf5;
+    width: 100%;
+    padding: 0 0 0 33px;
+}
+
+.header {
+    margin: 30px;
     display: flex;
     justify-content: end;
 }
 
-.wrapper .main_content .header p {
-    margin: 0 10px;
+.admin-text {
+    margin: 2px 5px;
 }
 
-.wrapper .main_content {
-    margin: 20px;
-    color: #000000;
-    line-height: 25px;
-}
-
-.info h1{
-    margin-left: 300px !important;
-}
-
-.wrapper .main_content .info h1 {
-    margin: 3rem 0;
-}
-
-.wrapper .main_content .info div {
-    margin-bottom: 20px;
-}
-
-.search h2 {
-    margin: 20px 0;
-}
-
-.search .searching {
-    display: flex;
-}
-
-.search .searching .lupa {
-    border: 1px solid #fe9c22;
-    background-color: #fe9c22;
-    padding: 9px 21px;
-    border-radius: 40px;
-    cursor: pointer;
-}
-
-.search .searching .lupa:hover {
-    background-color: #8B0000;
-}
-
-.book-form h2 {
-    margin: 50px 0 0 8px;
-}
-
-.book-form input {
-    color: #000000;
-}
-
-.book-form .formBtn {
-    cursor: pointer;
-}
-
-.about-store h2 {
-    margin: 50px 0 0 8px;
-}
-
-.about-store input {
-    color: #000000;
-}
-
-.about-store .aboutBtn {
-    cursor: pointer;
+.content h2 {
+    font-family: 'Montserrat', sans-serif;
+    size: 30px;
+    line-height: 59px;
+    font-weight: 600;
     margin: 0 0 20px 0;
 }
 
-.about-store .aboutBtns {
+.content h3 {
+    font-family: 'Montserrat', sans-serif;
+    size: 18px;
+}
+
+.search-area {
+    display: flex;
+    text-align: center;
+}
+
+.search-input {
+    margin: 20px 0;
+    width: 395px;
+    height: 41px;
+    border: 2px solid #a09385;
+    border-radius: 34px;
+    padding: 12px 30px;
+    size: 14px;
+}
+
+.src-btn {
+    margin: 18px 0 0 10px;
+    width: 63px;
+    height: 40px;
+    background-color: #ff8b00;
+    border: 1px solid #ff8b00;
+    border-radius: 38px;
     cursor: pointer;
 }
 
-.wrapper .main_content .info .search .input {
-    width: 395px;
-    padding: 15px;
-    border-radius: 30px;
-    margin: 0 5px;
-    color: #000000;
-}
-
 .history {
-    display: none;
-    padding: 15px;
-    overflow: auto;
-    max-height: 80px;
-    max-width: 388px;
-    margin: 10px 10px;
-    border: 1px solid #F1F0F0;
-    background-color: #F1F0F0;
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-div.row {
-    display: flex;
-}
-
-div.row input:nth-child(2) {
-    margin-left: 5px;
-}
-
-div.form-container {
-    align-items: left;
-    max-width: 70%;
-    border: 1px solid rgb(241, 245, 246);
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 30px;
-    padding: 1%;
-    margin-top: 5%;
-    border-radius: 15px;
-}
-
-input {
-    margin: 1rem 0;
-    width: 100%;
-    padding: 12px 19px;
-    border: 1px solid rgb(211, 221, 225);
-    border-radius: 4px;
-    box-shadow: 0px 4px 18px 0px #9EA8BD4F;
-    background-color: rgb(255, 255, 255);
-    color: rgb(208, 208, 208);
-    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
-}
-
-button {
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background-color: #fe9c22;
-    height: 38px;
-    padding: 0px 19px;
-    border: 0;
-    border-radius: 4px;
-    line-height: 1;
-    user-select: none;
-    transition-duration: 200ms;
-    transition-property: color, background-color;
-    transition-timing-function: ease-in-out;
-}
-
-.join-us {
-    margin: 5rem 5px;
-}
-
-.books {
-    margin: 5rem 5px;
-}
-
-.contact-us {
-    margin: 5rem 5px;
-}
-
-.fixed_headers th,
-.fixed_headers td {
+    margin: 12px 22px;
+    border: 1px solid #cdcdcd;
+    max-width: 350px;
+    max-height: 200px;
+    background-color: #cdcdcd;
+    border-radius: 10px;
     padding: 10px;
-    text-align: left;
+    display: none;
+    overflow: auto;
 }
 
-.fixed_headers th {
-    background-color: #8B0000;
-    border: 1px solid white;
+.book-info{
+    display: flex;
+    margin: 5px 0;
+}
+
+.book-info img{
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+.book-info p{
+    margin: 5px 0 0 10px;
+    cursor: pointer;
+}
+
+/*About Store and Book Form */
+
+.book-form,
+.about-store {
+    margin: 8rem 0;
+}
+
+.book-form>h2,
+.about-store>h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-container {
+    margin-top: 20px;
+    max-width: 1000px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+[type="email"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container .inpBtn {
+    background-color: #ff8b00;
     color: white;
-    border-bottom: #F1F0F0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    /* Full width */
+    display: block;
+    /* Display as block element */
 }
 
-.fixed_headers td {
-    background-color: #F5F5F5;
-    border-bottom: 1px solid #F1F0F0;
-    border: 1px solid white;
+.form-container .inpBtn:hover {
+    background-color: #cc7000;
 }
 
-.fixed_headers {
-    border-collapse: collapse;
-    border: 2px solid #ffffff;
-    width: 70%;
-}
-
-.fixed_headers tbody tr:hover {
-    background-color: #382727;
-}
-
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -272,132 +299,65 @@ button {
     cursor: pointer;
 }
 
-.checkbox {
-    display: flex;
-    gap: 55px;
-    margin-top: 1rem;
+
+
+
+/* Tables */
+
+/* Join us Table */
+.dash-table{
+    margin: 10rem 0;
 }
 
-.checkbox-item {
-    display: flex;
-    align-items: center;
+.dash-tables{
+    margin: 10rem 0;
 }
 
-.checkbox-item input {
-    margin-right: 5px;
+.join-us-table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 1rem 0;
 }
 
-.checkbox-label{
-    width: 100%;
+.book-table, .contact-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 1rem 0;
 }
 
-.book-form select {
-    width: 100%;
-    margin: 20px 0;
-    padding: 12px 19px;
-    border: 1px solid rgb(211, 221, 225);
-    border-radius: 4px;
-    box-shadow: 0px 4px 18px 0px #9EA8BD4F;
-    background-color: rgb(255, 255, 255);
-    color: rgb(208, 208, 208);
-    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
-    color: black;
-}
-
-
-.book-form select option {
-    color: black;
-    background-color: white;
-}
-
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-body{
+table th {
     background-color: #720418;
+    color: #ffffff;
+    padding: 8px;
+    text-align: left;
 }
 
-.login-user{
-    color: #000000;
+table td {
+    padding: 8px;
+    text-align: left;
 }
 
-.login-password{
-    color: #000000;
+table tbody tr:nth-child(odd) td {
+    background-color: #ffffff;
 }
 
-.logos img{
-    width: 282.59px;
-    height: 85.04;
-    margin: 45px 0 0 32px;
+table tbody tr:nth-child(even) td {
+    background-color: #f9fafc;
 }
 
-.login-page {
-  width: 662px;
-  margin: 100px  auto 0;
+.book-table img {
+    width: 30px;
 }
-
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 462px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.form h1{
-    margin: 20px auto;
-}
-
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #ffffff;
-  width: 100%;
-  border: 1px solid gray;
-  margin: 10px auto;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.form button {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  margin: 40px 0 0 0; 
-  outline: 0;
-  background: #E16A00;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-.book-thumbnail {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.books-titles{
-    width: 200px;
-}
-
-.book-info {
-    display: flex;
-    align-items: center;
-}
-
-
-.adminLogo{
+.remove-button {
+    background-color:  #ff8b00;
+    padding: 10px;
+    border: 1px solid #ff8b00;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    margin: 24px 32px;
 }
+.remove-button:hover {
+    background-color: #e16a00;
+}
+
+/*  */
