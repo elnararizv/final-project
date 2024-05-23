@@ -16,9 +16,7 @@ h2 {
     font-weight: 900;
     line-height: 196.187%;
     margin-left: 100px;
-    display: inline-block;
-    animation: slideInLeft;
-    animation-duration: 0.8s;
+    animation: slideIn 1s forwards;
     
 
 
@@ -92,7 +90,9 @@ h2 {
 }
 
 #sendBtn:hover {
-    background: linear-gradient(45deg, #3400e1, #FF8C00);
+    background-color: #770c20;
+    border: 2px solid #770c20;
+    box-shadow: 0px 0px 26px 8px hsla(323, 87%, 50%, 0.664);
 }
 
 

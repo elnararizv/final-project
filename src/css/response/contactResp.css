@@ -2,11 +2,10 @@
    
 
     h2 {
-        text-align: center;
-        /* width: 157px; */
+        margin: 0 auto;
+        width: 60%;
         height: 50px;
         flex-shrink: 0;
-        /* margin-right: 10px; */
         color: var(--, #241400);
         font-size: 25px;
         font-style: normal;
