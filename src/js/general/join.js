@@ -52,8 +52,8 @@ function infoSend(){
   .catch(err => {
     console.error("Firebase error:", err);
   });
+ 
 }
-
 
 let modal = document.querySelector('.joinModal');
 function checkSign() {
@@ -86,7 +86,7 @@ function checkSign() {
   }
   if (!hasError) {
     infoSend(); 
-    // modal.style.display="none";
+    modal.style.display="none";
     userIcon.style.display="none";
     document.querySelector('.logOut').style.display='block'
   }
@@ -94,10 +94,22 @@ function checkSign() {
 
 btnSend.addEventListener('click', checkSign);
 
-function logOut(){
-userIcon.style.display="block";
-  // modal.style.display="block";
-  document.querySelector('.logOut').style.display='none'
-  joinText.textContent = 'Join us'; 
+
+function logOut() {
+  Swal.fire({
+      title: "Are you sure you want to Log out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes"
+  }).then((result) => {
+      if (result.isConfirmed) {
+          userIcon.style.display = "block";
+          modal.style.display = "block";
+          document.querySelector('.logOut').style.display = 'none';
+          joinText.textContent = 'Join us';
+      }
+  });
 }
 document.querySelector('.logOut').addEventListener('click', logOut)
