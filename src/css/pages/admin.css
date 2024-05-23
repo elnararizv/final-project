@@ -325,3 +325,7 @@ table tbody tr:nth-child(even) td {
 }
 
 /*  */
+.book-table-container {
+    max-height: 500px; 
+    overflow: auto;
+}
