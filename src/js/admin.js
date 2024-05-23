@@ -466,6 +466,7 @@ function ContactUsData() {
 
 ContactUsData()
 ///////////////////////////////////////////////////////////////////////////
+//Admin Name Function
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('.login-form');
     const usernameInput = document.querySelector('input[type="text"]');
