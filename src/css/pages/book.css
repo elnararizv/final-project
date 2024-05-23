@@ -1,116 +1,138 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-  background: #fffaf5;
+  background: #FFFAF5;
 }
 
-/* #section1{
-  margin: 10% 5%;
-} */
-#bookmain {
-  margin-left: 5%;
-}
-#section2 {
-  margin-left: 5%;
-}
-.book {
-  display: flex;
-  justify-content: space-around;
-}
-.div1 {
-  width: 52%;
+.moreDetails{
+  cursor: pointer;
 }
 
-.buttons{
-  width: 200px;
-  margin-left: 4.5%;
-}
-.back {
-  /* width: 100px; */
+.back-button {
+  width: 100px;
   height: 29px;
-  margin-left: 5%;
-  background: #e16a00;
-  color: #fff;
-  box-shadow: none;
+  background-color: #E16A00;
+  border: 1px solid #E16A00;
   border-radius: 5px;
-  border: #fff;
-  padding-right: 3%;
-  margin-top: 180px;
-  margin-bottom: 80px;
+  margin-top: 173px;
+  margin-left: 6.5%;
+  padding-bottom: 20px;
 }
 
-
-
-
-.year {
-  background-color: #2f80ed;
-  width: 69px;
-  height: 23px;
-  color: #fff;
-  text-align: center;
-  /* margin-top: 50px; */
-  border-radius: 5px;
-  border: #fff;
-  padding-bottom: 10px;
+.back-button a {
+  text-decoration: none;
+  color: #FFF;
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
-  line-height: 196.187%; /* 23.542px */
-  text-transform: uppercase;
+
 }
-.order {
-  margin-top: -2%;
-  color: var(--, #241400);
-  font-family: "Montserrat", sans-serif;
+
+.year {
+  width: 69px;
+  height: 23px;
+  background-color: #2F80ED;
+  text-align: center;
+  color: #FFF;
+  border-radius: 5px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  padding: 4px 15px;
+}
+
+.bookName {
+  color: #241400;
+  font-family: Montserrat;
   font-size: 35px;
   font-style: normal;
   font-weight: 700;
-  line-height: 196.187%; /* 68.666px */
+  line-height: 196.187%;
 }
-.text {
-  width: 686px;
-  margin-top: -2%;
-  color: var(--, #241400);
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 196.187%; /* 35.314px */
-}
+
 .day {
-  margin-top: -4%;
   color: var(--, #241400);
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 196.187%; /* 31.39px */
 }
-.text-title {
-  /* margin-top: -5%; */
+
+.book-author {
   color: var(--, #241400);
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 196.187%; /* 43.161px */
+
 }
 
-.div2 img {
-  margin-top: -100px;
+
+.description {
+  display: flex;
+  width: 686px;
+  height: 272px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--, #241400);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.book-img img {
   width: 379px;
   height: 529px;
-  object-fit: cover;
 }
 
-.div2 img{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+
+
+.book-info {
+  display: flex;
+  justify-content: space-around;
+
 }
+
+.book-details{
+  margin-top: 80px;
+}
+
+
+/* .book-img {
+  position: relative;
+} */
+
+
+
+/* .new-icon {
+  width: 94px;
+  height: 28px;
+  background-color: #ff0000;
+  border-radius: 2px;
+  text-align: center;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  right: 20px;
+
+} */
+
+
+
 
 .input {
-  width: 50%;
-  /* max-width: 746px; */
+  width: 43%;
   height: 60px;
   border-radius: 5px;
   border: none;
@@ -120,17 +142,13 @@ body {
   display: flex;
   align-items: center;
   margin-top: 102px;
+  margin-left: 9%;
 }
-
-.input:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
 
 #comment-inp {
   border: none;
   width: 100%;
-  margin-left: 38px;
+  /* margin-left: 38px; */
   outline: none;
   padding-left: 10px;
 }
@@ -138,14 +156,15 @@ body {
 #send-button {
   width: 60px;
   height: 60px;
-  background-color: #e16a00;
+  background-color: #E16A00;
   color: white;
   border: none;
   border-radius: 5px;
 }
+
 .book-container {
-  width: 50%;
-  max-width: 686px;
+  width: 42%;
+  margin-left: 9%;
   margin-bottom: 43px;
   padding: 18px 30px;
   border-radius: 5px;
@@ -154,11 +173,13 @@ body {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
   list-style: none;
 }
+
 .box {
   display: flex;
   align-items: center;
   gap: 26px;
 }
+
 .bookText {
   padding: 0;
 }
