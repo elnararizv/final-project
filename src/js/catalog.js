@@ -26,8 +26,7 @@
 
  const booksRef = ref(db, 'books');
 
- get(booksRef)
- .then((snapshot) => {
+ get(booksRef).then((snapshot) => {
     if (snapshot.exists()) {
         const booksData = [];
 
@@ -520,9 +519,7 @@ function ForKidsGetData() {
 
                 });
             }
-     
-            addBooksToSlider();
-     
+                 addBooksToSlider();
         } else {
             console.log("No data available");
         }
