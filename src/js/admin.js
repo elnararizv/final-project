@@ -128,12 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function clearInputAndHistory() {
             // Clear input values
-            bookNameInput.value = '';
-            authorNameInput.value = '';
-            bookDateInput.value = '';
-            bookImageInput.value = '';
-            bookDescInput.value = '';
-            bookTypeInput.value = '';
+            searchBookInput.value = '';
+            booknameInp.value = '';
+            authorInp.value = '';
+            bookDate.value = '';
+            bookimgInp.value = '';
+            descriptInp.value = '';
+            bookType.value = '';
 
             // Hide history
             historyContainer.innerHTML = '';
@@ -478,4 +479,42 @@ function ContactUsData() {
         .catch(err => { alert(err) })
 }
 ContactUsData()
+///////////////////////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('.login-form');
+    const usernameInput = document.querySelector('input[type="text"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const button = document.querySelector('.adminJoin');
+    const login = document.querySelector('.admin-login');
+    const dashboard = document.querySelector('.panel');
+    const adminText = document.querySelector('.admin-text'); // Get the admin-text element
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        signInWithEmailAndPassword(auth, username, password)
+            .then(() => {
+                login.style.display = 'none';
+                dashboard.style.display = 'block';
+                dashboard.style.display = 'flex';
+                let displayName = username.split('@')[0];
+                displayName = displayName.charAt(0).toUpperCase() + displayName.slice(1);
+                adminText.textContent = displayName;
+            })
+            .catch(() => {
+                alert('Invalid username or password');
+            });
+    });
+
+    passwordInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            button.click();
+        }
+    });
+});
+
 

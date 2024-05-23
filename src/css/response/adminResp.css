@@ -1,3 +1,9 @@
+@media (min-width:541px){
+    .side-bar{
+        display: block !important;
+    }
+}
+
 @media (max-width: 540px) {
 
     /* Header */
@@ -65,6 +71,7 @@
     .dash-table {
         margin: 4rem 20px;
     }
+
     .content,
     .book-form,
     .about-store {
@@ -117,10 +124,8 @@
         flex-direction: column;
     }
 
-}
+    /* Join us Table */
 
-/* Join us Table */
-@media (max-width: 540px) {
     .join-us-table {
         width: 400px;
     }
@@ -132,13 +137,13 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-}
 
-/* Books Table */
-@media (max-width: 540px) {
+    /* Books Table */
+
     .book-table {
         width: 400px;
-        table-layout: fixed; /* Tablo genişliğini sabitle */
+        table-layout: fixed;
+        /* Tablo genişliğini sabitle */
     }
 
     /* Image ve Description sütunlarını gizle */
@@ -162,11 +167,9 @@
         padding-left: 0;
         margin-left: 0;
     }
-}
 
+    /* Contact Us Table */
 
-/* Contact Us Table */
-@media (max-width: 540px) {
     .contact-table {
         width: 400px;
     }
@@ -178,4 +181,5 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
 }
