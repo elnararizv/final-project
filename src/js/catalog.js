@@ -519,9 +519,7 @@ function ForKidsGetData() {
 
                 });
             }
-     
-            addBooksToSlider();
-     
+                 addBooksToSlider();
         } else {
             console.log("No data available");
         }
