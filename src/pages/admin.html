@@ -28,7 +28,7 @@
             <div class="form">
                 <h1>Welcome Admin</h1>
                 <form class="login-form">
-                    <input class="login-user" type="text" placeholder="Username" />
+                    <input class="login-user" type="text" placeholder="Username or email" />
                     <input class="login-password" type="password" placeholder="Password" />
                 </form>
                 <button class="adminJoin">Join</button>
@@ -118,16 +118,7 @@
                         <button class="formBtn inpBtn" type="submit">Add</button>
                     </div>
                 </div>
-
-
-                <!-- Modal -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p id="modalMessage"></p>
-                    </div>
-                </div>
-
+                
                 <!-- About Store -->
                 <div class="about-store" id="aboutStore">
                     <h2 id="about">About Store</h2>
@@ -223,6 +214,7 @@
     </main>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <script type="module" src="../js/admin.js"></script>
     </script>
 </body>

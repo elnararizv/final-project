@@ -2,7 +2,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getDatabase, set, ref, get, child, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, set, ref, get, child, remove , onValue} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 //Firebase configuration
 const firebaseConfig = {
@@ -29,28 +29,6 @@ function generate_uuidv4() {
     });
 }
 
-// Show success alert
-function successAlert(message) {
-    const modal = document.getElementById("myModal");
-    const modalMessage = document.getElementById("modalMessage");
-    modalMessage.textContent = message;
-    modal.style.display = "block";
-    setTimeout(() => {
-        modal.style.display = "none";
-    }, 50000);
-}
-
-// Show error alert
-function errorAlert(message) {
-    const modal = document.getElementById("myModal");
-    const modalMessage = document.getElementById("modalMessage");
-    modalMessage.textContent = message;
-    modal.style.display = "block";
-    setTimeout(() => {
-        modal.style.display = "none";
-    }, 50000);
-}
-
 // Login functionality
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('.login-form');
@@ -73,7 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 dashboard.style.display = 'flex';
             })
             .catch(() => {
-                alert('Invalid username or password');
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Invalid username or password"
+                })
             });
     });
 
@@ -121,10 +108,19 @@ document.addEventListener("DOMContentLoaded", function () {
             addedAt: timestamp
         })
             .then(() => {
-                successAlert("Book added successfully");
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "Book added successfully"
+                });
                 fetchBooks();
             })
-            .catch((err) => errorAlert("Error adding book: " + err));
+            .catch((err) => console.log("Error adding book: " + err));
 
         function clearInputAndHistory() {
             // Clear input values
@@ -143,9 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInputAndHistory()
     }
 
+
+
     function fetchBooks() {
-        const dbRef = ref(db);
-        get(child(dbRef, `books/`)).then((snapshot) => {
+        const dbRef = ref(db, 'books/');
+        onValue(dbRef, (snapshot) => {
             if (snapshot.exists()) {
                 const books = snapshot.val();
                 bookTable.innerHTML = "";
@@ -174,19 +172,20 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 bookTable.innerHTML = "<tr><td colspan='7'>No books available</td></tr>";
             }
-        }).catch((error) => {
+        }, (error) => {
             console.error(error);
         });
     }
+    
 
     function removeBook(id) {
         remove(ref(db, 'books/' + id))
             .then(() => {
-                successAlert("Book removed successfully");
+                alert("Book removed successfully");
                 fetchBooks();
             })
             .catch((error) => {
-                errorAlert("Error removing book: " + error);
+                alert("Error removing book: " + error);
             });
     }
 
@@ -223,13 +222,31 @@ document.addEventListener("DOMContentLoaded", function () {
             Description: description,
         })
             .then(() => {
-                successAlert('About info added successfully');
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "About information changed"
+                });
                 titleInp.value = '';
                 imgInp.value = '';
                 descripInp.value = '';
             })
             .catch((error) => {
-                errorAlert('Error adding about info: ' + error);
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Opss! Have a problem!!"
+                });
             });
     }
 });
@@ -391,64 +408,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-//Modal
-document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById("myModal");
-    var btn = document.querySelector(".formBtn");
-    var span = document.getElementsByClassName("close")[0];
-    var message = document.getElementById("modalMessage");
-    btn.onclick = function () {
-        var bookName = document.querySelector(".bookName").value;
-        var authorName = document.querySelector(".authorName").value;
-        var bookDate = document.querySelector(".bookDate").value;
-        var bookImage = document.querySelector(".bookImage").value;
-        var bookDesc = document.querySelector(".bookDesc").value;
-        var bookType = document.querySelector(".bookType").value;
-        message.innerHTML = `
-            <strong>Book Name:</strong> ${bookName}<br>
-            <strong>Author Name:</strong> ${authorName}<br>
-            <strong>Release Date:</strong> ${bookDate}<br>
-            <strong>Book Image URL:</strong> ${bookImage}<br>
-            <strong>Description:</strong> ${bookDesc}<br>
-            <strong>Book Type:</strong> ${bookType}
-        `;
-        modal.style.display = "block";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-});
-
-
-
 //Join Us
 const joinTable = document.querySelector("#joinUsTable tbody")
+
 function sendUser() {
-    get(ref(db, "JoinUs/"))
-        .then((data) => {
-            const userData = data.val();
-            if (userData) {
-                joinTable.innerHTML = '';
-                Object.values(userData).forEach((user, index) => {
-                    joinTable.innerHTML += `<tr>
-                                                <td>${index + 1}</td>
-                                                <td>${user.FullName}</td>
-                                                <td>${user.Email}</td>
-                                            </tr>`;
-                });
-            } else {
-                console.log("No users found.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error getting users:", error);
-        });
+    const dbRef = ref(db, "JoinUs/");
+    onValue(dbRef, (snapshot) => {
+        const userData = snapshot.val();
+        if (userData) {
+            joinTable.innerHTML = '';
+            Object.values(userData).forEach((user, index) => {
+                joinTable.innerHTML += `<tr>
+                                            <td>${index + 1}</td>
+                                            <td>${user.FullName}</td>
+                                            <td>${user.Email}</td>
+                                        </tr>`;
+            });
+        } else {
+            console.log("No users found.");
+        }
+    }, (error) => {
+        console.error("Error getting users:", error);
+    });
 }
+
 sendUser()
 
 
@@ -456,28 +439,31 @@ sendUser()
 //Contact Us 
 const contactUs = document.querySelector('#contactUs')
 function ContactUsData() {
-    get(ref(db, 'ContactUs/'))
-        .then((snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                Object.values(data).forEach((user, index) => {
-                    contactUs.innerHTML +=
-                        `
-                <tr>
-                    <td>${index + 1}</td>
-                    <td>${user.Name}</td>
-                    <td>${user.Adress}</td>
-                    <td>${user.Email}</td>
-                    <td>${user.Phone}</td>
-                </tr>
-                `
-                })
-            } else {
-                console.log('No Data');
-            }
-        })
-        .catch(err => { alert(err) })
+    const dbRef = ref(db, 'ContactUs/');
+    onValue(dbRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+            contactUs.innerHTML = '';
+            Object.values(data).forEach((user, index) => {
+                contactUs.innerHTML +=
+                    `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${user.Name}</td>
+                        <td>${user.Adress}</td>
+                        <td>${user.Email}</td>
+                        <td>${user.Phone}</td>
+                    </tr>
+                    `;
+            });
+        } else {
+            console.log('No Data');
+        }
+    }, (err) => {
+        alert(err);
+    });
 }
+
 ContactUsData()
 ///////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
@@ -505,7 +491,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 adminText.textContent = displayName;
             })
             .catch(() => {
-                alert('Invalid username or password');
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Invalid password or username"
+                });
             });
     });
 
@@ -516,5 +511,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+   
+
+
 
 
