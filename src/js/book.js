@@ -34,21 +34,58 @@ const commentInp = document.querySelector("#comment-inp");
 const send = document.querySelector("#send-button");
 const bookText = document.querySelector(".bookText");
 
- const bookId = window.location.search.substring(1);
-  const currentTime = new Date(); 
-  const options = { timeZone: 'Asia/Baku' }; 
-  const timestamp = currentTime.toLocaleString('en-US', options); 
-  console.log(timestamp)
+const bookId = window.location.search.substring(1);
+const currentTime = new Date();
+const options = { timeZone: 'Asia/Baku' };
+const timestamp = currentTime.toLocaleString('en-US', options);
+console.log(timestamp)
+
 
 function CommentSetData() {
-  const id = generate_uuidv4();
- 
-  set(ref(db, "books/" + bookId + "/comments/" + id), {
-    Comment: commentInp.value,
-    time: timestamp, 
-    Id: id
-  })
-  .then(() => {
+  const commentValue = commentInp.value.trim();
+  if (commentValue !== "") {
+    const id = generate_uuidv4();
+    set(ref(db, "books/" + bookId + "/comments/" + id), {
+      Comment: commentValue,
+      time: timestamp,
+      Id: id
+    })
+      .then(() => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "success",
+          title: "Your anonim comment is sent",
+        });
+        commentInp.value = "";
+      })
+      .catch(() => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Comment couldn't be sent",
+        });
+      });
+  } else {
     const Toast = Swal.mixin({
       toast: true,
       position: "top-end",
@@ -61,30 +98,19 @@ function CommentSetData() {
       },
     });
     Toast.fire({
-      icon: "success",
-      title: "Your anonim comment is sent",
+      icon: "error",
+      title: "Please enter a comment",
     });
-    commentInp.value ="";
-   
-  })
-  .catch(() =>{ const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 1000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
-    },
-  });
-  Toast.fire({
-    icon: "error",
-    title: "Comment couldn't be sent",
-  })})
+  }
 }
-
 send.addEventListener("click", CommentSetData);
+
+
+commentInp.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    CommentSetData();
+  }
+});
 
 function CommentGetData() {
   const bookId = window.location.search.substring(1);
@@ -152,7 +178,7 @@ function BookGetData() {
 
       bookInfo.innerHTML = `
         <div class="book-details">
-          <span class="year">${data.date.substring(0,4)}</span>
+          <span class="year">${data.date.substring(0, 4)}</span>
           <h1 class="bookName">${data.name}</h1>
           <h4 class="day">${timeString}</h4>
           <h2 class="book-author">${data.author}</h2>
@@ -163,14 +189,17 @@ function BookGetData() {
           <img src="${data.image}" alt="">
         </div>
       `;
-      
+
       const description = document.querySelector(".description");
       const moreDetails = document.querySelector(".moreDetails");
-      const shortText = description.textContent.substring(0, 560);
+      const shortText = description.textContent.substring(0, 500);
       const fullText = description.textContent;
 
+      description.textContent = shortText;
+      moreDetails.textContent = "More Details";
+
       let isLong = true;
-      moreDetails.addEventListener("click", function() {
+      moreDetails.addEventListener("click", function () {
         if (isLong) {
           description.textContent = fullText;
           moreDetails.textContent = "Hide Details";
@@ -183,3 +212,9 @@ function BookGetData() {
     }
   });
 }
+
+
+
+
+
+
