@@ -13,6 +13,7 @@ body {
 
 .searchLeftContainer {
     padding-left: 0px;
+   
 }
 
 .searchText {
@@ -23,12 +24,24 @@ body {
     line-height: 70.63px;
     word-wrap: break-word;
     padding-left: 20px;
+    
 }
 
 .searchText h1 {
     font-size: 35px;
     font-weight: 700;
     color: #241400;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; 
+        transform: translateX(0);
+    }
 }
 
 .searchInputButton {
@@ -78,7 +91,9 @@ body {
 }
 
 .searchInputButton button:hover {
-    opacity: 0.8;
+    background-color: white;
+    color: #E16A00;
+   box-shadow: 3px 4px 19px 2px #e17a1f;
 }
 
 .searchAboutBook {
@@ -228,6 +243,7 @@ body {
         margin: 20px;
         text-align: center;
     }
+    
 
     #inputSearch {
         padding: 10px;

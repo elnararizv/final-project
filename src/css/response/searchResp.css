@@ -184,6 +184,14 @@
         .searchText {
             font-size: 32px;
         }
+        .searchText h1{
+            padding-left: 75px;
+            font-size: 35px;
+        }
+        .searchLeftContainer{
+            width: 500px;
+            padding-left: 70px;
+        }
     }
     
     @media only screen and (max-width: 834px) {
