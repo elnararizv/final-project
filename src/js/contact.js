@@ -31,14 +31,7 @@ const phone = document.querySelector('#phone')
 const text = document.querySelector('#text')
 const sendBtn = document.querySelector('#sendBtn')
 //---------------------------------------------------
-function generate_uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-        function (c) {
-            const uuid = Math.random() * 16 | 0;
-            const v = c == 'x' ? uuid : (uuid & 0x3 | 0x8);
-            return v.toString(16);
-        });
-}
+
 function SetData() {
     const id = generate_uuidv4()
     set(ref(db, 'ContactUs/' + id), {
@@ -48,28 +41,22 @@ function SetData() {
         Phone: phone.value,
         Text: text.value
     })
-        .then(console.log('data-push'))
-        .catch(err => (alert(err)))
+        .then(() =>{
+             console.log('Data send')
+              name.value=""
+            email.value=""
+            adress.value=""
+            phone.value=""
+            text.value=""
+        }
+          
+           )
+        .catch(err => (console.log(err)))
 }
-sendBtn.addEventListener('click', SetData)
+
 
 
 //----------------------------------------------------
-
-
-
-
-function openModal() {
-    var modal = document.querySelector('.joinModal');
-    modal.classList.remove('d-none');
-}
-
-function closeModal() {
-    var modal = document.querySelector('.joinModal');
-    modal.classList.add('d-none');
-}
-
-
 
 function checkContact() {
 
@@ -90,9 +77,13 @@ function checkContact() {
         email.style.border = "1px solid #CECECE";
     }
 
-    if (!/^[0-9]+$/.test(phone.value.trim())) {
+    let phoneValue = phone.value.trim();
+    if (!/^[0-9]+$/.test(phoneValue)) {
         phone.style.border = "1px solid red";
         errors.push('Please check your number!');
+    } else if (phoneValue.length < 6) {
+        phone.style.border = "1px solid red";
+        errors.push('Please check your number! It should be at least 6 digits long.');
     } else {
         phone.style.border = "1px solid #CECECE";
     }
@@ -117,9 +108,10 @@ function checkContact() {
             text: errors[0]
         });
     } else {
+        SetData();
         Swal.fire({
             icon: 'success',
-            text: 'Thank you for contact us!'
+            text: 'Thank you for contacting us!'
         });
     }
 }
@@ -127,3 +119,8 @@ function checkContact() {
 sendBtn.addEventListener('click', checkContact);
 
 
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        checkContact();
+    }
+});
