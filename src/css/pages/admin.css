@@ -265,7 +265,6 @@
 
 /* Tables */
 
-/* Join us Table */
 .dash-table{
     margin: 10rem 0;
 }
@@ -284,6 +283,10 @@
     border-collapse: collapse;
     width: 90%;
     margin: 1rem 0;
+}
+
+.contact-table thead{
+    background-color: #720418;
 }
 
 table th {
