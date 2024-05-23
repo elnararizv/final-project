@@ -16,12 +16,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase()
-
+const userIcon=document.querySelector('.navbar .d-flex img');
 
 let fnameModal = document.querySelector('#fnameModal')
 let userMail = document.querySelector('#emailModal')
-let btnSend = document.querySelector('#buttonSign')
+let btnSend = document.querySelector('.modalCard button')
 let joinText = document.querySelector('#join-text');
+
 
 function infoSend(){
   const id = generate_uuidv4();
@@ -51,13 +52,14 @@ function infoSend(){
   .catch(err => {
     console.error("Firebase error:", err);
   });
+ 
 }
-
 
 let modal = document.querySelector('.joinModal');
 function checkSign() {
   let fnameInput = document.querySelector('#fnameModal');
   let emailInput = document.querySelector('#emailModal');
+  const userIcon=document.querySelector('.navbar .d-flex img');
 
   let hasError = false;
 
@@ -84,18 +86,30 @@ function checkSign() {
   }
   if (!hasError) {
     infoSend(); 
-    // modal.style.display="none";
-    document.querySelector('#userIcon').style.display="none";
+    modal.style.display="none";
+    userIcon.style.display="none";
     document.querySelector('.logOut').style.display='block'
   }
 }
 
 btnSend.addEventListener('click', checkSign);
 
-function logOut(){
-  document.querySelector('#userIcon').style.display="block";
-  // modal.style.display="block";
-  document.querySelector('.logOut').style.display='none'
-  joinText.textContent = 'Join us'; 
+
+function logOut() {
+  Swal.fire({
+      title: "Are you sure you want to Log out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes"
+  }).then((result) => {
+      if (result.isConfirmed) {
+          userIcon.style.display = "block";
+          modal.style.display = "block";
+          document.querySelector('.logOut').style.display = 'none';
+          joinText.textContent = 'Join us';
+      }
+  });
 }
 document.querySelector('.logOut').addEventListener('click', logOut)

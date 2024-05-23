@@ -16,36 +16,32 @@ const firebaseConfig = {
     appId: "1:520272877168:web:0245c151c6b0c41c62c6b5",
     measurementId: "G-WKRXPCNFEL"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-import { getDatabase, ref, get} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, get , onValue} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 const db = getDatabase();
 const about=document.querySelector(".about")
-
+  
 function aboutData() {
-    get(ref(db, "aboutInfo/"))
-    .then((data) => {
-        const aboutInfo = data.val();
-        if (aboutInfo) {
-            // about.innerHTML = "";
-            Object.values(aboutInfo).forEach((el) => {
-                console.log(el);
-                about.innerHTML += ` 
-                <div class="pages">
-                    <h1>${el.Title}</h1>
-                    <p class="text">${el.Description}</p>
-                </div>
-                <div class="image">
-                    <img src="${el.Image}" alt="">
-                </div>`;
-            });
-        } else {
-            console.log("Not found.");
-        }
-    })
-    .catch((error) => {
-        console.error(error);
+    onValue(ref(db, "aboutInfo/"), (snapshot) => {
+      const aboutInfo = snapshot.val();
+      if (aboutInfo) {
+        console.log(aboutInfo);
+        about.innerHTML = `
+          <div class="pages">
+            <h1>${aboutInfo.Title}</h1>
+            <p class="text">${aboutInfo.Description}</p>
+          </div>
+          <div class="image">
+            <img src="${aboutInfo.Image}" alt="">
+          </div>`;
+      } else {
+        console.log("Not found.");
+      }
+    }).catch((error) => {
+      console.error(error);
     });
-}
+  }
+  
+aboutData()

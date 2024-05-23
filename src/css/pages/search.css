@@ -13,6 +13,7 @@ body {
 
 .searchLeftContainer {
     padding-left: 0px;
+   
 }
 
 .searchText {
@@ -23,12 +24,24 @@ body {
     line-height: 70.63px;
     word-wrap: break-word;
     padding-left: 20px;
+    
 }
 
 .searchText h1 {
     font-size: 35px;
     font-weight: 700;
     color: #241400;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; 
+        transform: translateX(0);
+    }
 }
 
 .searchInputButton {
@@ -78,7 +91,9 @@ body {
 }
 
 .searchInputButton button:hover {
-    opacity: 0.8;
+    background-color: white;
+    color: #E16A00;
+   box-shadow: 3px 4px 19px 2px #e17a1f;
 }
 
 .searchAboutBook {
@@ -106,6 +121,8 @@ body {
     height: auto;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
+    padding-left: 30px;
+    padding-top: 40px;
 }
 
 .card-body {
@@ -144,7 +161,22 @@ body {
     overflow: hidden;
     height: 46px;
     object-fit: contain;
-    }
+}
+
+.text-center-error {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #E16A00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding-top: 15px;
+    /* background-color: #f7f7f7;
+    padding: 10px;
+    border: 2px solid #db5b34;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px; */
+}
 
 @media (min-width: 768px) {
     .card {
@@ -211,6 +243,7 @@ body {
         margin: 20px;
         text-align: center;
     }
+    
 
     #inputSearch {
         padding: 10px;
@@ -235,50 +268,50 @@ body {
     } */
 
     .carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 60px;
-    height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    .carousel-control-next-icon {
+        width: 60px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-.carousel-control-prev-icon {
-    background-image: url('../../assets/icons/Vector2.svg');
-    
-}
+    .carousel-control-prev-icon {
+        background-image: url('../../assets/icons/Vector2.svg');
 
-.carousel-control-next-icon {
-    background-image: url('../../assets/icons/Vector3.svg');
-}
+    }
 
-.vector-icon {
-    display: none; /* Hide the image elements themselves */
+    .carousel-control-next-icon {
+        background-image: url('../../assets/icons/Vector3.svg');
+    }
 
-}
+    .vector-icon {
+        display: none;
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    
-}
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+
+    }
 
     #nex {
         display: none;
-    padding-top: 250px;
-    padding-right: 80px;
+        padding-top: 250px;
+        padding-right: 50px;
 
     }
 
     #pre {
         display: none;
-      padding-top: 250px;
-      padding-left: 80px ;
+        padding-top: 250px;
+        padding-left: 50px;
     }
 }

@@ -80,7 +80,7 @@ a{
   font-style: normal;
   font-weight: 900;
   line-height: 196.187%; /* 23.542px */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: "Montserrat", sans-serif;
 
 }
@@ -208,7 +208,6 @@ line-height: 196.187%; /* 49.047px */
     border: none;
     background: none;
   }
-
 
 
   #load1{
@@ -522,4 +521,17 @@ line-height: 196.187%; /* 49.047px */
   margin: 0;
   cursor: pointer;
   padding: .1em .3em;
+}
+
+#fantastic{
+  padding-right: 5%;
+}
+#poems{
+  padding-right: 5%;
+}
+#dedective{
+  padding-right: 5%;
+}
+#kids{
+  padding-right: 5%;
 }
