@@ -44,17 +44,22 @@
             autoplay: true,
             interval: 1000,
             breakpoints: {
-              1100:{
+              1300:{
                 perPage: 4
               },
-              920:{
+              1100:{
                 perPage: 3,
                 arrows: false,
               },
-              576:{
-                perPage: 1,
+              850:{
+                perPage: 2,
                 arrows: false,
-              }
+              },
+              760: {
+                perPage : 1,
+                arrows : false,
+               }
+
             }
         }).mount();
 
@@ -114,16 +119,20 @@ get(booksRef).then((snapshot) => {
            autoplay: true,
            interval: 1000,
            breakpoints: {
-               1100: {
+               1300: {
                    perPage: 4
                },
-               920: {
+               1100: {
                    perPage: 3,
                    arrows: false,
                },
-               576: {
-                   perPage: 1,
+               850: {
+                   perPage: 2,
                    arrows: false,
+               },
+               600: {
+                perPage : 1,
+                arrows : false,
                }
            }
        }).mount();
@@ -180,17 +189,22 @@ get(booksRef).then((snapshot) => {
            autoplay: true,
            interval: 1000,
            breakpoints: {
-               1100: {
+               1300: {
                    perPage: 4
                },
-               920: {
+               1100: {
                    perPage: 3,
                    arrows: false,
                },
-               576: {
-                   perPage: 1,
+               850: {
+                   perPage: 2,
                    arrows: false,
+               },
+               600: {
+                perPage : 1,
+                arrows : false,
                }
+
            }
        }).mount();
 
@@ -246,7 +260,7 @@ function FantasitcGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type === "fantastic") {
+                if (book.type === "Fiction") {
                     booksData.push(book);
                 }
             });
@@ -260,17 +274,22 @@ function FantasitcGetData() {
                 autoplay: true,
                 interval: 1000,
                 breakpoints: {
-                    1100: {
+                    1300: {
                         perPage: 4
                     },
-                    920: {
+                    1100: {
                         perPage: 3,
                         arrows: false,
                     },
-                    576: {
-                        perPage: 1,
+                    850: {
+                        perPage: 2,
                         arrows: false,
-                    }
+                    },
+                    600: {
+                        perPage : 1,
+                        arrows : false,
+                       }
+        
                 }
             }).mount();
      
@@ -322,7 +341,7 @@ function PoemsGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type === "poems") {
+                if (book.type === "Poetry") {
                     booksData.push(book);
                 }
             });
@@ -336,17 +355,22 @@ function PoemsGetData() {
                 autoplay: true,
                 interval: 1000,
                 breakpoints: {
-                    1100: {
+                    1300: {
                         perPage: 4
                     },
-                    920: {
+                    1100: {
                         perPage: 3,
                         arrows: false,
                     },
-                    576: {
-                        perPage: 1,
+                    850: {
+                        perPage: 2,
                         arrows: false,
-                    }
+                    },
+                    600: {
+                        perPage : 1,
+                        arrows : false,
+                       }
+        
                 }
             }).mount();
      
@@ -411,17 +435,22 @@ function DetectiveGetData() {
                 autoplay: true,
                 interval: 1000,
                 breakpoints: {
-                    1100: {
+                    1300: {
                         perPage: 4
                     },
-                    920: {
+                    1100: {
                         perPage: 3,
                         arrows: false,
                     },
-                    576: {
-                        perPage: 1,
+                    850: {
+                        perPage: 2,
                         arrows: false,
-                    }
+                    },
+                    600: {
+                        perPage : 1,
+                        arrows : false,
+                       }
+        
                 }
             }).mount();
      
@@ -472,7 +501,7 @@ function ForKidsGetData() {
      
             snapshot.forEach((childSnapshot) => {
                 const book = childSnapshot.val();
-                if (book.type === "for kids") {
+                if (book.type === "kids") {
                     booksData.push(book);
                 }
             });
@@ -486,17 +515,22 @@ function ForKidsGetData() {
                 autoplay: true,
                 interval: 1000,
                 breakpoints: {
-                    1100: {
+                    1300: {
                         perPage: 4
                     },
-                    920: {
+                    1100: {
                         perPage: 3,
                         arrows: false,
                     },
-                    576: {
-                        perPage: 1,
+                    850: {
+                        perPage: 2,
                         arrows: false,
-                    }
+                    },
+                    600: {
+                        perPage : 1,
+                        arrows : false,
+                       }
+        
                 }
             }).mount();
      

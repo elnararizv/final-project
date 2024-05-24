@@ -1,3 +1,40 @@
+
+/* @media only screen and (max-width: 1200px) {
+  .categoryBook{
+    margin-left: -5%;
+  }
+} */
+
+/* @media only screen and (max-width: 1100px) {
+  .categoryBook{
+    margin-left: -5%;
+  }
+} */
+/* @media only screen and (max-width: 1000px) {
+  .categoryBook{
+    margin-left: -5%;
+    
+  }
+  .book{
+    margin-left: 10%;
+  }
+} */
+/* @media only screen and (max-width: 850px) {
+  .splide{
+    width: 70%;
+    margin-left: 15%;
+  }
+} */
+/* @media only screen and (max-width: 800px) {
+  .book{
+    margin-left: 5%;
+  }
+} */
+
+
+
+
+
 /* //----------------------------------------- Response for tablet mod */
 
 @media only screen and (max-width: 768px) {
@@ -116,5 +153,4 @@
     #splide7{
       margin-left: 135px;
     }
-
   }
