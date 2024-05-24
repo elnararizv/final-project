@@ -3,9 +3,7 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-
   }
-
   .back-button {
     width: 81px;
     height: 23.49px;
@@ -16,7 +14,6 @@
     margin-bottom: 67px;
     margin-left: 7%;
   }
-
   .book-details {
     margin: 0;
     display: flex;
@@ -24,20 +21,17 @@
     align-items: flex-start;
     width: 88%;
   }
-
   .book-img {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .book-img img {
     width: 88%;
     height: 390px;
     /* margin-left: 8%; */
     margin-bottom: 58px;
   }
-
   .bookName {
     height: 49px;
     font-size: 23px;
@@ -47,7 +41,6 @@
     margin: 0 auto;
     margin-top: 44px;
   }
-
   .book-author {
     text-align: center;
     font-family: Montserrat;
@@ -58,11 +51,9 @@
     margin-top: 35px;
     width: 100%;
   }
-
   .day {
     display: none;
   }
-
   .description {
     font-size: 12px;
     font-style: normal;
@@ -72,7 +63,6 @@
     margin: 0 auto;
     /* margin: 0; */
   }
-
   .moreDetails {
     font-size: 12px;
     font-style: normal;
@@ -84,33 +74,19 @@
     text-align: center;
     cursor: pointer;
   }
-
   .input {
     width: 80%;
   }
-
   .book-container {
     width: 80%;
-
   }
-
-
-
-
 }
-
-
-
-
 @media only screen and (min-width: 540px) and (max-width: 1024px) {
-
   .book-info {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-
   }
-
   .back-button {
     width: 81px;
     height: 23.49px;
@@ -121,7 +97,6 @@
     margin-bottom: 67px;
     margin-left: 7%;
   }
-
   .book-details {
     margin: 0;
     display: flex;
@@ -129,20 +104,17 @@
     align-items: flex-start;
     width: 88%;
   }
-
   .book-img {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .book-img img {
     width: 100%;
     height: 450px;
     /* margin-left: 8%; */
     margin-bottom: 58px;
   }
-
   .bookName {
     height: 49px;
     font-size: 25px;
@@ -151,9 +123,7 @@
     text-align: center;
     margin: 0 auto;
     margin-top: 44px;
-
   }
-
   .book-author {
     text-align: center;
     font-family: Montserrat;
@@ -163,11 +133,9 @@
     margin-bottom: 78px;
     width: 100%;
   }
-
   .day {
     display: none;
   }
-
   .description {
     font-size: 13px;
     font-style: normal;
@@ -178,7 +146,6 @@
     margin-top: -60px;
     /* margin: 0; */
   }
-
   .moreDetails {
     font-size: 12px;
     font-style: normal;
@@ -189,36 +156,33 @@
     text-align: center;
     cursor: pointer;
   }
-
   .input {
     width: 70%;
   }
-
   .book-container {
     width: 70%;
-
   }
-
 }
-
-
+@media only screen and (width: 1024px){
+  .book-img img {
+    width: auto;
+     margin-top: 40px;
+  }
+  .back-button {
+    margin-left: 22% !important;
+  }
+}
 @media only screen and (min-width: 1024px) and (max-width: 1100px) {
   .back-button {
-
     margin-left: 6.5%;
   }
-
-
   .book-info {
     display: flex;
     justify-content: center;
   }
-
   .book-details {
     width: 50%;
-    
   }
-
   .description {
     width: 70%;
     font-size: 13px;
@@ -227,13 +191,7 @@
     margin-top: -60px;
     /* margin: 0; */
   }
-
-  .book-img img {
-    /* width: auto; */
-    margin-top: -70px;
-
-  }
-
+ 
   .bookName {
     height: 49px;
     font-size: 22px;
@@ -241,9 +199,7 @@
     font-weight: 900;
     margin: 0 auto;
     margin-top: 44px;
-
   }
-
   .book-author {
     font-family: Montserrat;
     font-size: 13px;
@@ -252,29 +208,18 @@
     margin-bottom: 78px;
     width: 100%;
   }
-
-
-
-
 }
-
 @media only screen and (min-width: 1100px) and (max-width: 1200px){
   .back-button {
-
     margin-left: 8.5%;
   }
-
-
   .book-info {
     display: flex;
     justify-content: center;
   }
-
   .book-details {
     width: 50%;
-    
   }
-
   .description {
     width: 70%;
     font-size: 13px;
@@ -283,13 +228,10 @@
     margin-top: -60px;
     /* margin: 0; */
   }
-
   .book-img img {
     /* width: auto; */
     margin-top: -70px;
-
   }
-
   .bookName {
     height: 49px;
     font-size: 22px;
@@ -297,9 +239,7 @@
     font-weight: 900;
     margin: 0 auto;
     margin-top: 44px;
-
   }
-
   .book-author {
     font-family: Montserrat;
     font-size: 13px;
@@ -309,24 +249,17 @@
     width: 100%;
   }
 }
-
 @media only screen and (min-width: 1200px) and (max-width: 1300px){
   .back-button {
-
     margin-left: 9%;
   }
-
-
   .book-info {
     display: flex;
     justify-content: center;
   }
-
   .book-details {
     width: 50%;
-    
   }
-
   .description {
     width: 70%;
     font-size: 13px;
@@ -335,13 +268,10 @@
     margin-top: -60px;
     /* margin: 0; */
   }
-
   .book-img img {
     /* width: auto; */
     margin-top: -70px;
-
   }
-
   .bookName {
     height: 49px;
     font-size: 22px;
@@ -349,9 +279,7 @@
     font-weight: 900;
     margin: 0 auto;
     margin-top: 44px;
-
   }
-
   .book-author {
     font-family: Montserrat;
     font-size: 13px;
@@ -361,5 +289,3 @@
     width: 100%;
   }
 }
-
-

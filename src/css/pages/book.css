@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 body {
   background: #FFFAF5;
 }
@@ -9,7 +10,7 @@ body {
   opacity: 1;
 }
 
-.moreDetails:hover{
+.moreDetails:hover {
   opacity: 0.5;
 }
 
@@ -20,15 +21,14 @@ body {
   border: 1px solid #E16A00;
   border-radius: 5px;
   margin-top: 173px;
-  margin-left: 80px;
+  margin-left: 90px;
   padding-bottom: 20px;
 }
 
 .back-button:hover {
-  background-color: #770c20;
-  border: 2px solid #770c20;
+  background-color: #770C20;
+  border: 2px solid #770C20;
   box-shadow: 0px 0px 26px 8px hsla(323, 87%, 50%, 0.664);
-
 }
 
 .back-button a {
@@ -38,7 +38,6 @@ body {
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
-
 }
 
 .year {
@@ -55,12 +54,10 @@ body {
   padding: 4px 15px;
 }
 
-
-.year:hover{
-  box-shadow: 1px 1px  #2F80ED, 2px 2px #53a7ea, 3px 3px  #2F80ED;
-transform: translateX(-3px);
+.year:hover {
+  box-shadow: 1px 1px #2F80ED, 2px 2px #53A7EA, 3px 3px #2F80ED;
+  transform: translateX(-3px);
 }
-
 
 .bookName {
   color: #241400;
@@ -72,8 +69,6 @@ transform: translateX(-3px);
   transition: all 0.2s ease-in-out;
   opacity: 2;
 }
-
-
 
 .day {
   color: var(--, #241400);
@@ -89,9 +84,7 @@ transform: translateX(-3px);
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-
 }
-
 
 .description {
   display: flex;
@@ -104,58 +97,28 @@ transform: translateX(-3px);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  margin: 0 ;
+  margin: 0;
   height: auto;
 }
-
 
 .book-img img {
   width: 379px;
   height: 529px;
 }
 
-
-
-
 .book-info {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-
 }
 
 .book-details {
   margin-top: 80px;
 }
 
-
 .book-img {
   position: relative;
 }
-
-
-
-.new-icon {
-  width: 94px;
-  height: 28px;
-  background-color: #ff0000;
-  border-radius: 2px;
-  text-align: center;
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 196.187%;
-  text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  right: 20px;
-
-}
-
-
-
 
 .input {
   width: 43%;
@@ -169,6 +132,8 @@ transform: translateX(-3px);
   align-items: center;
   margin-top: 102px;
   margin-left: 9%;
+  font-family: Roboto;
+  font-size: 20px;
 }
 
 .input:hover {
@@ -183,8 +148,6 @@ transform: translateX(-3px);
   padding-left: 10px;
 }
 
-
-
 #send-button {
   width: 60px;
   height: 60px;
@@ -195,8 +158,8 @@ transform: translateX(-3px);
 }
 
 #send-button:hover {
-  background-color: #770c20;
-  border: 2px solid #770c20;
+  background-color: #770C20;
+  border: 2px solid #770C20;
   box-shadow: 0px 0px 26px 8px hsla(323, 87%, 50%, 0.664);
 }
 
@@ -206,6 +169,10 @@ transform: translateX(-3px);
   margin-bottom: 43px;
   padding: 18px 30px;
   border-radius: 5px;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
   border: none;
   background-color: white;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
